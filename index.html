@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bisse IA — Agents IA & automatisation pour PME valaisannes</title>
+<meta name="description" content="Bisse IA installe des agents IA et des automatisations sur-mesure pour les PME du Valais. Tes données restent en Suisse, protégées par les standards d'un SOC professionnel." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- Animated bisse running through page background -->
+<div class="bisse-bg" aria-hidden="true">
+  <svg viewBox="0 0 1440 900" preserveAspectRatio="none">
+    <path class="bisse-path" d="M-50,140 C220,80 360,220 600,180 S980,80 1220,200 S1500,160 1500,180" />
+    <path class="bisse-path b2" d="M-50,180 C240,140 380,260 620,220 S1000,140 1240,250 S1500,210 1500,220" />
+    <path class="bisse-path" d="M-50,420 C220,460 380,340 620,400 S980,500 1220,420 S1490,460 1490,430" />
+    <path class="bisse-path b2" d="M-50,460 C240,500 400,380 640,440 S1000,540 1260,460 S1490,500 1490,470" />
+    <path class="bisse-path" d="M-50,700 C260,640 420,780 660,720 S1040,620 1280,740 S1490,700 1490,720" />
+    <path class="bisse-path b2" d="M-50,740 C240,680 440,820 680,760 S1060,660 1300,780 S1490,740 1490,760" />
+  </svg>
+</div>
+
+<!-- Continuous vertical bisse thread + scroll-driven dot -->
+<svg class="bisse-thread" preserveAspectRatio="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="bt-water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c97b3f" stop-opacity="0"/>
+      <stop offset="0.06" stop-color="#c97b3f" stop-opacity="0.7"/>
+      <stop offset="0.5" stop-color="#d99966" stop-opacity="0.85"/>
+      <stop offset="0.94" stop-color="#c97b3f" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#c97b3f" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="bt-glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="3.2" />
+    </filter>
+  </defs>
+  <!-- Rock channel — wide, dark, low opacity (the carved bed) -->
+  <path id="bisseChannel" d="" stroke="#6b1a2e" stroke-opacity="0.18" stroke-width="18" fill="none" stroke-linecap="round"/>
+  <!-- Water body -->
+  <path id="bisseWater" d="" stroke="url(#bt-water)" stroke-width="11" fill="none" stroke-linecap="round"/>
+  <!-- Surface highlights — animated flowing dashes -->
+  <path id="bisseSurface" class="bisse-surface-flow" d="" stroke="#fbf6ec" stroke-opacity="0.55" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="8 22"/>
+  <!-- Dynamic splash particles spawn here on section crossings -->
+  <g id="bisseSplashes"></g>
+  <!-- Droplet — single, round, with halo + highlight -->
+  <g id="bisseThreadDot">
+    <circle r="14" fill="#c97b3f" filter="url(#bt-glow)" opacity="0.45"/>
+    <circle r="6" fill="#fbf6ec"/>
+    <circle r="3.5" fill="#e8b988"/>
+    <circle cx="-1.8" cy="-1.8" r="1.4" fill="#fff" opacity="0.9"/>
+  </g>
+</svg>
+
+<!-- Scroll progress + section indicator (right rail) -->
+<div class="page-rail" aria-hidden="true">
+  <div class="page-rail-track">
+    <div class="page-rail-fill" id="railFill"></div>
+  </div>
+  <div class="page-rail-label" id="railLabel">01 / Hero</div>
+</div>
+
+<!-- ============================================================ NAV ============================================================ -->
+<nav class="site-nav">
+  <div class="container">
+    <a href="#" class="logo">
+      <div class="logo-mark">
+        <svg aria-hidden="true" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 11 Q11 4 18 12 T33 11" stroke="#6b1a2e" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M3 19 Q11 12 18 20 T33 19" stroke="#c97b3f" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M3 27 Q11 20 18 28 T33 27" stroke="#6b1a2e" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="logo-text">Bisse<em> IA</em></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#flow"><span class="nav-dot"></span>Comment ça marche</a></li>
+      <li><a href="#cas-usage"><span class="nav-dot"></span>Cas d'usage</a></li>
+      <li><a href="#securite"><span class="nav-dot"></span>Sécurité</a></li>
+      <li><a href="#roi"><span class="nav-dot"></span>Calculateur</a></li>
+      <li><a href="#a-propos"><span class="nav-dot"></span>À propos</a></li>
+      <li><a href="#contact" class="nav-cta">Audit gratuit</a></li>
+    </ul>
+    <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ============================================================ HERO MOTION ============================================================ -->
+<header class="hero-motion">
+  <div class="hm-canvas-wrap" id="hmCanvasWrap">
+    <canvas class="hm-canvas" id="hmCanvas"></canvas>
+  </div>
+  <div class="hm-vignette" aria-hidden="true"></div>
+  <div class="hm-grain" aria-hidden="true"></div>
+
+  <div class="hm-fade hm-eyebrow-wrap">
+    <div class="hm-eyebrow">
+      <span class="hm-dot"></span>
+      Sion&nbsp;·&nbsp;Valais&nbsp;·&nbsp;Agents&nbsp;IA
+    </div>
+  </div>
+
+  <h1 class="hm-title hm-fade" aria-label="Bisse IA">
+    <span class="hm-title-line">Bisse</span>
+    <span class="hm-title-line"><em>IA</em></span>
+  </h1>
+
+  <div class="hm-slogan-wrap hm-fade hm-fade-delay">
+    <p class="hm-slogan">
+      Ton équipe perd <span class="hm-num">15 heures</span> par semaine<br>
+      sur des tâches qu'<em>une IA</em> peut faire.
+    </p>
+  </div>
+
+  <div class="hm-bottom hm-fade hm-fade-delay-2">
+    <div class="hm-promise">
+      <div class="hm-promise-label">Promesse Bisse IA</div>
+      <p class="hm-promise-text">
+        Tes données <em>ne sortent jamais</em> de Suisse.<br>
+        Hébergement souverain en Suisse, supervision continue.
+      </p>
+    </div>
+    <div class="hm-cta-block">
+      <div class="hm-cta-row">
+        <a href="#contact" class="hm-btn-primary">
+          <span class="hm-btn-label">Demander un audit gratuit</span>
+          <span class="hm-btn-arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="#cas-usage" class="hm-btn-glass">Voir les cas d'usage</a>
+      </div>
+      <div class="hm-pilote">
+        <span class="hm-pilote-dot"></span>
+        Premiers clients pilotes 2026 · conditions préférentielles
+      </div>
+    </div>
+  </div>
+
+  <div class="hm-meta-tl hm-fade hm-fade-delay-2">
+    <div class="hm-meta-k">Pilote</div>
+    <div class="hm-meta-v">2026</div>
+  </div>
+  <div class="hm-meta-tr hm-fade hm-fade-delay-2">
+    <div class="hm-meta-k">Latitude</div>
+    <div class="hm-meta-v">46.23° N</div>
+  </div>
+</header>
+
+<!-- ============================================================ SCENARIOS ============================================================ -->
+<section class="scenarios-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="head-meta">
+        <div class="eyebrow">Trois agents, en direct</div>
+        <h2>Ce qu'un agent IA fait <em>pour toi</em><br>pendant que tu fais autre chose.</h2>
+      </div>
+      <p class="head-lede">Trois scénarios réels, observés chez des PME valaisannes. Bisse IA installe des <strong>agents IA</strong> sur-mesure&nbsp;: factures, mémoire personnelle, commerce conversationnel.</p>
+    </div>
+
+    <div class="hero-grid">
+      <div class="scenarios-side reveal">
+        <div class="pilote-pill">
+          <span class="dot"></span>
+          Premiers clients pilotes 2026 · conditions préférentielles
+        </div>
+        <div class="scenarios-side-text">
+          <p>Chaque agent est <strong>déclenché par tes outils existants</strong> — email, WhatsApp, agenda — et écrit dans Bexio, Outlook, ou ton CRM. Tu ne changes rien à ta routine&nbsp;: l'agent travaille en arrière-plan, comme l'eau dans un bisse.</p>
+          <p>Les actions critiques passent toujours par une <strong>validation humaine</strong>. Le reste tourne sans toi.</p>
+        </div>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary">
+            Demander un audit gratuit
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#cas-usage" class="btn btn-ghost">Tous les cas d'usage →</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="scenario-rotator" id="scenarioRotator">
+
+          <!-- =============== SCENARIO 1 — Saisie factures =============== -->
+          <div class="scenario active" data-scenario="0">
+            <div class="float-card float-card-top">
+              <div class="fc-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+              <div>
+                <div class="fc-label">Email entrant</div>
+                <div class="fc-value">Facture · Fournisseur SA</div>
+              </div>
+            </div>
+
+            <div class="agent-card">
+              <div class="agent-header">
+                <div class="agent-title">Agent · Saisie factures</div>
+                <div class="agent-time">14:32:08</div>
+              </div>
+              <ul class="agent-log">
+                <li class="agent-step">
+                  <div class="step-icon">1</div>
+                  <div class="step-content">
+                    <div class="step-label">Lecture</div>
+                    <div class="step-text">Facture PDF reçue de <span class="accent">Bois du Rhône SA</span></div>
+                  </div>
+                </li>
+                <li class="agent-step">
+                  <div class="step-icon">2</div>
+                  <div class="step-content">
+                    <div class="step-label">Extraction</div>
+                    <div class="step-text">Montant <span class="accent">CHF 2'847.50</span> · TVA 8.1%</div>
+                  </div>
+                </li>
+                <li class="agent-step">
+                  <div class="step-icon">3</div>
+                  <div class="step-content">
+                    <div class="step-label">Saisie Bexio</div>
+                    <div class="step-text">Compte fournisseur trouvé · écriture créée</div>
+                  </div>
+                </li>
+                <li class="agent-step">
+                  <div class="step-icon">4</div>
+                  <div class="step-content">
+                    <div class="step-label">Validation</div>
+                    <div class="step-text">Notification WhatsApp envoyée au patron</div>
+                  </div>
+                </li>
+              </ul>
+              <div class="agent-footer">
+                <span>n8n · self-hosted Genève</span>
+                <span class="agent-footer-metric">⌀ 14 s par facture</span>
+              </div>
+            </div>
+
+            <div class="float-card float-card-bottom">
+              <div class="fc-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <div class="fc-label">Ce mois</div>
+                <div class="fc-value">142 factures traitées</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =============== SCENARIO 2 — Cortex récap hebdo =============== -->
+          <div class="scenario" data-scenario="1">
+            <div class="float-card float-card-top">
+              <div class="fc-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3v10M9 7l3-4 3 4M5 14v4a2 2 0 002 2h10a2 2 0 002-2v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <div class="fc-label">Note vocale</div>
+                <div class="fc-value">47 s · idée projet</div>
+              </div>
+            </div>
+
+            <div class="agent-card">
+              <div class="agent-header">
+                <div class="agent-title">Cortex · Récap dimanche soir</div>
+                <div class="agent-time">19:00:00</div>
+              </div>
+              <ul class="agent-log">
+                <li class="agent-step">
+                  <div class="step-icon">1</div>
+                  <div class="step-content">
+                    <div class="step-label">Capturé cette semaine</div>
+                    <div class="step-text"><span class="accent">23 notes</span> — vocal, texte, photo</div>
+                  </div>
+                </li>
+                <li class="agent-step">
+                  <div class="step-icon">2</div>
+                  <div class="step-content">
+                    <div class="step-label">Organisé</div>
+                    <div class="step-text">4 sujets · <span class="accent">Petit Pont</span> en tête (8 notes)</div>
+                  </div>
+                </li>
+                <li class="agent-step">
+                  <div class="step-icon">3</div>
+                  <div class="step-content">
+                    <div class="step-label">À ne pas oublier</div>
+                    <div class="step-text">Appel <span class="accent">BCV mardi 14:00</span> · facture trim.</div>
+                  </div>
+                </li>
+                <li class="agent-step">
+                  <div class="step-icon">4</div>
+                  <div class="step-content">
+                    <div class="step-label">Récap envoyé</div>
+                    <div class="step-text">WhatsApp · résumé personnel reçu</div>
+                  </div>
+                </li>
+              </ul>
+              <div class="agent-footer">
+                <span>Self-hosted Valais · 0 sortie réseau</span>
+                <span class="agent-footer-metric">1'247 notes en mémoire</span>
+              </div>
+            </div>
+
+            <div class="float-card float-card-bottom">
+              <div class="fc-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 12c0-5 4-9 9-9s9 4 9 9c0 2-.6 3.8-1.6 5.3L21 21l-3.7-.4A9 9 0 013 12z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <div class="fc-label">Mémoire externe</div>
+                <div class="fc-value">0 idée perdue</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =============== SCENARIO 3 — Agent commercial cave =============== -->
+          <div class="scenario" data-scenario="2">
+            <div class="float-card float-card-top">
+              <div class="fc-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 12c0-5 4-9 9-9s9 4 9 9c0 2-.6 3.8-1.6 5.3L21 21l-3.7-.4A9 9 0 013 12z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <div class="fc-label">WhatsApp · 22:47</div>
+                <div class="fc-value">Client cave Salgesch</div>
+              </div>
+            </div>
+
+            <div class="agent-card">
+              <div class="agent-header">
+                <div class="agent-title">Agent · Cave &amp; vignerons</div>
+                <div class="agent-time">22:47:13</div>
+              </div>
+              <ul class="agent-log">
+                <li class="agent-step">
+                  <div class="step-icon">1</div>
+                  <div class="step-content">
+                    <div class="step-label">Question reçue</div>
+                    <div class="step-text">«&nbsp;Encore de la <span class="accent">Petite Arvine 2022</span>&nbsp;?&nbsp;»</div>
+                  </div>
+                </li>
+                <li class="agent-step">
+                  <div class="step-icon">2</div>
+                  <div class="step-content">
+                    <div class="step-label">Stock vérifié</div>
+                    <div class="step-text"><span class="accent">12 bouteilles</span> · CHF 38 l'unité</div>
+                  </div>
+                </li>
+                <li class="agent-step">
+                  <div class="step-icon">3</div>
+                  <div class="step-content">
+                    <div class="step-label">Réponse envoyée</div>
+                    <div class="step-text">Suggestion accords mets-vins jointe</div>
+                  </div>
+                </li>
+                <li class="agent-step">
+                  <div class="step-icon">4</div>
+                  <div class="step-content">
+                    <div class="step-label">Commande</div>
+                    <div class="step-text">6 bouteilles · livraison <span class="accent">vendredi</span></div>
+                  </div>
+                </li>
+              </ul>
+              <div class="agent-footer">
+                <span>Catalogue Bexio · WhatsApp Business</span>
+                <span class="agent-footer-metric">⌀ 8 s par échange</span>
+              </div>
+            </div>
+
+            <div class="float-card float-card-bottom">
+              <div class="fc-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <div class="fc-label">Ce week-end</div>
+                <div class="fc-value">+18 commandes hors heures</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Indicators -->
+        <div class="scenario-dots" id="scenarioDots" role="tablist" aria-label="Scénarios">
+          <button class="s-dot active" data-go="0" aria-label="Saisie factures">
+            <span class="s-dot-fill"></span>
+            <span class="s-dot-label">Factures</span>
+          </button>
+          <button class="s-dot" data-go="1" aria-label="Cortex">
+            <span class="s-dot-fill"></span>
+            <span class="s-dot-label">Cortex</span>
+          </button>
+          <button class="s-dot" data-go="2" aria-label="Agent cave">
+            <span class="s-dot-fill"></span>
+            <span class="s-dot-label">Cave</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ TICKER ============================================================ -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="tag">Martigny</span> Menuiserie <span class="sep">/</span> Factures Bexio</span>
+    <span class="ticker-item"><span class="tag">Salgesch</span> Cave <span class="sep">/</span> WhatsApp commercial</span>
+    <span class="ticker-item"><span class="tag">Conthey</span> Plomberie <span class="sep">/</span> Devis sur photo</span>
+    <span class="ticker-item"><span class="tag">Sierre</span> Électricien <span class="sep">/</span> Planning chantiers</span>
+    <span class="ticker-item"><span class="tag">Sion</span> Garage <span class="sep">/</span> Rappels entretien</span>
+    <span class="ticker-item"><span class="tag">Verbier</span> Paysagiste <span class="sep">/</span> Mémoire chantiers Cortex</span>
+    <!-- duplicate for seamless loop -->
+    <span class="ticker-item"><span class="tag">Martigny</span> Menuiserie <span class="sep">/</span> Factures Bexio</span>
+    <span class="ticker-item"><span class="tag">Salgesch</span> Cave <span class="sep">/</span> WhatsApp commercial</span>
+    <span class="ticker-item"><span class="tag">Conthey</span> Plomberie <span class="sep">/</span> Devis sur photo</span>
+    <span class="ticker-item"><span class="tag">Sierre</span> Électricien <span class="sep">/</span> Planning chantiers</span>
+    <span class="ticker-item"><span class="tag">Sion</span> Garage <span class="sep">/</span> Rappels entretien</span>
+    <span class="ticker-item"><span class="tag">Verbier</span> Paysagiste <span class="sep">/</span> Mémoire chantiers Cortex</span>
+  </div>
+</div>
+
+<!-- ============================================================ FLOW ============================================================ -->
+<section id="flow" class="flow">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="head-meta">
+        <div class="eyebrow">La méthode bisse</div>
+        <h2>De l'idée au déploiement,<br><em>en quatre étapes claires.</em></h2>
+      </div>
+      <p class="head-lede">Pas de jargon, pas de surprise. Chaque mandat suit la même conduite d'eau : on observe, on trace, on construit, on livre. Tu valides à chaque vanne.</p>
+    </div>
+
+    <div class="flow-canvas reveal">
+      <div class="flow-track">
+        <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
+          <path d="M50,30 C300,-10 500,70 700,20 S1050,50 1150,30"
+                stroke="#c97b3f" stroke-width="1.5" fill="none"
+                stroke-dasharray="5 6" stroke-linecap="round" opacity="0.7"/>
+          <path d="M50,32 C300,-8 500,72 700,22 S1050,52 1150,32"
+                stroke="#6b1a2e" stroke-width="0.8" fill="none"
+                stroke-dasharray="2 8" stroke-linecap="round" opacity="0.4"/>
+        </svg>
+      </div>
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="flow-step-marker">
+            <span class="step-num">01</span>
+            <svg width="38" height="38" viewBox="0 0 32 32" fill="none">
+              <circle cx="14" cy="14" r="8" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M20 20l6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Audit gratuit</h3>
+          <p>Visite sur place pour observer ce qui se passe vraiment et identifier les chantiers les plus rentables.</p>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-marker">
+            <span class="step-num">02</span>
+            <svg width="38" height="38" viewBox="0 0 32 32" fill="none">
+              <path d="M6 8h20M6 16h20M6 24h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <circle cx="22" cy="24" r="3" stroke="currentColor" stroke-width="1.8"/>
+            </svg>
+          </div>
+          <h3>Proposition chiffrée</h3>
+          <p>Une seule page : périmètre, coût d'installation, abonnement, gain estimé en heures et en CHF.</p>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-marker">
+            <span class="step-num">03</span>
+            <svg width="38" height="38" viewBox="0 0 32 32" fill="none">
+              <rect x="4" y="6" width="24" height="20" rx="2" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M9 14h14M9 18h10M9 22h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="24" cy="22" r="2" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>Installation</h3>
+          <p>2 à 6 semaines selon le périmètre. Tests sur tes vraies données. Tu valides avant la mise en production.</p>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-marker">
+            <span class="step-num">04</span>
+            <svg width="38" height="38" viewBox="0 0 32 32" fill="none">
+              <path d="M16 4l3.5 8.5L28 14l-6.5 5.5L23 28l-7-4.5L9 28l1.5-8.5L4 14l8.5-1.5L16 4z"
+                    stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Monitoring continu</h3>
+          <p>L'agent travaille pour toi. Les logs sont surveillés, les réglages affinés, un rapport mensuel t'est transmis.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ CAS D'USAGE ============================================================ -->
+<section id="cas-usage" class="cases">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="head-meta">
+        <div class="eyebrow">Cas d'usage · Valais</div>
+        <h2>Des automatisations <em>pensées pour le Valais,</em><br>livrées clé en main.</h2>
+      </div>
+      <p class="head-lede">Chaque solution s'intègre dans tes outils existants — Bexio, Outlook, WhatsApp, ton agenda, ton site. Rien à installer chez toi, rien à maintenir.</p>
+    </div>
+
+    <div class="case-filters reveal">
+      <button class="case-filter active" data-filter="all">Tous<span class="case-filter-count">06</span></button>
+      <button class="case-filter" data-filter="artisans">Artisans</button>
+      <button class="case-filter" data-filter="fiduciaire">Fiduciaires</button>
+      <button class="case-filter" data-filter="caves">Caves</button>
+      <button class="case-filter" data-filter="tourisme">Tourisme</button>
+      <button class="case-filter" data-filter="services">Services</button>
+    </div>
+
+    <div class="cases-grid">
+      <article class="case-card reveal" data-tags="artisans">
+        <span class="case-tag">Artisans</span>
+        <h3>Saisie automatique des factures fournisseurs</h3>
+        <p class="case-desc">Tes factures arrivent par email, l'agent les lit, extrait les données et les saisit dans Bexio. Tu valides en un clic depuis ton téléphone.</p>
+        <div class="case-result">
+          <div class="case-result-value">−60 h</div>
+          <div class="case-result-label">d'admin en moins par an</div>
+        </div>
+      </article>
+
+      <article class="case-card reveal" data-tags="services">
+        <span class="case-tag">Cortex · Assistant personnel</span>
+        <h3>Mémoire externe sur WhatsApp</h3>
+        <p class="case-desc">Tu envoies à Cortex tes notes — texte, vocal, photo. Il les classe, les range, et te les ressort au bon moment : rappels, recherches, briefs. Il t'aide à mieux penser sans jamais décider à ta place. Multi-tenant, hébergé en Suisse, conçu pour la confidentialité.</p>
+        <div class="case-result">
+          <div class="case-result-value">0</div>
+          <div class="case-result-label">idée perdue · mémoire augmentée 24/7</div>
+        </div>
+      </article>
+
+      <article class="case-card reveal" data-tags="fiduciaire">
+        <span class="case-tag">Fiduciaires</span>
+        <h3>Tri intelligent des emails clients</h3>
+        <p class="case-desc">L'agent classe les demandes par type, répond aux questions simples avec tes réponses pré-validées, n'escalade que les vrais sujets complexes.</p>
+        <div class="case-result">
+          <div class="case-result-value">+12 h</div>
+          <div class="case-result-label">rendues aux comptables / semaine</div>
+        </div>
+      </article>
+
+      <article class="case-card reveal" data-tags="caves">
+        <span class="case-tag">Caves & vignerons</span>
+        <h3>Assistant commercial WhatsApp</h3>
+        <p class="case-desc">Tes clients posent leurs questions (stocks, accords mets-vins, livraisons), l'agent répond depuis ton catalogue. Les commandes simples passent toutes seules.</p>
+        <div class="case-result">
+          <div class="case-result-value">+40 %</div>
+          <div class="case-result-label">de commandes hors horaires</div>
+        </div>
+      </article>
+
+      <article class="case-card reveal" data-tags="tourisme">
+        <span class="case-tag">Hôtellerie</span>
+        <h3>Réponses pré-séjour multilingues</h3>
+        <p class="case-desc">Check-in, codes d'accès, recommandations locales, horaires des remontées : l'agent répond dans la langue du visiteur 24h/24.</p>
+        <div class="case-result">
+          <div class="case-result-value">−80 %</div>
+          <div class="case-result-label">d'emails répétitifs à traiter</div>
+        </div>
+      </article>
+
+      <article class="case-card reveal" data-tags="services">
+        <span class="case-tag">PME &amp; indépendants</span>
+        <h3>Qualification automatique des leads</h3>
+        <p class="case-desc">Les demandes entrantes sont triées par un agent : type de projet, délai, budget. Tu ne rappelles que les prospects mûrs avec un dossier déjà constitué.</p>
+        <div class="case-result">
+          <div class="case-result-value">×3</div>
+          <div class="case-result-label">taux de conversion observé</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ SÉCURITÉ ============================================================ -->
+<section id="securite" class="security">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="head-meta">
+        <div class="eyebrow dark">Pourquoi confier tes données à Bisse IA</div>
+        <h2>L'IA <em>sans la fuite</em><br>de données qui va avec.</h2>
+      </div>
+      <p class="head-lede">Connecter des outils, beaucoup savent le faire. Comprendre comment ces connexions peuvent être exploitées demande un autre métier. Bisse IA conçoit des systèmes qui tiennent compte des risques dès la première ligne.</p>
+    </div>
+
+    <div class="security-grid">
+      <div class="security-pillars reveal">
+
+        <div class="pillar">
+          <div class="pillar-icon">
+            <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+              <path d="M4 22 Q10 22 12 16 T20 10 Q26 8 28 14" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <path d="M14 28 L18 20 L22 26 Z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+              <circle cx="28" cy="14" r="1.6" fill="currentColor"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Hébergement 100 % Suisse</h3>
+            <p class="pillar-text">Tes données vivent sur un serveur dédié à Genève chez Infomaniak. Pas de transit par les États-Unis, pas de cloud américain. Pour les cas sensibles, option de modèles IA tournant en local, sans aucune sortie réseau.</p>
+          </div>
+        </div>
+
+        <div class="pillar">
+          <div class="pillar-icon">
+            <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+              <path d="M4 16 L11 16M21 16 L28 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <rect x="11" y="9" width="10" height="14" rx="1.5" stroke="currentColor" stroke-width="1.8" fill="none"/>
+              <path d="M16 9 L16 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <circle cx="16" cy="5" r="1.6" fill="currentColor"/>
+              <path d="M14 16 L18 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Accès chiffrés, jamais de mots de passe</h3>
+            <p class="pillar-text">Aucun mot de passe en clair, jamais. Tous les accès passent par OAuth ou des comptes dédiés avec droits granulaires, selon les standards de la gestion d'identités bancaire.</p>
+          </div>
+        </div>
+
+        <div class="pillar">
+          <div class="pillar-icon">
+            <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+              <path d="M3 12 Q8 8 13 12 T23 12 T33 12" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" opacity="0.5"/>
+              <path d="M3 17 Q8 13 13 17 T23 17 T33 17" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <path d="M3 22 Q8 18 13 22 T23 22 T33 22" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" opacity="0.5"/>
+              <circle cx="22" cy="17" r="3.2" stroke="currentColor" stroke-width="1.8" fill="none"/>
+              <circle cx="22" cy="17" r="1.1" fill="currentColor"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Monitoring 24/7 comme en SOC</h3>
+            <p class="pillar-text">Les workflows IA sont supervisés comme dans un centre opérationnel : alertes sur anomalies, logs traçables, audit trail complet. Si quelque chose dérape, Bisse IA le sait avant toi.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="credentials reveal">
+        <div class="credentials-label">Nos engagements de sécurité</div>
+        <ul class="cred-list">
+          <li>
+            <div class="cred-year">01</div>
+            <div class="cred-text">
+              <strong>Hébergement souverain</strong>
+              <span>Serveur dédié à Genève · Infomaniak · jamais hors de Suisse</span>
+            </div>
+          </li>
+          <li>
+            <div class="cred-year">02</div>
+            <div class="cred-text">
+              <strong>Zéro mot de passe stocké</strong>
+              <span>OAuth · comptes dédiés · droits granulaires révocables</span>
+            </div>
+          </li>
+          <li>
+            <div class="cred-year">03</div>
+            <div class="cred-text">
+              <strong>Supervision 24/7</strong>
+              <span>Pratiques SOC · alertes anomalies · logs traçables</span>
+            </div>
+          </li>
+          <li>
+            <div class="cred-year">04</div>
+            <div class="cred-text">
+              <strong>Validation humaine systématique</strong>
+              <span>Paiements et envois critiques toujours validés par toi</span>
+            </div>
+          </li>
+          <li>
+            <div class="cred-year">05</div>
+            <div class="cred-text">
+              <strong>Conformité nLPD</strong>
+              <span>Contrat de sous-traitance · audit trail · option self-hosted</span>
+            </div>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ ROI ============================================================ -->
+<section id="roi" class="roi">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="head-meta">
+        <div class="eyebrow">Combien tu perds, combien tu gagnes</div>
+        <h2>Calcule ce que te coûte <em>l'inaction.</em></h2>
+      </div>
+      <p class="head-lede">Une estimation honnête, sans magie : les heures que ton équipe passe sur des tâches automatisables, multipliées par leur coût réel. Glisse les curseurs.</p>
+    </div>
+
+    <div class="roi-wrap reveal">
+      <div class="roi-card">
+        <div class="roi-card-title">Ta situation</div>
+        <div class="roi-controls">
+          <div class="roi-control">
+            <label for="roi-hours">
+              Heures perdues par semaine
+              <span class="roi-val" id="roi-hours-val">8 h</span>
+            </label>
+            <input type="range" id="roi-hours" class="roi-slider" min="1" max="40" step="1" value="8" />
+            <div class="roi-ticks"><span>1 h</span><span>20 h</span><span>40 h</span></div>
+          </div>
+
+          <div class="roi-control">
+            <label for="roi-rate">
+              Coût horaire chargé
+              <span class="roi-val" id="roi-rate-val">75 CHF</span>
+            </label>
+            <input type="range" id="roi-rate" class="roi-slider" min="40" max="250" step="5" value="75" />
+            <div class="roi-ticks"><span>40 CHF</span><span>145 CHF</span><span>250 CHF</span></div>
+          </div>
+        </div>
+
+        <p class="roi-note" style="margin-top: 32px; text-align: left;">
+          Base : 48 semaines travaillées par an. Hors charges sociales et coût d'opportunité. Un calcul affiné fait partie de l'audit.
+        </p>
+      </div>
+
+      <div class="roi-card roi-output">
+        <div class="roi-card-title t2" style="color: var(--ocre-soft);">Ce que tu laisses filer</div>
+        <div class="roi-output-display">
+          <div class="roi-output-label">Coût annuel estimé</div>
+          <div class="roi-output-value"><span id="roi-result">28'800</span><span class="roi-output-suffix"> CHF / an</span></div>
+          <div class="roi-output-detail">soit l'équivalent d'un poste à mi-temps qui ne crée aucune valeur</div>
+        </div>
+
+        <div class="roi-breakdown">
+          <div class="roi-bd-item">
+            <div class="roi-bd-label">Heures récupérables</div>
+            <div class="roi-bd-value" id="roi-hours-year">384 h</div>
+          </div>
+          <div class="roi-bd-item">
+            <div class="roi-bd-label">Mensualisé</div>
+            <div class="roi-bd-value" id="roi-monthly">2'400 CHF</div>
+          </div>
+        </div>
+
+        <div class="roi-cta-wrap">
+          <a href="#contact" class="btn btn-ocre">
+            Récupérer ce temps
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ BISSE STORY ============================================================ -->
+<section class="bisse-story">
+  <svg class="bisse-story-svg" viewBox="0 0 1440 600" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="bs-grad" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#c97b3f" stop-opacity="0.1"/>
+        <stop offset="0.5" stop-color="#c97b3f" stop-opacity="0.8"/>
+        <stop offset="1" stop-color="#c97b3f" stop-opacity="0.1"/>
+      </linearGradient>
+    </defs>
+    <path class="bs-flow bs-flow-1" d="M0,300 Q360,200 720,300 T1440,300" stroke="url(#bs-grad)" stroke-width="2" fill="none"/>
+    <path class="bs-flow bs-flow-2" d="M0,330 Q360,230 720,330 T1440,330" stroke="url(#bs-grad)" stroke-width="1.2" fill="none" opacity="0.7"/>
+    <path class="bs-flow bs-flow-3" d="M0,270 Q360,170 720,270 T1440,270" stroke="url(#bs-grad)" stroke-width="0.8" fill="none" opacity="0.5"/>
+    <path class="bs-flow bs-flow-4" d="M0,360 Q400,280 720,360 T1440,360" stroke="url(#bs-grad)" stroke-width="1" fill="none" opacity="0.5"/>
+    <path class="bs-flow bs-flow-5" d="M0,240 Q380,140 720,240 T1440,240" stroke="url(#bs-grad)" stroke-width="0.8" fill="none" opacity="0.45"/>
+    <!-- Subtle mountain silhouette -->
+    <path d="M0,500 L120,420 L220,460 L340,360 L460,440 L580,380 L720,300 L860,400 L1000,360 L1120,440 L1260,380 L1440,440 L1440,600 L0,600 Z"
+          fill="#2a2521" opacity="0.5"/>
+  </svg>
+
+  <div class="bisse-story-content">
+    <div class="eyebrow center">D'où vient le nom Bisse IA</div>
+    <span class="bisse-marker">«</span>
+    <p class="bisse-quote">
+      <span class="bisse-quote-line">Pendant 700 ans, les bisses ont irrigué les terres arides</span>
+      <span class="bisse-quote-line">du Valais sans qu'aucun paysan n'ait à porter d'eau.</span>
+      <br>
+      <span class="bisse-quote-line accent">Une infrastructure invisible, fiable, qui travaille en continu.</span>
+      <span class="bisse-quote-line">C'est exactement ce que doit être l'IA dans ton entreprise.</span>
+    </p>
+    <div class="bisse-story-footer">— Le principe Bisse IA</div>
+  </div>
+</section>
+
+<!-- ============================================================ ABOUT ============================================================ -->
+<section id="a-propos" class="about">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="head-meta">
+        <div class="eyebrow">La philosophie Bisse IA</div>
+        <h2>Une infrastructure invisible, fiable,<br>pensée <em>pour le Valais.</em></h2>
+      </div>
+      <p class="head-lede">Bisse IA n'est pas une agence de plus qui empile des outils à la mode. C'est un atelier d'automatisation pensé pour les réalités d'une PME valaisanne.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>Bisse IA est née d'un constat simple : l'intelligence artificielle change ce qu'une petite équipe peut accomplir. Mais entre les outils grand public, les fuites de données régulières et les promesses marketing, les PME valaisannes n'ont pas de partenaire de confiance pour franchir le pas sereinement.</p>
+
+        <p>L'approche : appliquer à l'IA les mêmes standards qu'un centre opérationnel de sécurité. Aucune donnée ne quitte un système sans qu'on sache exactement où elle va, qui la lit, et combien de temps elle y reste. Les workflows sont supervisés en continu, les accès sont chiffrés, et chaque action critique passe par une validation humaine.</p>
+
+        <p>Les outils sont éprouvés — n8n self-hosted, Claude, Bexio, Microsoft 365 — et l'hébergement se fait sur un serveur dédié à Genève chez Infomaniak. La nouvelle Loi sur la protection des données est respectée scrupuleusement, et chaque mandat fait l'objet d'un contrat de sous-traitance en bonne et due forme.</p>
+
+        <p>Connecter des outils, beaucoup savent le faire. Ce que Bisse IA apporte en plus : reconnaître une fuite de données dans un log, anticiper un vecteur d'attaque sur une API mal configurée, et concevoir un workflow qui résiste à un incident plutôt que de l'amplifier. Pour une fiduciaire, un cabinet médical ou une étude d'avocats, ce n'est pas un détail — c'est l'essentiel.</p>
+
+        <p>Du concret, mesurable en heures gagnées et en CHF économisés. Pas de jargon, pas de surprise, pas de dépendance à un prestataire qui parle une autre langue que la vôtre.</p>
+      </div>
+
+      <aside class="about-stats reveal">
+        <div class="about-stats-title">Bisse IA en chiffres</div>
+        <div class="stat">
+          <div class="stat-value">100<em>%</em></div>
+          <div class="stat-label">Données hébergées en Suisse, sur un serveur dédié à Genève. Conforme nLPD.</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">24<em>/7</em></div>
+          <div class="stat-label">Supervision continue des workflows · pratiques héritées du monde SOC</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">3–6<em>mois</em></div>
+          <div class="stat-label">Retour sur investissement moyen pour une PME de 1 à 10 personnes</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">0<em>CHF</em></div>
+          <div class="stat-label">Coût de l'audit initial et de la proposition chiffrée</div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FAQ ============================================================ -->
+<section id="faq" class="faq">
+  <div class="container-narrow">
+    <div class="section-head reveal" style="grid-template-columns: 1fr;">
+      <div class="head-meta">
+        <div class="eyebrow">Questions fréquentes</div>
+        <h2>Ce que les patrons de PME<br>nous demandent <em>en premier.</em></h2>
+      </div>
+    </div>
+
+    <div class="faq-grid reveal">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="fa1">
+          <span class="faq-question-text">Est-ce que mes données sortent de Suisse ?</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="fa1" role="region">
+          <p>Non, par défaut. Tes données vivent sur un serveur dédié à Genève chez Infomaniak — hébergeur 100 % suisse, neutre en carbone. Aucun transit par les États-Unis. Pour les cas sensibles (avocats, médecins, données stratégiques), Bisse IA propose une option entièrement self-hosted avec des modèles d'IA tournant en local, sans aucune connexion sortante. Tout est documenté dans un contrat de sous-traitance conforme à la nouvelle Loi sur la protection des données.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="fa3">
+          <span class="faq-question-text">J'ai déjà Bexio, Microsoft 365 ou un autre outil, ça marche ?</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="fa3" role="region">
+          <p>Oui, c'est même l'idée. Bisse IA connecte tes outils existants entre eux et y ajoute une couche d'IA, sans bouleverser tes habitudes. Les intégrations principales : Bexio, Microsoft 365, Google Workspace, Outlook, Gmail, WhatsApp Business, Notion, et la plupart des CRM courants. Si tu utilises un logiciel métier spécifique, on regarde ensemble s'il dispose d'une API ouverte.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="fa4">
+          <span class="faq-question-text">Combien de temps avant que ça fonctionne ?</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="fa4" role="region">
+          <p>Pour une automatisation simple, la livraison se fait généralement en 1 à 2 semaines après la signature. Pour un agent IA plus complexe, compte 3 à 6 semaines, avec une phase de test sur tes vraies données avant la mise en production. Bisse IA s'engage toujours sur une date précise, et l'installation n'est facturée que lorsque tu es satisfait du résultat.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="fa5">
+          <span class="faq-question-text">Et si l'IA fait une erreur ?</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="fa5" role="region">
+          <p>Toutes les actions critiques (paiements, envois, décisions financières) passent toujours par une validation humaine. L'agent propose, tu décides. Pour les actions à moindre enjeu, Bisse IA met en place des garde-fous : seuils de montants, vérifications croisées, alertes en cas de doute. Les exécutions sont monitorées en continu : si quelque chose dérape, tu es prévenu immédiatement.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="fa6">
+          <span class="faq-question-text">Je n'y connais rien en IA, est-ce que je vais pouvoir m'en servir ?</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="fa6" role="region">
+          <p>C'est précisément le but. Tu ne vois pas l'IA, tu vois juste que les choses se font toutes seules. Pas de logiciel à apprendre, pas d'interface compliquée. Tu continues à utiliser tes outils habituels (Bexio, ta boîte mail, WhatsApp), et l'automatisation tourne en arrière-plan. La formation prend généralement 30 minutes à 1 heure maximum.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="fa7">
+          <span class="faq-question-text">Où intervenez-vous en Valais ?</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="fa7" role="region">
+          <p>Bisse IA intervient dans tout le Valais romand (de Saint-Maurice à Sierre, vallées comprises) et dans le Haut-Valais germanophone (Brigue, Viège, Zermatt). Pour les premiers échanges, une visite sur place est privilégiée : comprendre ton environnement, tes contraintes et ton équipe fait partie du travail. Les sessions de suivi peuvent se faire en visio si tu préfères.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ CONTACT ============================================================ -->
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="head-meta">
+        <div class="eyebrow dark">Audit gratuit · sans engagement</div>
+        <h2>Discutons de ton cas<br>en <em>30 minutes.</em></h2>
+      </div>
+      <p class="head-lede">Décris ton activité et la tâche qui te prend le plus de temps. Bisse IA te répond sous 24 h ouvrées avec une première analyse et une proposition chiffrée si pertinente.</p>
+    </div>
+
+    <div class="contact-grid">
+      <form class="contact-form reveal" id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom" required />
+          </div>
+          <div class="form-group">
+            <label for="entreprise">Entreprise</label>
+            <input type="text" id="entreprise" name="entreprise" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="telephone">Téléphone</label>
+            <input type="tel" id="telephone" name="telephone" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="secteur">Secteur d'activité</label>
+          <select id="secteur" name="secteur" required>
+            <option value="">Sélectionnez…</option>
+            <option>Artisan / Bâtiment</option>
+            <option>Fiduciaire / Comptabilité</option>
+            <option>Cabinet médical / Dentaire</option>
+            <option>Cave / Vigneron</option>
+            <option>Hôtellerie / Location</option>
+            <option>Commerce / Service</option>
+            <option>Autre</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Quelle tâche te prend le plus de temps&nbsp;?</label>
+          <textarea id="message" name="message" placeholder="Ex : je passe 5 h par mois à saisir manuellement mes factures fournisseurs dans Bexio…" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-ocre">
+          Demander mon audit gratuit
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+
+        <div class="form-success" id="formSuccess" role="status" aria-live="polite">
+          Merci ! Ta demande a bien été envoyée. Bisse IA te recontacte sous 24 h ouvrées.
+        </div>
+      </form>
+
+      <aside class="contact-info reveal">
+        <div class="contact-info-item">
+          <div class="contact-info-label">Email</div>
+          <div class="contact-info-value"><a href="/cdn-cgi/l/email-protection#690a06071d080a1d290b001a1a0c440008470a01"><span class="__cf_email__" data-cfemail="80e3efeef4e1e3f4c0e2e9f3f3e5ade9e1aee3e8">[email&#160;protected]</span></a></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-label">Téléphone</div>
+          <div class="contact-info-value"><a href="tel:+41779246978">+41 77 924 69 78</a></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-label">Basé à</div>
+          <div class="contact-info-value">Sion, Valais</div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-label">Disponibilité</div>
+          <div class="contact-info-value">Lundi–vendredi · 8h–18h</div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <div class="logo-mark">
+            <svg aria-hidden="true" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 11 Q11 4 18 12 T33 11" stroke="#f4ede0" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M3 19 Q11 12 18 20 T33 19" stroke="#c97b3f" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M3 27 Q11 20 18 28 T33 27" stroke="#f4ede0" stroke-width="2" fill="none" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span class="logo-text">Bisse<em> IA</em></span>
+        </a>
+        <p class="footer-tagline">
+          L'eau qui travaille pour ton entreprise.<br>
+          Agents IA et automatisation pour PME valaisannes, hébergés en Suisse.
+        </p>
+        <div class="footer-pilote">
+          <span class="footer-pilote-dot"></span>
+          Premiers clients pilotes 2026
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Naviguer</div>
+        <ul>
+          <li><a href="#flow">Comment ça marche</a></li>
+          <li><a href="#cas-usage">Cas d'usage</a></li>
+          <li><a href="#securite">Sécurité</a></li>
+          <li><a href="#roi">Calculateur ROI</a></li>
+          <li><a href="#a-propos">À propos</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Mentions légales</div>
+        <ul>
+          <li><a href="mentions-legales.html#impressum">Mentions légales · Impressum</a></li>
+          <li><a href="mentions-legales.html#confidentialite">Politique de confidentialité</a></li>
+          <li><a href="mentions-legales.html#cookies">Politique des cookies</a></li>
+          <li><a href="mentions-legales.html#droits">Tes droits (nLPD)</a></li>
+          <li><a href="mentions-legales.html#securite">Mesures de sécurité</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <ul>
+          <li><a href="/cdn-cgi/l/email-protection#e1828e8f95808295a18388929284cc8880cf8289"><span class="__cf_email__" data-cfemail="b3d0dcddc7d2d0c7f3d1dac0c0d69edad29dd0db">[email&#160;protected]</span></a></li>
+          <li><a href="tel:+41779246978">+41 77 924 69 78</a></li>
+          <li class="footer-static">Sion · Valais</li>
+          <li class="footer-static">Lundi–vendredi · 8h–18h</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        © 2026 Bisse IA · Tous droits réservés
+      </div>
+      <div class="footer-compliance">
+        <span class="footer-badge">nLPD&nbsp;·&nbsp;conforme</span>
+        <span class="footer-badge">RGPD&nbsp;·&nbsp;compatible</span>
+        <span class="footer-badge">Hébergé&nbsp;en&nbsp;Suisse</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
+</body>
+</html>
