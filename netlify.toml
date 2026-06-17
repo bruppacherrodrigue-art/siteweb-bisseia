@@ -1,0 +1,29 @@
+# Netlify — Bisse IA · Turiya
+# Site statique, aucune étape de build (HTML/CSS/JS inline).
+
+[build]
+  publish = "."
+  command = ""
+
+# Sécurité — en-têtes recommandés (cohérents avec le discours du produit).
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+# Polices auto-hébergées — cache long (les fichiers sont versionnés par leur nom).
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Redirige le www vers l'apex (ajuster selon le domaine retenu).
+[[redirects]]
+  from = "https://www.bisse-ia.ch/*"
+  to = "https://bisse-ia.ch/:splat"
+  status = 301
+  force = true
