@@ -1,443 +1,346 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Mentions légales · Bisse IA</title>
-<meta name="description" content="Mentions légales, politique de confidentialité, gestion des cookies et droits nLPD de Bisse IA — agents IA et automatisation pour PME valaisannes." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css" />
+<title>Mentions légales, confidentialité &amp; droits nLPD · Bisse IA — Turiya</title>
+<meta name="description" content="Mentions légales, politique de confidentialité (conforme nLPD) et droits sur vos données du site bisse-ia.ch. Éditeur Rodrigue Bruppacher · Bisse IA, Sion. Hébergement en Suisse (Infomaniak, Genève), sans cookie ni traceur." />
+<link rel="canonical" href="https://bisse-ia.ch/mentions-legales.html" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Rodrigue Bruppacher · Bisse IA" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="fr_CH" />
+<meta property="og:site_name" content="Bisse IA — Turiya" />
+<meta property="og:title" content="Mentions légales, confidentialité &amp; droits nLPD · Bisse IA — Turiya" />
+<meta property="og:description" content="Mentions légales, politique de confidentialité (nLPD) et droits sur vos données. Hébergement en Suisse, sans cookie ni traceur." />
+<meta property="og:url" content="https://bisse-ia.ch/mentions-legales.html" />
+<!-- Polices AUTO-HÉBERGÉES — aucun appel à Google. Voir fonts/FONTS.md. -->
 <style>
-  body { background: var(--creme); }
-  .legal-shell { padding: 160px 0 100px; position: relative; z-index: 2; }
-  .legal-hero {
-    display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 64px;
-    align-items: end;
-    margin-bottom: 80px;
-    padding-bottom: 48px;
-    border-bottom: 1px solid var(--line);
+  @font-face { font-family: 'Sora'; font-style: normal; font-weight: 300; font-display: swap; src: url('fonts/sora-300.woff2') format('woff2'); }
+  @font-face { font-family: 'Sora'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/sora-400.woff2') format('woff2'); }
+  @font-face { font-family: 'Sora'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/sora-600.woff2') format('woff2'); }
+  @font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/ibm-plex-mono-400.woff2') format('woff2'); }
+  @font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 500; font-display: swap; src: url('fonts/ibm-plex-mono-500.woff2') format('woff2'); }
+  @font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/ibm-plex-mono-600.woff2') format('woff2'); }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Bisse IA",
+  "alternateName": "Turiya",
+  "url": "https://bisse-ia.ch",
+  "email": "admin@bisse-ia.ch",
+  "telephone": "+41779246978",
+  "founder": { "@type": "Person", "name": "Rodrigue Bruppacher" },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rue des Champs de Tabac 12",
+    "postalCode": "1950",
+    "addressLocality": "Sion",
+    "addressRegion": "Valais",
+    "addressCountry": "CH"
+  },
+  "areaServed": "CH"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://bisse-ia.ch/" },
+    { "@type": "ListItem", "position": 2, "name": "Mentions légales & confidentialité", "item": "https://bisse-ia.ch/mentions-legales.html" }
+  ]
+}
+</script>
+<style>
+  :root {
+    --bg: #060d12;
+    --bg-2: #0a161e;
+    --bg-panel: #0e1c26;
+    --glacier: #7fd4e8;
+    --glacier-deep: #4ba6bd;
+    --mist: #dfe9ec;
+    --mist-70: rgba(223, 233, 236, 0.74);
+    --mist-45: rgba(223, 233, 236, 0.52);
+    --line: rgba(127, 212, 232, 0.18);
+    --line-soft: rgba(127, 212, 232, 0.09);
+    --sans: 'Sora', system-ui, sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, monospace;
   }
-  .legal-back {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--texte-soft);
-    text-decoration: none;
-    margin-bottom: 32px;
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg); color: var(--mist);
+    font-family: var(--sans); font-weight: 300; line-height: 1.68;
+    -webkit-font-smoothing: antialiased; overflow-x: hidden;
   }
-  .legal-back:hover { color: var(--grenat); }
-  .legal-hero h1 {
-    font-family: var(--serif);
-    font-weight: 300;
-    font-style: italic;
-    font-size: clamp(48px, 7vw, 88px);
-    line-height: 0.95;
-    letter-spacing: -0.025em;
-    color: var(--grenat);
-    text-wrap: balance;
-  }
-  .legal-hero h1 em { font-style: italic; color: var(--ocre); }
-  .legal-hero p {
-    font-family: var(--serif);
-    font-size: 1.05rem;
-    line-height: 1.55;
-    color: var(--texte-soft);
-  }
-  .legal-toc {
-    background: rgba(244, 237, 224, 0.5);
-    border: 1px solid var(--line-soft);
-    border-radius: 4px;
-    padding: 24px;
-  }
-  .legal-toc-title {
-    font-family: var(--mono);
-    font-size: 0.66rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--ocre);
-    margin-bottom: 16px;
-  }
-  .legal-toc ol {
-    list-style: none;
-    margin: 0; padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    counter-reset: l;
-  }
-  .legal-toc li {
-    counter-increment: l;
-    font-size: 0.92rem;
-  }
-  .legal-toc li::before {
-    content: counter(l, decimal-leading-zero) "  ";
-    color: var(--ocre);
-    font-family: var(--mono);
-    font-size: 0.78rem;
-    margin-right: 8px;
-  }
-  .legal-toc a {
-    color: var(--texte);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 200ms, color 200ms;
-  }
-  .legal-toc a:hover { color: var(--grenat); border-color: var(--ocre); }
+  ::selection { background: rgba(127, 212, 232, 0.3); }
+  a { color: var(--glacier); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--glacier); outline-offset: 3px; border-radius: 2px; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+  .k-label { font-family: var(--mono); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--glacier); }
 
-  .legal-body {
-    max-width: 760px;
-    margin: 0 auto;
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(14px); background: rgba(6, 13, 18, 0.74);
+    border-bottom: 1px solid var(--line-soft);
   }
-  .legal-section {
-    margin-bottom: 80px;
-    scroll-margin-top: 110px;
-  }
-  .legal-section-num {
-    font-family: var(--mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--ocre);
-    margin-bottom: 12px;
-  }
-  .legal-section h2 {
-    font-family: var(--serif);
-    font-weight: 400;
-    font-style: italic;
-    font-size: clamp(28px, 3.5vw, 44px);
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: var(--grenat);
-    margin-bottom: 28px;
-  }
-  .legal-section h3 {
-    font-family: var(--serif);
-    font-weight: 500;
-    font-size: 1.35rem;
-    line-height: 1.25;
-    color: var(--ardoise);
-    margin: 36px 0 14px;
-  }
-  .legal-section p {
-    font-family: var(--sans);
-    font-size: 1.02rem;
-    line-height: 1.65;
-    color: var(--texte);
-    margin-bottom: 18px;
-  }
-  .legal-section ul {
-    list-style: none;
-    margin: 0 0 18px;
-    padding: 0;
-  }
-  .legal-section li {
-    position: relative;
-    padding-left: 22px;
-    margin-bottom: 10px;
-    font-size: 1.02rem;
-    line-height: 1.6;
-    color: var(--texte);
-  }
-  .legal-section li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.7em;
-    width: 12px;
-    height: 1px;
-    background: var(--ocre);
-  }
-  .legal-section strong { color: var(--grenat); font-weight: 600; }
-  .legal-section a { color: var(--grenat); border-bottom: 1px solid var(--ocre); text-decoration: none; }
-  .legal-section a:hover { color: var(--ocre); }
+  .nav-in { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .brand { font-family: var(--mono); font-size: 0.95rem; font-weight: 500; letter-spacing: 0.08em; color: var(--mist); }
+  .brand b { color: var(--glacier); font-weight: 500; }
+  .nav-back { font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mist-70); display: inline-flex; align-items: center; gap: 8px; }
+  .nav-back:hover { color: var(--glacier); text-decoration: none; }
 
-  .legal-impressum-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px 32px;
-    padding: 28px;
-    background: rgba(244, 237, 224, 0.5);
-    border: 1px solid var(--line-soft);
-    border-radius: 4px;
-    margin-top: 24px;
+  /* HEADER */
+  header.legal-hero { padding: 80px 0 56px; border-bottom: 1px solid var(--line-soft); position: relative; overflow: hidden; }
+  header.legal-hero::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(620px 360px at 80% -10%, rgba(127,212,232,0.08), transparent 70%);
   }
-  .legal-imp-k {
-    font-family: var(--mono);
-    font-size: 0.66rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--texte-soft);
-    margin-bottom: 4px;
-  }
-  .legal-imp-v {
-    font-family: var(--sans);
-    font-size: 0.98rem;
-    color: var(--ardoise);
-    line-height: 1.4;
-  }
+  header.legal-hero h1 { position: relative; font-size: clamp(2.1rem, 3.6vw, 3rem); font-weight: 300; letter-spacing: -0.02em; line-height: 1.08; margin: 18px 0 20px; text-wrap: balance; }
+  header.legal-hero h1 b { font-weight: 600; color: var(--glacier); }
+  header.legal-hero p { position: relative; color: var(--mist-70); font-size: 1.06rem; max-width: 60ch; text-wrap: pretty; }
+  .updated { position: relative; margin-top: 26px; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mist-45); }
 
-  .legal-update {
-    font-family: var(--mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--texte-soft);
-    margin-top: 80px;
-    padding-top: 32px;
-    border-top: 1px solid var(--line-soft);
-  }
+  /* LAYOUT */
+  .legal-grid { display: grid; grid-template-columns: 240px 1fr; gap: 64px; padding: 64px 0 40px; align-items: start; }
+  .toc { position: sticky; top: 96px; }
+  .toc h2 { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mist-45); margin-bottom: 18px; }
+  .toc ol { list-style: none; display: flex; flex-direction: column; gap: 2px; counter-reset: toc; }
+  .toc a { display: flex; gap: 12px; padding: 9px 0; font-size: 0.92rem; color: var(--mist-70); border-bottom: 1px solid var(--line-soft); }
+  .toc a:hover { color: var(--glacier); text-decoration: none; }
+  .toc a::before { counter-increment: toc; content: counter(toc, decimal-leading-zero); font-family: var(--mono); font-size: 0.72rem; color: var(--glacier-deep); }
 
-  @media (max-width: 900px) {
-    .legal-hero { grid-template-columns: 1fr; gap: 40px; }
-    .legal-impressum-grid { grid-template-columns: 1fr; gap: 18px; padding: 20px; }
-    .legal-shell { padding: 120px 0 80px; }
+  /* SECTIONS */
+  .legal-body { min-width: 0; }
+  .legal-section { padding-bottom: 64px; margin-bottom: 64px; border-bottom: 1px solid var(--line-soft); scroll-margin-top: 96px; }
+  .legal-section:last-child { border-bottom: 0; margin-bottom: 0; }
+  .legal-section > .k-label { display: block; margin-bottom: 12px; }
+  .legal-section h2 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); font-weight: 300; letter-spacing: -0.015em; line-height: 1.12; margin-bottom: 8px; text-wrap: balance; }
+  .legal-section h2 b { font-weight: 600; color: var(--glacier); }
+  .legal-section > .sub { color: var(--mist-70); font-size: 1.04rem; margin: 14px 0 4px; max-width: 64ch; text-wrap: pretty; }
+  .legal-section h3 { font-size: 1.04rem; font-weight: 500; color: var(--mist); margin: 38px 0 10px; letter-spacing: 0.01em; }
+  .legal-section p { color: var(--mist-70); margin-bottom: 14px; max-width: 68ch; text-wrap: pretty; }
+  .legal-section ul { list-style: none; display: flex; flex-direction: column; gap: 11px; margin: 6px 0 18px; max-width: 68ch; }
+  .legal-section li { color: var(--mist-70); display: flex; gap: 13px; align-items: baseline; }
+  .legal-section li::before { content: "—"; color: var(--glacier); flex-shrink: 0; }
+  .legal-section li b { color: var(--mist); font-weight: 500; }
+  .legal-section strong { color: var(--mist); font-weight: 500; }
+
+  /* address / contact card */
+  .info-card { margin: 8px 0 18px; border: 1px solid var(--line); border-left: 2px solid var(--glacier); border-radius: 4px; background: var(--bg-panel); padding: 24px 28px; max-width: 60ch; }
+  .info-card .ic-name { font-size: 1.06rem; color: var(--mist); font-weight: 500; }
+  .info-card .ic-line { font-family: var(--mono); font-size: 0.88rem; color: var(--mist-70); line-height: 1.9; }
+  .info-card .ic-line a { color: var(--glacier); }
+
+  .callout { margin: 8px 0 18px; border: 1px solid var(--line-soft); border-radius: 4px; background: rgba(127,212,232,0.04); padding: 20px 24px; max-width: 66ch; }
+  .callout p { margin: 0; color: var(--mist); }
+  .callout .ck { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--glacier); display: block; margin-bottom: 9px; }
+
+  /* FOOTER */
+  footer { padding: 56px 0; background: var(--bg-2); border-top: 1px solid var(--line-soft); }
+  .foot-in { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mist-45); }
+  .foot-in a { color: var(--mist-70); }
+  .foot-in a:hover { color: var(--glacier); text-decoration: none; }
+  .foot-links { display: flex; gap: 24px; flex-wrap: wrap; }
+
+  @media (max-width: 860px) {
+    .wrap { padding: 0 26px; }
+    .legal-grid { grid-template-columns: 1fr; gap: 8px; padding-top: 40px; }
+    .toc { position: static; margin-bottom: 32px; padding-bottom: 28px; border-bottom: 1px solid var(--line-soft); }
+    .toc ol { gap: 0; }
   }
 </style>
 </head>
 <body>
 
-<!-- Same nav as main site -->
-<nav class="site-nav">
-  <div class="container">
-    <a href="index.html" class="logo">
-      <div class="logo-mark">
-        <svg aria-hidden="true" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3 11 Q11 4 18 12 T33 11" stroke="#6b1a2e" stroke-width="2" fill="none" stroke-linecap="round"/>
-          <path d="M3 19 Q11 12 18 20 T33 19" stroke="#c97b3f" stroke-width="2" fill="none" stroke-linecap="round"/>
-          <path d="M3 27 Q11 20 18 28 T33 27" stroke="#6b1a2e" stroke-width="2" fill="none" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <span class="logo-text">Bisse<em> IA</em></span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html#flow"><span class="nav-dot"></span>Comment ça marche</a></li>
-      <li><a href="index.html#cas-usage"><span class="nav-dot"></span>Cas d'usage</a></li>
-      <li><a href="index.html#securite"><span class="nav-dot"></span>Sécurité</a></li>
-      <li><a href="index.html#roi"><span class="nav-dot"></span>Calculateur</a></li>
-      <li><a href="index.html#contact" class="nav-cta">Audit gratuit</a></li>
-    </ul>
+<nav aria-label="Navigation">
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html">BISSE<b>·IA</b></a>
+    <a class="nav-back" href="index.html">← Retour au site</a>
   </div>
 </nav>
 
-<main class="legal-shell">
-  <div class="container">
-    <a href="index.html" class="legal-back">← Retour à l'accueil</a>
-
-    <header class="legal-hero">
-      <div>
-        <h1>Mentions légales <em>&amp; protection des données</em></h1>
-      </div>
-      <div>
-        <p>Tout ce que la loi suisse — et toi — êtes en droit d'attendre d'un prestataire qui touche à tes données.</p>
-      </div>
-    </header>
-
-    <aside class="legal-toc">
-      <div class="legal-toc-title">Sommaire</div>
-      <ol>
-        <li><a href="#impressum">Impressum &amp; mentions légales</a></li>
-        <li><a href="#confidentialite">Politique de confidentialité (nLPD)</a></li>
-        <li><a href="#donnees-collectees">Données que nous collectons</a></li>
-        <li><a href="#finalites">Finalités du traitement</a></li>
-        <li><a href="#sous-traitants">Sous-traitants &amp; hébergement</a></li>
-        <li><a href="#droits">Tes droits (nLPD)</a></li>
-        <li><a href="#cookies">Politique des cookies</a></li>
-        <li><a href="#securite">Mesures de sécurité</a></li>
-        <li><a href="#contact">Contact &amp; délégué à la protection des données</a></li>
-      </ol>
-    </aside>
-
-    <div class="legal-body">
-
-      <section class="legal-section" id="impressum">
-        <div class="legal-section-num">01 · Impressum</div>
-        <h2>Mentions légales</h2>
-        <p>Conformément à l'art. 3 al. 1 let. s de la Loi fédérale contre la concurrence déloyale (LCD), les informations suivantes identifient l'éditeur du présent site.</p>
-
-        <div class="legal-impressum-grid">
-          <div>
-            <div class="legal-imp-k">Raison sociale</div>
-            <div class="legal-imp-v">Bisse IA</div>
-          </div>
-          <div>
-            <div class="legal-imp-k">Forme juridique</div>
-            <div class="legal-imp-v">Raison individuelle de droit suisse</div>
-          </div>
-          <div>
-            <div class="legal-imp-k">Siège</div>
-            <div class="legal-imp-v">Sion · Valais · Suisse</div>
-          </div>
-          <div>
-            <div class="legal-imp-k">Registre du commerce</div>
-            <div class="legal-imp-v">En cours d'inscription au RC du Valais</div>
-          </div>
-          <div>
-            <div class="legal-imp-k">N° TVA</div>
-            <div class="legal-imp-v">Non assujetti (CA &lt; 100&apos;000 CHF/an)</div>
-          </div>
-          <div>
-            <div class="legal-imp-k">Responsable du contenu</div>
-            <div class="legal-imp-v">Direction Bisse IA</div>
-          </div>
-          <div>
-            <div class="legal-imp-k">Email</div>
-            <div class="legal-imp-v"><a href="/cdn-cgi/l/email-protection#ff9c90918b9e9c8bbf9d968c8c9ad2969ed19c97"><span class="__cf_email__" data-cfemail="eb8884859f8a889fab898298988ec6828ac58883">[email&#160;protected]</span></a></div>
-          </div>
-          <div>
-            <div class="legal-imp-k">Téléphone</div>
-            <div class="legal-imp-v"><a href="tel:+41779246978">+41 77 924 69 78</a></div>
-          </div>
-        </div>
-
-        <h3>Droits d'auteur</h3>
-        <p>L'ensemble des textes, visuels, codes et éléments graphiques publiés sur bisse-ia.ch sont la propriété de Bisse IA, sauf mention contraire. Toute reproduction, totale ou partielle, sans autorisation écrite préalable est interdite.</p>
-
-        <h3>Limitation de responsabilité</h3>
-        <p>Bisse IA met tout en œuvre pour assurer l'exactitude des informations publiées. Toutefois, aucune garantie n'est donnée quant à la complétude ou l'actualité des contenus. Bisse IA décline toute responsabilité pour les dommages directs ou indirects résultant de l'accès au site ou de son utilisation.</p>
-      </section>
-
-      <section class="legal-section" id="confidentialite">
-        <div class="legal-section-num">02 · Confidentialité</div>
-        <h2>Politique de confidentialité</h2>
-        <p>La présente politique décrit comment Bisse IA collecte, traite et protège les données personnelles, en pleine conformité avec la <strong>nouvelle Loi fédérale sur la protection des données (nLPD)</strong> entrée en vigueur le 1<sup>er</sup> septembre 2023 et, lorsque le RGPD s'applique, avec celui-ci.</p>
-        <p>Notre principe directeur est simple&nbsp;: <strong>tes données ne sortent jamais de Suisse</strong>. Nous ne traitons que ce qui est strictement nécessaire à l'exécution du mandat, et nous documentons chaque opération.</p>
-      </section>
-
-      <section class="legal-section" id="donnees-collectees">
-        <div class="legal-section-num">03 · Données collectées</div>
-        <h2>Quelles données nous collectons</h2>
-        <p>Selon le contexte (visite du site, formulaire de contact, exécution d'un mandat), les catégories suivantes peuvent être traitées&nbsp;:</p>
-        <ul>
-          <li><strong>Données d'identification</strong>&nbsp;: nom, prénom, raison sociale, fonction.</li>
-          <li><strong>Coordonnées</strong>&nbsp;: email professionnel, téléphone, adresse postale.</li>
-          <li><strong>Données techniques</strong>&nbsp;: adresse IP anonymisée, type de navigateur, pages consultées, horodatage.</li>
-          <li><strong>Données métier</strong> (clients sous mandat)&nbsp;: documents transmis pour l'analyse, accès aux outils intégrés (Bexio, Microsoft 365, etc.) limités à ce qui est nécessaire à l'agent IA.</li>
-          <li><strong>Échanges</strong>&nbsp;: contenu des emails, prises de notes lors des audits, comptes-rendus de réunion.</li>
-        </ul>
-      </section>
-
-      <section class="legal-section" id="finalites">
-        <div class="legal-section-num">04 · Finalités</div>
-        <h2>Pourquoi nous traitons ces données</h2>
-        <ul>
-          <li>Répondre aux demandes de contact et planifier les audits gratuits.</li>
-          <li>Exécuter les mandats d'installation, de maintenance et de supervision des agents IA.</li>
-          <li>Assurer la sécurité, la traçabilité et la conformité des workflows.</li>
-          <li>Émettre les factures et respecter les obligations comptables suisses (10 ans).</li>
-          <li>Améliorer la qualité du service sur la base d'analyses anonymisées.</li>
-        </ul>
-        <p>Toute autre finalité fait l'objet d'un consentement préalable explicite.</p>
-      </section>
-
-      <section class="legal-section" id="sous-traitants">
-        <div class="legal-section-num">05 · Sous-traitants</div>
-        <h2>Sous-traitants &amp; hébergement</h2>
-        <p>Bisse IA recourt à un nombre limité de prestataires, tous sélectionnés pour leurs garanties de souveraineté et de sécurité&nbsp;:</p>
-        <ul>
-          <li><strong>Infomaniak Network SA</strong> (Genève) — hébergement du site et des workflows n8n self-hosted. 100&nbsp;% suisse, neutre en carbone.</li>
-          <li><strong>Anthropic / OpenAI</strong> — modèles IA utilisés exclusivement avec une clause de non-rétention des données. Pour les mandats sensibles, des modèles open-source tournent en local sans connexion sortante.</li>
-          <li><strong>Outils métier des clients</strong> (Bexio, Microsoft 365, etc.) — accès via OAuth ou comptes dédiés, jamais par mots de passe stockés.</li>
-        </ul>
-        <p>Chaque sous-traitant est lié par un contrat de sous-traitance conforme à l'art. 9 nLPD ou à l'art. 28 RGPD lorsque celui-ci s'applique.</p>
-      </section>
-
-      <section class="legal-section" id="droits">
-        <div class="legal-section-num">06 · Tes droits</div>
-        <h2>Tes droits selon la nLPD</h2>
-        <p>En tant que personne concernée, tu disposes des droits suivants, exerçables gratuitement et à tout moment&nbsp;:</p>
-        <ul>
-          <li><strong>Droit d'accès</strong> (art. 25 nLPD) — obtenir confirmation que tes données sont traitées et en recevoir copie.</li>
-          <li><strong>Droit de rectification</strong> — faire corriger des données inexactes ou incomplètes.</li>
-          <li><strong>Droit à l'effacement</strong> — demander la suppression des données qui ne sont plus nécessaires.</li>
-          <li><strong>Droit d'opposition</strong> — t'opposer au traitement pour des motifs légitimes.</li>
-          <li><strong>Droit à la portabilité</strong> — recevoir tes données dans un format structuré et exploitable.</li>
-          <li><strong>Droit de retirer ton consentement</strong> à tout moment, sans affecter la licéité des traitements antérieurs.</li>
-          <li><strong>Droit de plainte</strong> auprès du <a href="https://www.edoeb.admin.ch" target="_blank" rel="noopener">Préposé fédéral à la protection des données et à la transparence (PFPDT)</a>.</li>
-        </ul>
-        <p>Pour exercer ces droits&nbsp;: <a href="/cdn-cgi/l/email-protection#3357435c73515a4040561e5a521d505b"><span class="__cf_email__" data-cfemail="cbafbba48ba9a2b8b8aee6a2aae5a8a3">[email&#160;protected]</span></a>. Une réponse est garantie sous 30 jours ouvrables.</p>
-      </section>
-
-      <section class="legal-section" id="cookies">
-        <div class="legal-section-num">07 · Cookies</div>
-        <h2>Politique des cookies</h2>
-        <p>Le site bisse-ia.ch utilise un minimum strict de cookies. Aucune solution de tracking publicitaire n'est déployée.</p>
-        <h3>Cookies techniques (toujours actifs)</h3>
-        <ul>
-          <li>Préférences d'interface (thème, fermeture des bannières).</li>
-          <li>Session anti-CSRF lors de l'envoi du formulaire de contact.</li>
-        </ul>
-        <h3>Cookies analytiques (avec consentement)</h3>
-        <ul>
-          <li>Statistiques de fréquentation anonymisées (Plausible, hébergé en Allemagne — IP non stockée).</li>
-        </ul>
-        <p>Tu peux refuser ou retirer ton consentement à tout moment depuis les paramètres de ton navigateur ou en nous contactant.</p>
-      </section>
-
-      <section class="legal-section" id="securite">
-        <div class="legal-section-num">08 · Sécurité</div>
-        <h2>Mesures de sécurité</h2>
-        <p>Bisse IA applique à ses workflows les pratiques héritées du monde des centres opérationnels de sécurité (SOC)&nbsp;:</p>
-        <ul>
-          <li>Chiffrement TLS 1.3 des communications, chiffrement au repos des données stockées.</li>
-          <li>Authentification multifacteur sur tous les accès administratifs.</li>
-          <li>OAuth et comptes à droits granulaires — aucun mot de passe en clair, jamais.</li>
-          <li>Logs traçables, alertes sur anomalies, audit trail complet.</li>
-          <li>Validation humaine systématique pour les actions critiques (paiements, envois sortants).</li>
-          <li>Sauvegardes chiffrées quotidiennes, restauration testée mensuellement.</li>
-        </ul>
-        <p>En cas d'incident de sécurité affectant des données personnelles, Bisse IA s'engage à notifier le PFPDT et les personnes concernées dans les délais légaux (72 heures lorsque le RGPD s'applique).</p>
-      </section>
-
-      <section class="legal-section" id="contact">
-        <div class="legal-section-num">09 · Contact</div>
-        <h2>Contact &amp; délégué à la protection des données</h2>
-        <p>Pour toute question relative à la présente politique, à l'exercice de tes droits ou à un éventuel incident&nbsp;:</p>
-        <div class="legal-impressum-grid">
-          <div>
-            <div class="legal-imp-k">Contact général</div>
-            <div class="legal-imp-v"><a href="/cdn-cgi/l/email-protection#d8bbb7b6acb9bbac98bab1ababbdf5b1b9f6bbb0"><span class="__cf_email__" data-cfemail="fb9894958f9a988fbb999288889ed6929ad59893">[email&#160;protected]</span></a></div>
-          </div>
-          <div>
-            <div class="legal-imp-k">Délégué à la protection des données</div>
-            <div class="legal-imp-v"><a href="/cdn-cgi/l/email-protection#ddb9adb29dbfb4aeaeb8f0b4bcf3beb5"><span class="__cf_email__" data-cfemail="c9adb9a689aba0babaace4a0a8e7aaa1">[email&#160;protected]</span></a></div>
-          </div>
-          <div>
-            <div class="legal-imp-k">Adresse postale</div>
-            <div class="legal-imp-v">Bisse IA · Sion · Valais · Suisse</div>
-          </div>
-          <div>
-            <div class="legal-imp-k">Autorité de contrôle</div>
-            <div class="legal-imp-v"><a href="https://www.edoeb.admin.ch" target="_blank" rel="noopener">PFPDT — edoeb.admin.ch</a></div>
-          </div>
-        </div>
-      </section>
-
-      <div class="legal-update">
-        Dernière mise à jour&nbsp;: 28 mai 2026 · Bisse IA se réserve le droit de modifier la présente politique. Toute modification matérielle est notifiée par email aux clients sous mandat.
-      </div>
-    </div>
+<header class="legal-hero">
+  <div class="wrap">
+    <p class="k-label">Informations légales · nLPD</p>
+    <h1>Mentions légales, <b>confidentialité</b> &amp; vos droits</h1>
+    <p>Tout ce qui encadre ce site et le traitement de vos données — qui édite bisse-ia.ch, où sont hébergées vos données, et les droits que la loi suisse vous reconnaît.</p>
+    <p class="updated">Dernière mise à jour : juin 2026</p>
   </div>
-</main>
+</header>
+
+<div class="wrap">
+  <div class="legal-grid">
+    <nav class="toc" aria-label="Sommaire">
+      <h2>Sommaire</h2>
+      <ol>
+        <li><a href="#impressum">Mentions légales</a></li>
+        <li><a href="#confidentialite">Politique de confidentialité</a></li>
+        <li><a href="#droits">Vos droits (nLPD)</a></li>
+      </ol>
+    </nav>
+
+    <main class="legal-body">
+
+      <!-- ════ MENTIONS LÉGALES ════ -->
+      <section class="legal-section" id="impressum" aria-labelledby="impressum-h">
+        <span class="k-label">01 — Impressum</span>
+        <h2 id="impressum-h">Mentions <b>légales</b></h2>
+        <p class="sub">Bisse IA · Turiya</p>
+
+        <h3>Éditeur du site</h3>
+        <p>Le présent site bisse-ia.ch est édité par :</p>
+        <div class="info-card">
+          <div class="ic-name">Rodrigue Bruppacher</div>
+          <div class="ic-line">
+            Entreprise individuelle «&nbsp;Bisse IA&nbsp;»<br />
+            Rue des Champs de Tabac 12<br />
+            1950 Sion · Valais · Suisse<br />
+            Email : <a href="mailto:admin@bisse-ia.ch">admin@bisse-ia.ch</a><br />
+            Téléphone : <a href="tel:+41779246978">+41 77 924 69 78</a>
+          </div>
+        </div>
+        <p>Bisse IA est le nom commercial sous lequel Rodrigue Bruppacher exerce son activité d'indépendant. L'entreprise n'est pas inscrite au registre du commerce, son chiffre d'affaires annuel étant inférieur au seuil d'inscription obligatoire.</p>
+
+        <h3>Responsable de la publication</h3>
+        <p>Rodrigue Bruppacher, à l'adresse mentionnée ci-dessus.</p>
+
+        <h3>Hébergement</h3>
+        <p>Le site est hébergé en Suisse par :</p>
+        <div class="info-card">
+          <div class="ic-name">Infomaniak Network SA</div>
+          <div class="ic-line">
+            Rue Eugène-Marziano 25<br />
+            1227 Les Acacias (Genève) · Suisse<br />
+            <a href="https://www.infomaniak.com" rel="noopener">www.infomaniak.com</a>
+          </div>
+        </div>
+
+        <h3>Propriété intellectuelle</h3>
+        <p>L'ensemble des contenus présents sur ce site (textes, structure, identité visuelle, marque «&nbsp;Turiya&nbsp;») est la propriété de Rodrigue Bruppacher, sauf mention contraire. Toute reproduction ou utilisation, totale ou partielle, sans autorisation écrite préalable est interdite.</p>
+
+        <h3>Responsabilité</h3>
+        <p>Les informations publiées sur ce site sont fournies à titre indicatif. Bisse IA s'efforce d'en assurer l'exactitude mais ne saurait être tenu responsable d'éventuelles erreurs, omissions, ou de l'usage qui en serait fait. Les liens éventuels vers des sites tiers n'engagent pas la responsabilité de Bisse IA quant à leur contenu.</p>
+
+        <h3>Droit applicable</h3>
+        <p>Le présent site et son utilisation sont régis par le droit suisse. Tout litige relève de la compétence des tribunaux du canton du Valais.</p>
+      </section>
+
+      <!-- ════ CONFIDENTIALITÉ ════ -->
+      <section class="legal-section" id="confidentialite" aria-labelledby="confidentialite-h">
+        <span class="k-label">02 — Confidentialité</span>
+        <h2 id="confidentialite-h">Politique de <b>confidentialité</b></h2>
+        <p class="sub">Conforme à la nLPD · Bisse IA · Turiya</p>
+        <p>La présente politique décrit comment sont traitées les données personnelles collectées via le site bisse-ia.ch, conformément à la loi fédérale suisse sur la protection des données (nLPD).</p>
+
+        <h3>Responsable du traitement</h3>
+        <div class="info-card">
+          <div class="ic-name">Rodrigue Bruppacher · Bisse IA</div>
+          <div class="ic-line">
+            Rue des Champs de Tabac 12, 1950 Sion<br />
+            <a href="mailto:admin@bisse-ia.ch">admin@bisse-ia.ch</a>
+          </div>
+        </div>
+
+        <h3>Quelles données sont collectées</h3>
+        <p>Ce site ne collecte que les données que vous transmettez volontairement via le formulaire de contact, à savoir :</p>
+        <ul>
+          <li>votre nom ;</li>
+          <li>le nom de votre organisation ;</li>
+          <li>votre adresse email ;</li>
+          <li>le contenu du message que vous rédigez.</li>
+        </ul>
+        <p>Aucune autre donnée n'est collectée à votre insu.</p>
+
+        <h3>Pas de cookies ni de traceurs</h3>
+        <div class="callout">
+          <span class="ck">Aucun suivi</span>
+          <p>Ce site n'utilise aucun cookie, aucun outil de mesure d'audience, aucun traceur publicitaire, et ne charge aucune ressource depuis un service tiers. Votre navigation n'est pas suivie. C'est pourquoi aucun bandeau de consentement aux cookies ne vous est présenté : il n'y a rien à consentir.</p>
+        </div>
+
+        <h3>Finalité du traitement</h3>
+        <p>Les données transmises via le formulaire servent uniquement à répondre à votre demande et, le cas échéant, à assurer le suivi d'un éventuel échange commercial. Elles ne sont utilisées à aucune autre fin.</p>
+
+        <h3>Base du traitement</h3>
+        <p>Le traitement repose sur votre démarche volontaire : en remplissant le formulaire, vous nous transmettez vos données dans le but d'obtenir une réponse de notre part.</p>
+
+        <h3>Hébergement et localisation des données</h3>
+        <p>Le site et les données transmises sont hébergés en Suisse par Infomaniak Network SA (Genève). <strong>Vos données restent sous juridiction suisse.</strong></p>
+
+        <h3>Partage des données</h3>
+        <p>Vos données ne sont ni vendues, ni louées, ni transmises à des tiers à des fins commerciales. Elles ne sont communiquées à un tiers que si la loi l'exige.</p>
+
+        <h3>Durée de conservation</h3>
+        <p>Les données transmises via le formulaire sont conservées le temps nécessaire au traitement de votre demande et au suivi d'une éventuelle relation commerciale. Au-delà, elles sont supprimées, sauf obligation légale de conservation.</p>
+
+        <h3>Vos droits</h3>
+        <p>Conformément à la nLPD, vous disposez de droits sur vos données personnelles (accès, rectification, effacement, opposition, portabilité, retrait du consentement). Le détail de ces droits et la manière de les exercer sont décrits dans la section <a href="#droits">Vos droits (nLPD)</a>.</p>
+
+        <h3>Sécurité</h3>
+        <p>Des mesures techniques et organisationnelles raisonnables sont mises en œuvre pour protéger vos données contre tout accès, modification ou divulgation non autorisés.</p>
+
+        <h3>Modifications</h3>
+        <p>Cette politique peut être mise à jour. La date de dernière mise à jour figure en bas de page.</p>
+      </section>
+
+      <!-- ════ DROITS nLPD ════ -->
+      <section class="legal-section" id="droits" aria-labelledby="droits-h">
+        <span class="k-label">03 — Vos droits</span>
+        <h2 id="droits-h">Vos <b>droits</b></h2>
+        <p class="sub">Loi fédérale sur la protection des données (nLPD)</p>
+        <p>La loi suisse sur la protection des données (nLPD) vous reconnaît plusieurs droits sur les données personnelles vous concernant que nous traitons. Cette section vous explique lesquels, et comment les exercer.</p>
+
+        <h3>Les droits dont vous disposez</h3>
+        <ul>
+          <li><b>Droit d'accès</b> — vous pouvez demander si nous traitons des données vous concernant, et lesquelles.</li>
+          <li><b>Droit de rectification</b> — vous pouvez demander la correction de données inexactes ou incomplètes.</li>
+          <li><b>Droit à l'effacement</b> — vous pouvez demander la suppression de vos données, sous réserve de nos obligations légales de conservation.</li>
+          <li><b>Droit d'opposition</b> — vous pouvez vous opposer à un traitement de vos données pour des motifs légitimes.</li>
+          <li><b>Droit à la portabilité</b> — vous pouvez demander à recevoir les données que vous nous avez transmises, dans un format lisible.</li>
+          <li><b>Droit de retirer votre consentement</b> — lorsqu'un traitement repose sur votre accord, vous pouvez le retirer à tout moment.</li>
+        </ul>
+
+        <h3>Comment exercer vos droits</h3>
+        <p>Pour exercer l'un de ces droits, il vous suffit de nous écrire à l'adresse suivante, en précisant votre demande :</p>
+        <div class="info-card">
+          <div class="ic-name">Rodrigue Bruppacher · Bisse IA</div>
+          <div class="ic-line">
+            Rue des Champs de Tabac 12, 1950 Sion<br />
+            <a href="mailto:admin@bisse-ia.ch">admin@bisse-ia.ch</a>
+          </div>
+        </div>
+        <p>Nous pourrons vous demander de justifier votre identité, afin de nous assurer que la demande émane bien de la personne concernée. Nous répondons à votre demande dans les meilleurs délais, et au plus tard dans le délai prévu par la loi.</p>
+
+        <h3>Gratuité</h3>
+        <p>L'exercice de vos droits est en principe gratuit. Des frais raisonnables ne peuvent être facturés que dans les cas exceptionnels prévus par la loi (par exemple une demande manifestement abusive ou répétée).</p>
+
+        <h3>Réclamation</h3>
+        <p>Si vous estimez que le traitement de vos données n'est pas conforme à la loi, vous avez le droit d'adresser une réclamation au Préposé fédéral à la protection des données et à la transparence (PFPDT), l'autorité suisse compétente en matière de protection des données (<a href="https://www.edoeb.admin.ch" rel="noopener">www.edoeb.admin.ch</a>).</p>
+
+        <h3>Quelles données nous traitons</h3>
+        <p>Pour rappel, ce site ne collecte que les données transmises via le formulaire de contact (nom, organisation, email, message) et n'utilise aucun cookie ni traceur. Le détail figure dans la section <a href="#confidentialite">Politique de confidentialité</a>.</p>
+      </section>
+
+    </main>
+  </div>
+</div>
 
 <footer>
-  <div class="container">
-    <div class="footer-bottom" style="border: 0; padding-top: 0;">
-      <div class="footer-copy">© 2026 Bisse IA · Tous droits réservés</div>
-      <div class="footer-compliance">
-        <a href="index.html" style="font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase;">← Retour à l'accueil</a>
-      </div>
+  <div class="wrap foot-in">
+    <span>© 2026 Bisse IA · Turiya — Sion, Valais</span>
+    <div class="foot-links">
+      <a href="index.html">Accueil</a>
+      <a href="#impressum">Mentions légales</a>
+      <a href="#confidentialite">Confidentialité</a>
+      <a href="#droits">Droits nLPD</a>
     </div>
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</body>
 </html>

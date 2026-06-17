@@ -1,1066 +1,1227 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Bisse IA — Agents IA & automatisation pour PME valaisannes</title>
-<meta name="description" content="Bisse IA installe des agents IA et des automatisations sur-mesure pour les PME du Valais. Tes données restent en Suisse, protégées par les standards d'un SOC professionnel." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css" />
+<title>Bisse IA — Turiya · Surveillance de sécurité, conformité &amp; exposition</title>
+<meta name="description" content="Turiya surveille en continu la sécurité, la conformité et l'exposition numérique des PME. Par Bisse IA, basé à Sion — un ex-analyste cybersécurité bancaire. Surveillance externe, sources ouvertes, données en Suisse." />
+<link rel="canonical" href="https://bisse-ia.ch/" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="author" content="Rodrigue Bruppacher · Bisse IA" />
+<meta name="keywords" content="surveillance cybersécurité PME, exposition numérique, conformité nLPD, sécurité site web, surveillance domaine email, audit exposition, Sion, Valais, Suisse, Turiya, Bisse IA" />
+<meta name="theme-color" content="#060d12" />
+<meta name="geo.region" content="CH-VS" />
+<meta name="geo.placename" content="Sion" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="fr_CH" />
+<meta property="og:site_name" content="Bisse IA — Turiya" />
+<meta property="og:title" content="Turiya — la surveillance continue de votre exposition numérique" />
+<meta property="og:description" content="Turiya surveille en continu ce qu'un attaquant voit de votre entreprise — site, domaine, email, conformité nLPD, exposition externe — et vous prévient pendant qu'il est encore temps d'agir." />
+<meta property="og:url" content="https://bisse-ia.ch/" />
+<meta property="og:image" content="https://bisse-ia.ch/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Turiya — surveillance de sécurité, conformité et exposition numérique, par Bisse IA (Sion)." />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Turiya — surveillance de sécurité, conformité &amp; exposition" />
+<meta name="twitter:description" content="La surveillance continue de l'exposition numérique des PME. Par un ex-analyste cybersécurité, données en Suisse." />
+<meta name="twitter:image" content="https://bisse-ia.ch/og-image.png" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://bisse-ia.ch/#org",
+      "name": "Bisse IA",
+      "alternateName": "Turiya",
+      "url": "https://bisse-ia.ch/",
+      "email": "admin@bisse-ia.ch",
+      "telephone": "+41779246978",
+      "founder": { "@type": "Person", "name": "Rodrigue Bruppacher", "jobTitle": "Analyste cybersécurité" },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sion",
+        "addressRegion": "Valais",
+        "addressCountry": "CH"
+      },
+      "areaServed": { "@type": "Country", "name": "Suisse" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://bisse-ia.ch/#website",
+      "url": "https://bisse-ia.ch/",
+      "name": "Bisse IA — Turiya",
+      "inLanguage": "fr-CH",
+      "publisher": { "@id": "https://bisse-ia.ch/#org" }
+    },
+    {
+      "@type": "Service",
+      "name": "Turiya",
+      "serviceType": "Surveillance de sécurité, de conformité et d'exposition numérique",
+      "provider": { "@id": "https://bisse-ia.ch/#org" },
+      "areaServed": { "@type": "Country", "name": "Suisse" },
+      "audience": { "@type": "Audience", "audienceType": "PME, fiduciaires, avocats, cabinets médicaux, notaires, régies" },
+      "description": "Surveillance continue et externe de la présence numérique d'une PME — santé technique du site, sécurité visible, conformité nLPD et exposition externe — avec alerte qualifiée et marche à suivre."
+    }
+  ]
+}
+</script>
+<!-- Polices AUTO-HÉBERGÉES — aucun appel à Google. Voir fonts/FONTS.md pour récupérer les .woff2. -->
+<style>
+  /* Sora — 300 / 400 / 600 */
+  @font-face { font-family: 'Sora'; font-style: normal; font-weight: 300; font-display: swap; src: url('fonts/sora-300.woff2') format('woff2'); }
+  @font-face { font-family: 'Sora'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/sora-400.woff2') format('woff2'); }
+  @font-face { font-family: 'Sora'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/sora-600.woff2') format('woff2'); }
+  /* IBM Plex Mono — 400 / 500 / 600 */
+  @font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/ibm-plex-mono-400.woff2') format('woff2'); }
+  @font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 500; font-display: swap; src: url('fonts/ibm-plex-mono-500.woff2') format('woff2'); }
+  @font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/ibm-plex-mono-600.woff2') format('woff2'); }
+</style>
+<style>
+  :root {
+    --bg: #060d12;
+    --bg-2: #0a161e;
+    --bg-panel: #0e1c26;
+    --bg-panel-2: #122430;
+    --glacier: #7fd4e8;
+    --glacier-soft: rgba(127, 212, 232, 0.65);
+    --mist: #dfe9ec;
+    --mist-70: rgba(223, 233, 236, 0.72);
+    --mist-45: rgba(223, 233, 236, 0.5);
+    --line: rgba(127, 212, 232, 0.18);
+    --line-soft: rgba(127, 212, 232, 0.1);
+    --ok: #8fd4a8;
+    --sans: 'Sora', system-ui, sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    background: var(--bg);
+    color: var(--mist);
+    font-family: var(--sans);
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+  }
+  ::selection { background: rgba(127, 212, 232, 0.3); }
+  a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 2px solid var(--glacier); outline-offset: 3px; border-radius: 2px;
+  }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  section { scroll-margin-top: 90px; }
+
+  .k-label {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--glacier);
+  }
+  h2 {
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: clamp(34px, 4.6vw, 56px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--mist);
+    text-wrap: balance;
+  }
+  h2 b { font-weight: 600; color: var(--glacier); }
+
+  /* reveal — gated: hidden only when html.anim (JS + motion ok) */
+  html.anim .reveal { opacity: 0; transform: translateY(18px); transition: opacity 700ms ease, transform 700ms cubic-bezier(0.2, 0.6, 0.2, 1); }
+  html.anim .reveal.in { opacity: 1; transform: none; }
+
+  /* ════════ NAV ════════ */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(6, 13, 18, 0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .nav .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 72px; gap: 24px;
+  }
+  .brand {
+    font-family: var(--sans); font-weight: 600; font-size: 1.15rem;
+    letter-spacing: 0.06em; color: var(--mist);
+    text-decoration: none; white-space: nowrap;
+  }
+  .brand b { color: var(--glacier); font-weight: 600; }
+  .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+  .nav-links a {
+    font-family: var(--mono); font-size: 0.72rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--mist-45); text-decoration: none;
+    transition: color 160ms ease;
+  }
+  .nav-links a:hover { color: var(--glacier); }
+  .nav-cta {
+    font-family: var(--sans) !important; font-weight: 400;
+    font-size: 0.85rem !important; letter-spacing: 0.02em !important;
+    text-transform: none !important;
+    color: var(--bg) !important;
+    background: var(--glacier);
+    padding: 11px 22px; border-radius: 100px;
+    transition: background 160ms ease;
+  }
+  .nav-cta:hover { background: #a5e2f0; }
+  .nav-burger {
+    display: none; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+    width: 44px; height: 44px; flex-shrink: 0;
+    background: transparent; border: 0; cursor: pointer; border-radius: 6px;
+  }
+  .nav-burger .nb-bar {
+    width: 20px; height: 1.5px; background: var(--mist);
+    transition: transform 200ms ease;
+  }
+  .nav-burger[aria-expanded="true"] .nb-bar:first-child { transform: translateY(3.75px) rotate(45deg); }
+  .nav-burger[aria-expanded="true"] .nb-bar:last-child { transform: translateY(-3.75px) rotate(-45deg); }
+  .nav-menu { display: none; border-top: 1px solid var(--line-soft); }
+  .nav-menu a {
+    display: block; padding: 17px 32px;
+    font-family: var(--mono); font-size: 0.78rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--mist-70); text-decoration: none;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .nav-menu a:last-child { border-bottom: 0; }
+  .nav-menu a:hover { color: var(--glacier); }
+  @media (max-width: 860px) {
+    .nav-links li:not(:last-child) { display: none; }
+    .nav-burger { display: inline-flex; }
+    .nav-menu:not([hidden]) { display: block; }
+  }
+
+  /* ════════ HERO ════════ */
+  .hero {
+    position: relative;
+    min-height: calc(100vh - 72px);
+    min-height: calc(100svh - 72px);
+    display: flex; flex-direction: column;
+    background: radial-gradient(1200px 700px at 75% 18%, #122835 0%, var(--bg-2) 55%, var(--bg) 100%);
+    overflow: hidden;
+  }
+  .hero-flow { position: absolute; inset: 0; z-index: 0; pointer-events: none; width: 100%; height: 100%; }
+  .hero-flow path { fill: none; stroke-linecap: round; }
+  .hero-flow .bed { stroke: rgba(127, 212, 232, 0.09); stroke-width: 60; }
+  .hero-flow .stream { stroke: var(--glacier-soft); stroke-width: 2.5; }
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-flow .stream { stroke-dasharray: 90 60; animation: flow 4s linear infinite; }
+    @keyframes flow { to { stroke-dashoffset: -150; } }
+  }
+  .hero-main {
+    position: relative; z-index: 2;
+    flex: 1; display: flex; flex-direction: column; justify-content: center;
+    padding-top: 64px; padding-bottom: 64px;
+  }
+  .hero-kicker { margin-bottom: 36px; }
+  .hero h1 {
+    font-weight: 300;
+    font-size: clamp(40px, 5.8vw, 82px);
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    max-width: 18ch;
+    text-wrap: balance;
+  }
+  .hero h1 b { font-weight: 600; color: var(--glacier); }
+  .hero-lede {
+    font-size: clamp(16px, 1.35vw, 19px);
+    line-height: 1.75;
+    color: var(--mist-70);
+    max-width: 54ch;
+    margin-top: 32px;
+    text-wrap: pretty;
+  }
+  .cta-row { display: flex; align-items: center; gap: 28px; margin-top: 48px; flex-wrap: wrap; }
+  .cta {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--glacier); color: #07141b;
+    font-family: var(--sans); font-weight: 600; font-size: 1.05rem;
+    padding: 19px 38px; text-decoration: none; border-radius: 100px;
+    transition: background 160ms ease;
+  }
+  .cta:hover { background: #a5e2f0; }
+  .pilote {
+    font-family: var(--mono); font-size: 0.78rem;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--mist-45);
+  }
+  .hero-foot {
+    position: relative; z-index: 2;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--line);
+  }
+  .hero-foot > div {
+    padding: 26px 32px;
+    border-right: 1px solid var(--line);
+  }
+  .hero-foot > div:first-child { padding-left: max(32px, calc((100vw - 1200px) / 2 + 32px)); }
+  .hero-foot > div:last-child { border-right: 0; }
+  .hf-k {
+    font-family: var(--mono); font-size: 0.66rem;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--glacier); display: block; margin-bottom: 7px;
+  }
+  .hf-v { font-weight: 400; font-size: 1.02rem; color: var(--mist); }
+  @media (max-width: 760px) {
+    .hero-foot { grid-template-columns: 1fr; }
+    .hero-foot > div { border-right: 0; border-bottom: 1px solid var(--line); padding: 18px 32px; }
+    .hero-foot > div:first-child { padding-left: 32px; }
+    .hero-foot > div:last-child { border-bottom: 0; }
+  }
+
+  /* ════════ FONDATEUR ════════ */
+  .fondateur { padding: 130px 0; background: var(--bg); }
+  .fondateur-grid {
+    display: grid; grid-template-columns: 320px 1fr; gap: 72px;
+    align-items: start;
+  }
+  .monogram {
+    aspect-ratio: 1; border: 1px solid var(--line);
+    border-radius: 6px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 10px;
+    background: linear-gradient(160deg, var(--bg-panel) 0%, var(--bg-2) 100%);
+    position: relative; overflow: hidden;
+  }
+  .monogram::after {
+    content: ''; position: absolute; left: -10%; right: -10%; bottom: 26%;
+    height: 1.5px; background: var(--glacier-soft);
+    transform: rotate(-4deg);
+  }
+  .monogram .rb {
+    font-family: var(--sans); font-weight: 300; font-size: 96px;
+    letter-spacing: 0.02em; color: var(--mist); line-height: 1;
+  }
+  .monogram .rb b { font-weight: 600; color: var(--glacier); }
+  .monogram .role {
+    font-family: var(--mono); font-size: 0.68rem;
+    letter-spacing: 0.24em; text-transform: uppercase; color: var(--mist-45);
+  }
+  .fondateur h2 { margin: 18px 0 26px; }
+  .fondateur-body p { color: var(--mist-70); max-width: 58ch; text-wrap: pretty; font-size: 1.05rem; }
+  .fondateur-body p + p { margin-top: 18px; }
+  .fondateur-body p strong { color: var(--mist); font-weight: 400; }
+  .creds {
+    margin-top: 38px; border-top: 1px solid var(--line);
+    display: flex; flex-direction: column;
+  }
+  .cred {
+    display: grid; grid-template-columns: 150px 1fr; gap: 24px;
+    padding: 16px 0; border-bottom: 1px solid var(--line-soft);
+    align-items: baseline;
+  }
+  .cred .ck {
+    font-family: var(--mono); font-size: 0.7rem;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--glacier);
+  }
+  .cred .cv { font-size: 0.97rem; color: var(--mist-70); font-weight: 300; }
+  @media (max-width: 860px) {
+    .fondateur-grid { grid-template-columns: 1fr; gap: 40px; }
+    .monogram { max-width: 280px; }
+  }
+
+  /* ════════ PRÉ-COMPTABLE ════════ */
+  .produit {
+    padding: 130px 0;
+    background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 18%, var(--bg-2) 82%, var(--bg) 100%);
+    border-top: 1px solid var(--line-soft);
+  }
+  .produit-head { max-width: 720px; }
+  .produit-head h2 { margin: 18px 0 24px; }
+  .produit-head p { color: var(--mist-70); font-size: 1.08rem; text-wrap: pretty; }
+  .probleme {
+    margin-top: 56px;
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 6px; overflow: hidden;
+    max-width: 880px;
+  }
+  .probleme > div { background: var(--bg-panel); padding: 30px 34px; }
+  .probleme .pk {
+    font-family: var(--mono); font-size: 0.68rem;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    display: block; margin-bottom: 12px;
+  }
+  .probleme .avant .pk { color: var(--mist-45); }
+  .probleme .apres .pk { color: var(--glacier); }
+  .probleme p { font-size: 1rem; color: var(--mist-70); text-wrap: pretty; }
+  .probleme .apres p strong { color: var(--mist); font-weight: 400; }
+  @media (max-width: 720px) { .probleme { grid-template-columns: 1fr; } }
+
+  /* demo */
+  .demo { margin-top: 72px; }
+  .demo-steps {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+    list-style: none;
+  }
+  .demo-step {
+    text-align: left;
+    font-family: inherit;
+    background: transparent; border: 0; cursor: pointer;
+    border-top: 2px solid var(--line);
+    padding: 18px 10px 0 2px;
+    transition: border-color 240ms ease;
+  }
+  .demo-step .sn {
+    font-family: var(--mono); font-size: 0.7rem;
+    letter-spacing: 0.2em; color: var(--mist-45);
+    display: block; margin-bottom: 6px;
+    transition: color 240ms ease;
+  }
+  .demo-step .st {
+    font-family: var(--sans); font-weight: 400; font-size: 1.02rem;
+    color: var(--mist-45); transition: color 240ms ease;
+  }
+  .demo-step[aria-selected="true"] { border-top-color: var(--glacier); }
+  .demo-step[aria-selected="true"] .sn { color: var(--glacier); }
+  .demo-step[aria-selected="true"] .st { color: var(--mist); }
+  .demo-stage {
+    margin-top: 28px;
+    border: 1px solid var(--line); border-radius: 6px;
+    background: var(--bg-panel);
+    min-height: 320px;
+    position: relative; overflow: hidden;
+  }
+  .demo-pane {
+    position: absolute; inset: 0;
+    padding: 40px 48px;
+    display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 48px; align-items: center;
+    opacity: 0; visibility: hidden;
+    transition: opacity 360ms ease, visibility 0s 360ms;
+  }
+  .demo-pane.active { opacity: 1; visibility: visible; transition: opacity 360ms ease 120ms, visibility 0s; position: relative; }
+  .demo-pane h3 {
+    font-weight: 300; font-size: 1.7rem; letter-spacing: -0.01em;
+    color: var(--mist); margin-bottom: 14px;
+  }
+  .demo-pane h3 b { font-weight: 600; color: var(--glacier); }
+  .demo-pane > div p { color: var(--mist-70); font-size: 1rem; max-width: 44ch; text-wrap: pretty; }
+  .demo-visual {
+    border: 1px solid var(--line); border-radius: 5px;
+    background: var(--bg-2);
+    padding: 26px 28px;
+    font-family: var(--mono); font-size: 0.85rem; line-height: 1.9;
+  }
+  .demo-visual .dim { color: var(--mist-45); }
+  .demo-visual .hl { color: var(--glacier); }
+  .demo-visual .okc { color: var(--ok); }
+  .demo-visual .row { display: flex; justify-content: space-between; gap: 18px; }
+  .demo-visual .badge {
+    display: inline-block;
+    font-size: 0.7rem; letter-spacing: 0.16em; font-weight: 600;
+    color: var(--glacier); border: 1px solid var(--glacier-soft);
+    padding: 3px 10px; border-radius: 3px;
+  }
+  .demo-visual .badge.ok { color: var(--ok); border-color: rgba(143, 212, 168, 0.5); }
+  .demo-visual hr { border: 0; border-top: 1px solid var(--line-soft); margin: 10px 0; }
+  @media (max-width: 860px) {
+    .demo-steps { grid-template-columns: repeat(2, 1fr); }
+    .demo-pane { grid-template-columns: 1fr; gap: 28px; padding: 28px; }
+  }
+  .demo-note {
+    margin-top: 26px;
+    display: flex; align-items: center; gap: 14px;
+    font-family: var(--mono); font-size: 0.82rem;
+    color: var(--mist-70);
+  }
+  .demo-note::before {
+    content: ''; width: 9px; height: 9px; border-radius: 50%;
+    background: var(--glacier); flex-shrink: 0;
+  }
+  .demo-note b { color: var(--glacier); font-weight: 600; }
+  .produit-cta { margin-top: 64px; }
+
+  /* ════════ AGENTS ════════ */
+  .agents { padding: 110px 0; }
+  .agents-head { margin-bottom: 48px; }
+  .agents-head h2 { margin-top: 18px; }
+  .agents-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
+    background: var(--line); border: 1px solid var(--line);
+    border-radius: 6px; overflow: hidden;
+  }
+  .agent { background: var(--bg-panel); padding: 36px 40px; }
+  .agent .an {
+    font-family: var(--mono); font-size: 0.68rem;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--glacier); display: block; margin-bottom: 14px;
+  }
+  .agent h3 { font-weight: 400; font-size: 1.35rem; letter-spacing: -0.01em; margin-bottom: 12px; }
+  .agent p { color: var(--mist-70); font-size: 0.98rem; max-width: 44ch; text-wrap: pretty; }
+  .agents-note {
+    margin-top: 22px;
+    font-family: var(--mono); font-size: 0.8rem; color: var(--mist-45);
+  }
+  @media (max-width: 720px) { .agents-grid { grid-template-columns: 1fr; } }
+
+  /* ════════ SÉCURITÉ ════════ */
+  .securite {
+    padding: 130px 0;
+    background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 20%, var(--bg-2) 80%, var(--bg) 100%);
+    border-top: 1px solid var(--line-soft);
+  }
+  .securite-head { max-width: 760px; }
+  .securite-head h2 { margin: 18px 0 24px; }
+  .securite-head p { color: var(--mist-70); font-size: 1.08rem; text-wrap: pretty; }
+  .sec-grid {
+    margin-top: 64px;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;
+  }
+  .sec-pillar { border-top: 2px solid var(--glacier); padding-top: 24px; }
+  .sec-pillar .sn {
+    font-family: var(--mono); font-size: 0.7rem;
+    letter-spacing: 0.22em; color: var(--glacier);
+    display: block; margin-bottom: 14px;
+  }
+  .sec-pillar h3 { font-weight: 400; font-size: 1.3rem; letter-spacing: -0.01em; margin-bottom: 14px; }
+  .sec-pillar p { color: var(--mist-70); font-size: 0.97rem; text-wrap: pretty; }
+  .sec-pillar ul { margin-top: 16px; list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .sec-pillar li {
+    font-family: var(--mono); font-size: 0.82rem; color: var(--mist-70);
+    display: flex; gap: 12px; align-items: baseline;
+  }
+  .sec-pillar li::before { content: '—'; color: var(--glacier); flex-shrink: 0; }
+  .nlpd {
+    margin-top: 64px;
+    border: 1px solid var(--line); border-radius: 6px;
+    background: var(--bg-panel);
+    padding: 30px 38px;
+    display: flex; align-items: baseline; gap: 28px;
+  }
+  .nlpd .nk {
+    font-family: var(--mono); font-size: 0.72rem;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--glacier); white-space: nowrap;
+  }
+  .nlpd p { color: var(--mist-70); font-size: 0.98rem; text-wrap: pretty; }
+  .nlpd p strong { color: var(--mist); font-weight: 400; }
+  @media (max-width: 860px) {
+    .sec-grid { grid-template-columns: 1fr; gap: 36px; }
+    .nlpd { flex-direction: column; gap: 12px; }
+  }
+
+  /* ════════ LE NOM ════════ */
+  .nom {
+    padding: 150px 0;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .nom-flow { position: absolute; left: 0; right: 0; top: 50%; z-index: 0; pointer-events: none; }
+  .nom-flow path { fill: none; stroke: rgba(127, 212, 232, 0.14); stroke-width: 1.5; }
+  @media (prefers-reduced-motion: no-preference) {
+    .nom-flow path { stroke-dasharray: 60 40; animation: flow 5s linear infinite; }
+  }
+  .nom .wrap { position: relative; z-index: 2; }
+  .nom blockquote {
+    font-weight: 300;
+    font-size: clamp(26px, 3.4vw, 42px);
+    line-height: 1.35; letter-spacing: -0.015em;
+    max-width: 30ch; margin: 28px auto 0;
+    text-wrap: balance;
+  }
+  .nom blockquote b { font-weight: 600; color: var(--glacier); }
+  .nom figcaption {
+    margin-top: 30px;
+    font-family: var(--mono); font-size: 0.8rem;
+    letter-spacing: 0.14em; color: var(--mist-45);
+  }
+
+  /* ════════ FAQ ════════ */
+  .faq { padding: 110px 0; border-top: 1px solid var(--line-soft); }
+  .faq-grid { display: grid; grid-template-columns: 320px 1fr; gap: 72px; align-items: start; }
+  .faq-intro h2 { margin-top: 18px; }
+  .faq-list { border-top: 1px solid var(--line); }
+  .faq details { border-bottom: 1px solid var(--line-soft); }
+  .faq summary {
+    cursor: pointer; list-style: none;
+    display: flex; align-items: baseline; justify-content: space-between; gap: 24px;
+    padding: 24px 4px;
+    font-weight: 400; font-size: 1.08rem; color: var(--mist);
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: '+';
+    font-family: var(--mono); font-size: 1.1rem; color: var(--glacier);
+    flex-shrink: 0;
+  }
+  .faq details[open] summary::after { content: '−'; }
+  .faq details p {
+    padding: 0 4px 26px;
+    color: var(--mist-70); font-size: 0.99rem; max-width: 60ch; text-wrap: pretty;
+  }
+  .faq details p strong { color: var(--mist); font-weight: 400; }
+  @media (max-width: 860px) { .faq-grid { grid-template-columns: 1fr; gap: 36px; } }
+
+  /* ════════ CONTACT ════════ */
+  .contact {
+    padding: 130px 0 100px;
+    background: radial-gradient(1000px 600px at 30% 0%, #122835 0%, var(--bg-2) 55%, var(--bg) 100%);
+    border-top: 1px solid var(--line-soft);
+  }
+  .contact-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 80px; align-items: start; }
+  .contact-info h2 { margin: 18px 0 24px; }
+  .contact-info > p { color: var(--mist-70); max-width: 44ch; text-wrap: pretty; font-size: 1.05rem; }
+  .coords { margin-top: 44px; display: flex; flex-direction: column; }
+  .coord {
+    display: grid; grid-template-columns: 130px 1fr; gap: 24px;
+    padding: 15px 0; border-bottom: 1px solid var(--line-soft);
+    align-items: baseline;
+  }
+  .coord .ck {
+    font-family: var(--mono); font-size: 0.68rem;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--glacier);
+  }
+  .coord .cv, .coord .cv a { font-size: 0.99rem; color: var(--mist); font-weight: 300; text-decoration: none; }
+  .coord .cv a:hover { color: var(--glacier); }
+  .form { display: flex; flex-direction: column; gap: 22px; }
+  .field { display: flex; flex-direction: column; gap: 9px; }
+  .field label {
+    font-family: var(--mono); font-size: 0.7rem;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--mist-45);
+  }
+  .field input, .field textarea {
+    width: 100%; min-width: 0;
+    background: rgba(14, 28, 38, 0.7);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    color: var(--mist);
+    font-family: var(--sans); font-weight: 300; font-size: 1rem;
+    padding: 15px 18px;
+    transition: border-color 160ms ease;
+  }
+  .field input:focus, .field textarea:focus {
+    outline: none; border-color: var(--glacier-soft);
+  }
+  .field textarea { min-height: 120px; resize: vertical; }
+  .form-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 22px; }
+  .form button {
+    align-self: flex-start;
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--glacier); color: #07141b;
+    font-family: var(--sans); font-weight: 600; font-size: 1.02rem;
+    padding: 18px 36px; border: 0; border-radius: 100px; cursor: pointer;
+    transition: background 160ms ease;
+  }
+  .form button:hover { background: #a5e2f0; }
+  .form-note { font-family: var(--mono); font-size: 0.76rem; color: var(--mist-45); }
+  .form-status {
+    font-size: 0.96rem; font-weight: 300; line-height: 1.6;
+    padding: 15px 19px; border-radius: 4px; border: 1px solid; text-wrap: pretty;
+  }
+  .form-status.ok { color: var(--ok); border-color: rgba(143, 212, 168, 0.4); background: rgba(143, 212, 168, 0.06); }
+  .form-status.err { color: var(--mist-70); border-color: rgba(232, 170, 127, 0.4); background: rgba(232, 170, 127, 0.06); }
+  .form-status a { color: var(--glacier); }
+  .hp-field { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  @media (max-width: 860px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 56px; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+
+  /* ════════ FOOTER ════════ */
+  .footer { border-top: 1px solid var(--line); padding: 36px 0 44px; }
+  .footer .wrap {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 24px; flex-wrap: wrap;
+  }
+  .footer .fb { font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.1em; color: var(--mist-45); }
+  .footer-links { display: flex; gap: 28px; list-style: none; flex-wrap: wrap; }
+  .footer-links a {
+    font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.08em;
+    color: var(--mist-45); text-decoration: none;
+  }
+  .footer-links a:hover { color: var(--glacier); }
+
+  /* ════════ AJOUTS TURIYA ════════ */
+  .agents-head p { color: var(--mist-70); font-size: 1.05rem; max-width: 60ch; margin-top: 18px; text-wrap: pretty; }
+  .lede-xl { font-size: clamp(18px, 1.7vw, 23px); line-height: 1.62; color: var(--mist); max-width: 60ch; margin-top: 26px; font-weight: 300; text-wrap: pretty; }
+  .lede-xl b { font-weight: 400; color: var(--glacier); }
+  .continuity { margin-top: 30px; padding: 20px 26px; border-left: 2px solid var(--glacier); background: var(--bg-panel); border-radius: 0 4px 4px 0; font-size: clamp(15px, 1.25vw, 17px); line-height: 1.6; color: var(--mist-70); max-width: 64ch; text-wrap: pretty; }
+  .continuity b { color: var(--mist); font-weight: 500; }
+  .scope-note { margin-top: 40px; }
+  /* offre */
+  .offre { padding: 130px 0; border-top: 1px solid var(--line-soft); background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 18%, var(--bg-2) 82%, var(--bg) 100%); }
+  .offre-head { max-width: 760px; }
+  .offre-head h2 { margin: 18px 0 24px; }
+  .offre-head p { color: var(--mist-70); font-size: 1.08rem; text-wrap: pretty; }
+  .pilot { margin-top: 56px; border: 1px solid var(--line); border-left: 2px solid var(--glacier); border-radius: 6px; background: var(--bg-panel); padding: 40px 42px; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 48px; align-items: center; }
+  .pilot-label { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--glacier); display: flex; align-items: center; gap: 10px; }
+  .pilot-label::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--glacier); }
+  .pilot h3 { font-weight: 300; font-size: clamp(1.5rem, 2.4vw, 2rem); letter-spacing: -0.015em; line-height: 1.18; margin: 18px 0 14px; }
+  .pilot h3 b { font-weight: 600; color: var(--glacier); white-space: nowrap; }
+  .pilot-l p { color: var(--mist-70); font-size: 1rem; max-width: 44ch; text-wrap: pretty; }
+  .pilot-r ul { list-style: none; display: flex; flex-direction: column; gap: 13px; margin-bottom: 26px; }
+  .pilot-r li { font-family: var(--mono); font-size: 0.84rem; color: var(--mist-70); display: flex; gap: 12px; align-items: baseline; }
+  .pilot-r li::before { content: '—'; color: var(--glacier); flex-shrink: 0; }
+  @media (max-width: 860px) { .pilot { grid-template-columns: 1fr; gap: 30px; padding: 32px 28px; } }
+  .tiers { margin-top: 64px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+  .tier { border-top: 2px solid var(--line); padding-top: 24px; }
+  .tier.feature { border-top-color: var(--glacier); }
+  .tier .tn { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--glacier); display: block; margin-bottom: 12px; }
+  .tier h3 { font-weight: 400; font-size: 1.22rem; letter-spacing: -0.01em; margin-bottom: 10px; }
+  .tier > p { color: var(--mist-70); font-size: 0.96rem; margin-bottom: 18px; text-wrap: pretty; }
+  .tier ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+  .tier li { font-size: 0.93rem; color: var(--mist-70); display: flex; gap: 11px; align-items: baseline; }
+  .tier li::before { content: '›'; color: var(--glacier); font-family: var(--mono); flex-shrink: 0; }
+  .offer-note { margin-top: 40px; font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.04em; color: var(--mist-45); max-width: 60ch; }
+  @media (max-width: 860px) { .tiers { grid-template-columns: 1fr; gap: 34px; } }
+
+</style>
 </head>
 <body>
 
-<!-- Animated bisse running through page background -->
-<div class="bisse-bg" aria-hidden="true">
-  <svg viewBox="0 0 1440 900" preserveAspectRatio="none">
-    <path class="bisse-path" d="M-50,140 C220,80 360,220 600,180 S980,80 1220,200 S1500,160 1500,180" />
-    <path class="bisse-path b2" d="M-50,180 C240,140 380,260 620,220 S1000,140 1240,250 S1500,210 1500,220" />
-    <path class="bisse-path" d="M-50,420 C220,460 380,340 620,400 S980,500 1220,420 S1490,460 1490,430" />
-    <path class="bisse-path b2" d="M-50,460 C240,500 400,380 640,440 S1000,540 1260,460 S1490,500 1490,470" />
-    <path class="bisse-path" d="M-50,700 C260,640 420,780 660,720 S1040,620 1280,740 S1490,700 1490,720" />
-    <path class="bisse-path b2" d="M-50,740 C240,680 440,820 680,760 S1060,660 1300,780 S1490,740 1490,760" />
-  </svg>
-</div>
-
-<!-- Continuous vertical bisse thread + scroll-driven dot -->
-<svg class="bisse-thread" preserveAspectRatio="none" aria-hidden="true">
-  <defs>
-    <linearGradient id="bt-water" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#c97b3f" stop-opacity="0"/>
-      <stop offset="0.06" stop-color="#c97b3f" stop-opacity="0.7"/>
-      <stop offset="0.5" stop-color="#d99966" stop-opacity="0.85"/>
-      <stop offset="0.94" stop-color="#c97b3f" stop-opacity="0.7"/>
-      <stop offset="1" stop-color="#c97b3f" stop-opacity="0"/>
-    </linearGradient>
-    <filter id="bt-glow" x="-100%" y="-100%" width="300%" height="300%">
-      <feGaussianBlur stdDeviation="3.2" />
-    </filter>
-  </defs>
-  <!-- Rock channel — wide, dark, low opacity (the carved bed) -->
-  <path id="bisseChannel" d="" stroke="#6b1a2e" stroke-opacity="0.18" stroke-width="18" fill="none" stroke-linecap="round"/>
-  <!-- Water body -->
-  <path id="bisseWater" d="" stroke="url(#bt-water)" stroke-width="11" fill="none" stroke-linecap="round"/>
-  <!-- Surface highlights — animated flowing dashes -->
-  <path id="bisseSurface" class="bisse-surface-flow" d="" stroke="#fbf6ec" stroke-opacity="0.55" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="8 22"/>
-  <!-- Dynamic splash particles spawn here on section crossings -->
-  <g id="bisseSplashes"></g>
-  <!-- Droplet — single, round, with halo + highlight -->
-  <g id="bisseThreadDot">
-    <circle r="14" fill="#c97b3f" filter="url(#bt-glow)" opacity="0.45"/>
-    <circle r="6" fill="#fbf6ec"/>
-    <circle r="3.5" fill="#e8b988"/>
-    <circle cx="-1.8" cy="-1.8" r="1.4" fill="#fff" opacity="0.9"/>
-  </g>
-</svg>
-
-<!-- Scroll progress + section indicator (right rail) -->
-<div class="page-rail" aria-hidden="true">
-  <div class="page-rail-track">
-    <div class="page-rail-fill" id="railFill"></div>
-  </div>
-  <div class="page-rail-label" id="railLabel">01 / Hero</div>
-</div>
-
-<!-- ============================================================ NAV ============================================================ -->
-<nav class="site-nav">
-  <div class="container">
-    <a href="#" class="logo">
-      <div class="logo-mark">
-        <svg aria-hidden="true" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3 11 Q11 4 18 12 T33 11" stroke="#6b1a2e" stroke-width="2" fill="none" stroke-linecap="round"/>
-          <path d="M3 19 Q11 12 18 20 T33 19" stroke="#c97b3f" stroke-width="2" fill="none" stroke-linecap="round"/>
-          <path d="M3 27 Q11 20 18 28 T33 27" stroke="#6b1a2e" stroke-width="2" fill="none" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <span class="logo-text">Bisse<em> IA</em></span>
-    </a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#flow"><span class="nav-dot"></span>Comment ça marche</a></li>
-      <li><a href="#cas-usage"><span class="nav-dot"></span>Cas d'usage</a></li>
-      <li><a href="#securite"><span class="nav-dot"></span>Sécurité</a></li>
-      <li><a href="#roi"><span class="nav-dot"></span>Calculateur</a></li>
-      <li><a href="#a-propos"><span class="nav-dot"></span>À propos</a></li>
-      <li><a href="#contact" class="nav-cta">Audit gratuit</a></li>
+<nav class="nav" aria-label="Navigation principale">
+  <div class="wrap">
+    <a class="brand" href="#haut">BISSE<b>·IA</b></a>
+    <ul class="nav-links">
+      <li><a href="#probleme">Le problème</a></li>
+      <li><a href="#turiya">Turiya</a></li>
+      <li><a href="#pourqui">Pour qui</a></li>
+      <li><a href="#fondateur">Le fondateur</a></li>
+      <li><a class="nav-cta" href="#contact">Demander un audit</a></li>
     </ul>
-    <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
-      <span></span><span></span><span></span>
+    <button class="nav-burger" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Ouvrir le menu">
+      <span class="nb-bar"></span>
+      <span class="nb-bar"></span>
     </button>
+  </div>
+  <div class="nav-menu" id="nav-menu" hidden>
+    <a href="#probleme">Le problème</a>
+    <a href="#turiya">Turiya</a>
+    <a href="#pourqui">Pour qui</a>
+    <a href="#fondateur">Le fondateur</a>
+    <a href="#garanties">Garanties</a>
+    <a href="#offre">L'offre</a>
+    <a href="#contact">Demander un audit</a>
   </div>
 </nav>
 
-<!-- ============================================================ HERO MOTION ============================================================ -->
-<header class="hero-motion">
-  <div class="hm-canvas-wrap" id="hmCanvasWrap">
-    <canvas class="hm-canvas" id="hmCanvas"></canvas>
-  </div>
-  <div class="hm-vignette" aria-hidden="true"></div>
-  <div class="hm-grain" aria-hidden="true"></div>
-
-  <div class="hm-fade hm-eyebrow-wrap">
-    <div class="hm-eyebrow">
-      <span class="hm-dot"></span>
-      Sion&nbsp;·&nbsp;Valais&nbsp;·&nbsp;Agents&nbsp;IA
-    </div>
-  </div>
-
-  <h1 class="hm-title hm-fade" aria-label="Bisse IA">
-    <span class="hm-title-line">Bisse</span>
-    <span class="hm-title-line"><em>IA</em></span>
-  </h1>
-
-  <div class="hm-slogan-wrap hm-fade hm-fade-delay">
-    <p class="hm-slogan">
-      Ton équipe perd <span class="hm-num">15 heures</span> par semaine<br>
-      sur des tâches qu'<em>une IA</em> peut faire.
-    </p>
-  </div>
-
-  <div class="hm-bottom hm-fade hm-fade-delay-2">
-    <div class="hm-promise">
-      <div class="hm-promise-label">Promesse Bisse IA</div>
-      <p class="hm-promise-text">
-        Tes données <em>ne sortent jamais</em> de Suisse.<br>
-        Hébergement souverain en Suisse, supervision continue.
-      </p>
-    </div>
-    <div class="hm-cta-block">
-      <div class="hm-cta-row">
-        <a href="#contact" class="hm-btn-primary">
-          <span class="hm-btn-label">Demander un audit gratuit</span>
-          <span class="hm-btn-arrow" aria-hidden="true">→</span>
-        </a>
-        <a href="#cas-usage" class="hm-btn-glass">Voir les cas d'usage</a>
-      </div>
-      <div class="hm-pilote">
-        <span class="hm-pilote-dot"></span>
-        Premiers clients pilotes 2026 · conditions préférentielles
-      </div>
-    </div>
-  </div>
-
-  <div class="hm-meta-tl hm-fade hm-fade-delay-2">
-    <div class="hm-meta-k">Pilote</div>
-    <div class="hm-meta-v">2026</div>
-  </div>
-  <div class="hm-meta-tr hm-fade hm-fade-delay-2">
-    <div class="hm-meta-k">Latitude</div>
-    <div class="hm-meta-v">46.23° N</div>
-  </div>
-</header>
-
-<!-- ============================================================ SCENARIOS ============================================================ -->
-<section class="scenarios-section">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="head-meta">
-        <div class="eyebrow">Trois agents, en direct</div>
-        <h2>Ce qu'un agent IA fait <em>pour toi</em><br>pendant que tu fais autre chose.</h2>
-      </div>
-      <p class="head-lede">Trois scénarios réels, observés chez des PME valaisannes. Bisse IA installe des <strong>agents IA</strong> sur-mesure&nbsp;: factures, mémoire personnelle, commerce conversationnel.</p>
-    </div>
-
-    <div class="hero-grid">
-      <div class="scenarios-side reveal">
-        <div class="pilote-pill">
-          <span class="dot"></span>
-          Premiers clients pilotes 2026 · conditions préférentielles
-        </div>
-        <div class="scenarios-side-text">
-          <p>Chaque agent est <strong>déclenché par tes outils existants</strong> — email, WhatsApp, agenda — et écrit dans Bexio, Outlook, ou ton CRM. Tu ne changes rien à ta routine&nbsp;: l'agent travaille en arrière-plan, comme l'eau dans un bisse.</p>
-          <p>Les actions critiques passent toujours par une <strong>validation humaine</strong>. Le reste tourne sans toi.</p>
-        </div>
-        <div class="hero-ctas">
-          <a href="#contact" class="btn btn-primary">
-            Demander un audit gratuit
-            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="#cas-usage" class="btn btn-ghost">Tous les cas d'usage →</a>
-        </div>
-      </div>
-
-      <div class="hero-visual">
-        <div class="scenario-rotator" id="scenarioRotator">
-
-          <!-- =============== SCENARIO 1 — Saisie factures =============== -->
-          <div class="scenario active" data-scenario="0">
-            <div class="float-card float-card-top">
-              <div class="fc-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              </div>
-              <div>
-                <div class="fc-label">Email entrant</div>
-                <div class="fc-value">Facture · Fournisseur SA</div>
-              </div>
-            </div>
-
-            <div class="agent-card">
-              <div class="agent-header">
-                <div class="agent-title">Agent · Saisie factures</div>
-                <div class="agent-time">14:32:08</div>
-              </div>
-              <ul class="agent-log">
-                <li class="agent-step">
-                  <div class="step-icon">1</div>
-                  <div class="step-content">
-                    <div class="step-label">Lecture</div>
-                    <div class="step-text">Facture PDF reçue de <span class="accent">Bois du Rhône SA</span></div>
-                  </div>
-                </li>
-                <li class="agent-step">
-                  <div class="step-icon">2</div>
-                  <div class="step-content">
-                    <div class="step-label">Extraction</div>
-                    <div class="step-text">Montant <span class="accent">CHF 2'847.50</span> · TVA 8.1%</div>
-                  </div>
-                </li>
-                <li class="agent-step">
-                  <div class="step-icon">3</div>
-                  <div class="step-content">
-                    <div class="step-label">Saisie Bexio</div>
-                    <div class="step-text">Compte fournisseur trouvé · écriture créée</div>
-                  </div>
-                </li>
-                <li class="agent-step">
-                  <div class="step-icon">4</div>
-                  <div class="step-content">
-                    <div class="step-label">Validation</div>
-                    <div class="step-text">Notification WhatsApp envoyée au patron</div>
-                  </div>
-                </li>
-              </ul>
-              <div class="agent-footer">
-                <span>n8n · self-hosted Genève</span>
-                <span class="agent-footer-metric">⌀ 14 s par facture</span>
-              </div>
-            </div>
-
-            <div class="float-card float-card-bottom">
-              <div class="fc-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div>
-                <div class="fc-label">Ce mois</div>
-                <div class="fc-value">142 factures traitées</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- =============== SCENARIO 2 — Cortex récap hebdo =============== -->
-          <div class="scenario" data-scenario="1">
-            <div class="float-card float-card-top">
-              <div class="fc-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3v10M9 7l3-4 3 4M5 14v4a2 2 0 002 2h10a2 2 0 002-2v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div>
-                <div class="fc-label">Note vocale</div>
-                <div class="fc-value">47 s · idée projet</div>
-              </div>
-            </div>
-
-            <div class="agent-card">
-              <div class="agent-header">
-                <div class="agent-title">Cortex · Récap dimanche soir</div>
-                <div class="agent-time">19:00:00</div>
-              </div>
-              <ul class="agent-log">
-                <li class="agent-step">
-                  <div class="step-icon">1</div>
-                  <div class="step-content">
-                    <div class="step-label">Capturé cette semaine</div>
-                    <div class="step-text"><span class="accent">23 notes</span> — vocal, texte, photo</div>
-                  </div>
-                </li>
-                <li class="agent-step">
-                  <div class="step-icon">2</div>
-                  <div class="step-content">
-                    <div class="step-label">Organisé</div>
-                    <div class="step-text">4 sujets · <span class="accent">Petit Pont</span> en tête (8 notes)</div>
-                  </div>
-                </li>
-                <li class="agent-step">
-                  <div class="step-icon">3</div>
-                  <div class="step-content">
-                    <div class="step-label">À ne pas oublier</div>
-                    <div class="step-text">Appel <span class="accent">BCV mardi 14:00</span> · facture trim.</div>
-                  </div>
-                </li>
-                <li class="agent-step">
-                  <div class="step-icon">4</div>
-                  <div class="step-content">
-                    <div class="step-label">Récap envoyé</div>
-                    <div class="step-text">WhatsApp · résumé personnel reçu</div>
-                  </div>
-                </li>
-              </ul>
-              <div class="agent-footer">
-                <span>Self-hosted Valais · 0 sortie réseau</span>
-                <span class="agent-footer-metric">1'247 notes en mémoire</span>
-              </div>
-            </div>
-
-            <div class="float-card float-card-bottom">
-              <div class="fc-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 12c0-5 4-9 9-9s9 4 9 9c0 2-.6 3.8-1.6 5.3L21 21l-3.7-.4A9 9 0 013 12z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div>
-                <div class="fc-label">Mémoire externe</div>
-                <div class="fc-value">0 idée perdue</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- =============== SCENARIO 3 — Agent commercial cave =============== -->
-          <div class="scenario" data-scenario="2">
-            <div class="float-card float-card-top">
-              <div class="fc-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 12c0-5 4-9 9-9s9 4 9 9c0 2-.6 3.8-1.6 5.3L21 21l-3.7-.4A9 9 0 013 12z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div>
-                <div class="fc-label">WhatsApp · 22:47</div>
-                <div class="fc-value">Client cave Salgesch</div>
-              </div>
-            </div>
-
-            <div class="agent-card">
-              <div class="agent-header">
-                <div class="agent-title">Agent · Cave &amp; vignerons</div>
-                <div class="agent-time">22:47:13</div>
-              </div>
-              <ul class="agent-log">
-                <li class="agent-step">
-                  <div class="step-icon">1</div>
-                  <div class="step-content">
-                    <div class="step-label">Question reçue</div>
-                    <div class="step-text">«&nbsp;Encore de la <span class="accent">Petite Arvine 2022</span>&nbsp;?&nbsp;»</div>
-                  </div>
-                </li>
-                <li class="agent-step">
-                  <div class="step-icon">2</div>
-                  <div class="step-content">
-                    <div class="step-label">Stock vérifié</div>
-                    <div class="step-text"><span class="accent">12 bouteilles</span> · CHF 38 l'unité</div>
-                  </div>
-                </li>
-                <li class="agent-step">
-                  <div class="step-icon">3</div>
-                  <div class="step-content">
-                    <div class="step-label">Réponse envoyée</div>
-                    <div class="step-text">Suggestion accords mets-vins jointe</div>
-                  </div>
-                </li>
-                <li class="agent-step">
-                  <div class="step-icon">4</div>
-                  <div class="step-content">
-                    <div class="step-label">Commande</div>
-                    <div class="step-text">6 bouteilles · livraison <span class="accent">vendredi</span></div>
-                  </div>
-                </li>
-              </ul>
-              <div class="agent-footer">
-                <span>Catalogue Bexio · WhatsApp Business</span>
-                <span class="agent-footer-metric">⌀ 8 s par échange</span>
-              </div>
-            </div>
-
-            <div class="float-card float-card-bottom">
-              <div class="fc-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div>
-                <div class="fc-label">Ce week-end</div>
-                <div class="fc-value">+18 commandes hors heures</div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Indicators -->
-        <div class="scenario-dots" id="scenarioDots" role="tablist" aria-label="Scénarios">
-          <button class="s-dot active" data-go="0" aria-label="Saisie factures">
-            <span class="s-dot-fill"></span>
-            <span class="s-dot-label">Factures</span>
-          </button>
-          <button class="s-dot" data-go="1" aria-label="Cortex">
-            <span class="s-dot-fill"></span>
-            <span class="s-dot-label">Cortex</span>
-          </button>
-          <button class="s-dot" data-go="2" aria-label="Agent cave">
-            <span class="s-dot-fill"></span>
-            <span class="s-dot-label">Cave</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================ TICKER ============================================================ -->
-<div class="ticker" aria-hidden="true">
-  <div class="ticker-track">
-    <span class="ticker-item"><span class="tag">Martigny</span> Menuiserie <span class="sep">/</span> Factures Bexio</span>
-    <span class="ticker-item"><span class="tag">Salgesch</span> Cave <span class="sep">/</span> WhatsApp commercial</span>
-    <span class="ticker-item"><span class="tag">Conthey</span> Plomberie <span class="sep">/</span> Devis sur photo</span>
-    <span class="ticker-item"><span class="tag">Sierre</span> Électricien <span class="sep">/</span> Planning chantiers</span>
-    <span class="ticker-item"><span class="tag">Sion</span> Garage <span class="sep">/</span> Rappels entretien</span>
-    <span class="ticker-item"><span class="tag">Verbier</span> Paysagiste <span class="sep">/</span> Mémoire chantiers Cortex</span>
-    <!-- duplicate for seamless loop -->
-    <span class="ticker-item"><span class="tag">Martigny</span> Menuiserie <span class="sep">/</span> Factures Bexio</span>
-    <span class="ticker-item"><span class="tag">Salgesch</span> Cave <span class="sep">/</span> WhatsApp commercial</span>
-    <span class="ticker-item"><span class="tag">Conthey</span> Plomberie <span class="sep">/</span> Devis sur photo</span>
-    <span class="ticker-item"><span class="tag">Sierre</span> Électricien <span class="sep">/</span> Planning chantiers</span>
-    <span class="ticker-item"><span class="tag">Sion</span> Garage <span class="sep">/</span> Rappels entretien</span>
-    <span class="ticker-item"><span class="tag">Verbier</span> Paysagiste <span class="sep">/</span> Mémoire chantiers Cortex</span>
-  </div>
-</div>
-
-<!-- ============================================================ FLOW ============================================================ -->
-<section id="flow" class="flow">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="head-meta">
-        <div class="eyebrow">La méthode bisse</div>
-        <h2>De l'idée au déploiement,<br><em>en quatre étapes claires.</em></h2>
-      </div>
-      <p class="head-lede">Pas de jargon, pas de surprise. Chaque mandat suit la même conduite d'eau : on observe, on trace, on construit, on livre. Tu valides à chaque vanne.</p>
-    </div>
-
-    <div class="flow-canvas reveal">
-      <div class="flow-track">
-        <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
-          <path d="M50,30 C300,-10 500,70 700,20 S1050,50 1150,30"
-                stroke="#c97b3f" stroke-width="1.5" fill="none"
-                stroke-dasharray="5 6" stroke-linecap="round" opacity="0.7"/>
-          <path d="M50,32 C300,-8 500,72 700,22 S1050,52 1150,32"
-                stroke="#6b1a2e" stroke-width="0.8" fill="none"
-                stroke-dasharray="2 8" stroke-linecap="round" opacity="0.4"/>
-        </svg>
-      </div>
-      <div class="flow-steps">
-        <div class="flow-step">
-          <div class="flow-step-marker">
-            <span class="step-num">01</span>
-            <svg width="38" height="38" viewBox="0 0 32 32" fill="none">
-              <circle cx="14" cy="14" r="8" stroke="currentColor" stroke-width="1.8"/>
-              <path d="M20 20l6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3>Audit gratuit</h3>
-          <p>Visite sur place pour observer ce qui se passe vraiment et identifier les chantiers les plus rentables.</p>
-        </div>
-        <div class="flow-step">
-          <div class="flow-step-marker">
-            <span class="step-num">02</span>
-            <svg width="38" height="38" viewBox="0 0 32 32" fill="none">
-              <path d="M6 8h20M6 16h20M6 24h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-              <circle cx="22" cy="24" r="3" stroke="currentColor" stroke-width="1.8"/>
-            </svg>
-          </div>
-          <h3>Proposition chiffrée</h3>
-          <p>Une seule page : périmètre, coût d'installation, abonnement, gain estimé en heures et en CHF.</p>
-        </div>
-        <div class="flow-step">
-          <div class="flow-step-marker">
-            <span class="step-num">03</span>
-            <svg width="38" height="38" viewBox="0 0 32 32" fill="none">
-              <rect x="4" y="6" width="24" height="20" rx="2" stroke="currentColor" stroke-width="1.8"/>
-              <path d="M9 14h14M9 18h10M9 22h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-              <circle cx="24" cy="22" r="2" fill="currentColor"/>
-            </svg>
-          </div>
-          <h3>Installation</h3>
-          <p>2 à 6 semaines selon le périmètre. Tests sur tes vraies données. Tu valides avant la mise en production.</p>
-        </div>
-        <div class="flow-step">
-          <div class="flow-step-marker">
-            <span class="step-num">04</span>
-            <svg width="38" height="38" viewBox="0 0 32 32" fill="none">
-              <path d="M16 4l3.5 8.5L28 14l-6.5 5.5L23 28l-7-4.5L9 28l1.5-8.5L4 14l8.5-1.5L16 4z"
-                    stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h3>Monitoring continu</h3>
-          <p>L'agent travaille pour toi. Les logs sont surveillés, les réglages affinés, un rapport mensuel t'est transmis.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================ CAS D'USAGE ============================================================ -->
-<section id="cas-usage" class="cases">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="head-meta">
-        <div class="eyebrow">Cas d'usage · Valais</div>
-        <h2>Des automatisations <em>pensées pour le Valais,</em><br>livrées clé en main.</h2>
-      </div>
-      <p class="head-lede">Chaque solution s'intègre dans tes outils existants — Bexio, Outlook, WhatsApp, ton agenda, ton site. Rien à installer chez toi, rien à maintenir.</p>
-    </div>
-
-    <div class="case-filters reveal">
-      <button class="case-filter active" data-filter="all">Tous<span class="case-filter-count">06</span></button>
-      <button class="case-filter" data-filter="artisans">Artisans</button>
-      <button class="case-filter" data-filter="fiduciaire">Fiduciaires</button>
-      <button class="case-filter" data-filter="caves">Caves</button>
-      <button class="case-filter" data-filter="tourisme">Tourisme</button>
-      <button class="case-filter" data-filter="services">Services</button>
-    </div>
-
-    <div class="cases-grid">
-      <article class="case-card reveal" data-tags="artisans">
-        <span class="case-tag">Artisans</span>
-        <h3>Saisie automatique des factures fournisseurs</h3>
-        <p class="case-desc">Tes factures arrivent par email, l'agent les lit, extrait les données et les saisit dans Bexio. Tu valides en un clic depuis ton téléphone.</p>
-        <div class="case-result">
-          <div class="case-result-value">−60 h</div>
-          <div class="case-result-label">d'admin en moins par an</div>
-        </div>
-      </article>
-
-      <article class="case-card reveal" data-tags="services">
-        <span class="case-tag">Cortex · Assistant personnel</span>
-        <h3>Mémoire externe sur WhatsApp</h3>
-        <p class="case-desc">Tu envoies à Cortex tes notes — texte, vocal, photo. Il les classe, les range, et te les ressort au bon moment : rappels, recherches, briefs. Il t'aide à mieux penser sans jamais décider à ta place. Multi-tenant, hébergé en Suisse, conçu pour la confidentialité.</p>
-        <div class="case-result">
-          <div class="case-result-value">0</div>
-          <div class="case-result-label">idée perdue · mémoire augmentée 24/7</div>
-        </div>
-      </article>
-
-      <article class="case-card reveal" data-tags="fiduciaire">
-        <span class="case-tag">Fiduciaires</span>
-        <h3>Tri intelligent des emails clients</h3>
-        <p class="case-desc">L'agent classe les demandes par type, répond aux questions simples avec tes réponses pré-validées, n'escalade que les vrais sujets complexes.</p>
-        <div class="case-result">
-          <div class="case-result-value">+12 h</div>
-          <div class="case-result-label">rendues aux comptables / semaine</div>
-        </div>
-      </article>
-
-      <article class="case-card reveal" data-tags="caves">
-        <span class="case-tag">Caves & vignerons</span>
-        <h3>Assistant commercial WhatsApp</h3>
-        <p class="case-desc">Tes clients posent leurs questions (stocks, accords mets-vins, livraisons), l'agent répond depuis ton catalogue. Les commandes simples passent toutes seules.</p>
-        <div class="case-result">
-          <div class="case-result-value">+40 %</div>
-          <div class="case-result-label">de commandes hors horaires</div>
-        </div>
-      </article>
-
-      <article class="case-card reveal" data-tags="tourisme">
-        <span class="case-tag">Hôtellerie</span>
-        <h3>Réponses pré-séjour multilingues</h3>
-        <p class="case-desc">Check-in, codes d'accès, recommandations locales, horaires des remontées : l'agent répond dans la langue du visiteur 24h/24.</p>
-        <div class="case-result">
-          <div class="case-result-value">−80 %</div>
-          <div class="case-result-label">d'emails répétitifs à traiter</div>
-        </div>
-      </article>
-
-      <article class="case-card reveal" data-tags="services">
-        <span class="case-tag">PME &amp; indépendants</span>
-        <h3>Qualification automatique des leads</h3>
-        <p class="case-desc">Les demandes entrantes sont triées par un agent : type de projet, délai, budget. Tu ne rappelles que les prospects mûrs avec un dossier déjà constitué.</p>
-        <div class="case-result">
-          <div class="case-result-value">×3</div>
-          <div class="case-result-label">taux de conversion observé</div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================ SÉCURITÉ ============================================================ -->
-<section id="securite" class="security">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="head-meta">
-        <div class="eyebrow dark">Pourquoi confier tes données à Bisse IA</div>
-        <h2>L'IA <em>sans la fuite</em><br>de données qui va avec.</h2>
-      </div>
-      <p class="head-lede">Connecter des outils, beaucoup savent le faire. Comprendre comment ces connexions peuvent être exploitées demande un autre métier. Bisse IA conçoit des systèmes qui tiennent compte des risques dès la première ligne.</p>
-    </div>
-
-    <div class="security-grid">
-      <div class="security-pillars reveal">
-
-        <div class="pillar">
-          <div class="pillar-icon">
-            <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
-              <path d="M4 22 Q10 22 12 16 T20 10 Q26 8 28 14" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-              <path d="M14 28 L18 20 L22 26 Z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
-              <circle cx="28" cy="14" r="1.6" fill="currentColor"/>
-            </svg>
-          </div>
-          <div>
-            <h3>Hébergement 100 % Suisse</h3>
-            <p class="pillar-text">Tes données vivent sur un serveur dédié à Genève chez Infomaniak. Pas de transit par les États-Unis, pas de cloud américain. Pour les cas sensibles, option de modèles IA tournant en local, sans aucune sortie réseau.</p>
-          </div>
-        </div>
-
-        <div class="pillar">
-          <div class="pillar-icon">
-            <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
-              <path d="M4 16 L11 16M21 16 L28 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-              <rect x="11" y="9" width="10" height="14" rx="1.5" stroke="currentColor" stroke-width="1.8" fill="none"/>
-              <path d="M16 9 L16 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-              <circle cx="16" cy="5" r="1.6" fill="currentColor"/>
-              <path d="M14 16 L18 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div>
-            <h3>Accès chiffrés, jamais de mots de passe</h3>
-            <p class="pillar-text">Aucun mot de passe en clair, jamais. Tous les accès passent par OAuth ou des comptes dédiés avec droits granulaires, selon les standards de la gestion d'identités bancaire.</p>
-          </div>
-        </div>
-
-        <div class="pillar">
-          <div class="pillar-icon">
-            <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
-              <path d="M3 12 Q8 8 13 12 T23 12 T33 12" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" opacity="0.5"/>
-              <path d="M3 17 Q8 13 13 17 T23 17 T33 17" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-              <path d="M3 22 Q8 18 13 22 T23 22 T33 22" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" opacity="0.5"/>
-              <circle cx="22" cy="17" r="3.2" stroke="currentColor" stroke-width="1.8" fill="none"/>
-              <circle cx="22" cy="17" r="1.1" fill="currentColor"/>
-            </svg>
-          </div>
-          <div>
-            <h3>Monitoring 24/7 comme en SOC</h3>
-            <p class="pillar-text">Les workflows IA sont supervisés comme dans un centre opérationnel : alertes sur anomalies, logs traçables, audit trail complet. Si quelque chose dérape, Bisse IA le sait avant toi.</p>
-          </div>
-        </div>
-
-      </div>
-
-      <aside class="credentials reveal">
-        <div class="credentials-label">Nos engagements de sécurité</div>
-        <ul class="cred-list">
-          <li>
-            <div class="cred-year">01</div>
-            <div class="cred-text">
-              <strong>Hébergement souverain</strong>
-              <span>Serveur dédié à Genève · Infomaniak · jamais hors de Suisse</span>
-            </div>
-          </li>
-          <li>
-            <div class="cred-year">02</div>
-            <div class="cred-text">
-              <strong>Zéro mot de passe stocké</strong>
-              <span>OAuth · comptes dédiés · droits granulaires révocables</span>
-            </div>
-          </li>
-          <li>
-            <div class="cred-year">03</div>
-            <div class="cred-text">
-              <strong>Supervision 24/7</strong>
-              <span>Pratiques SOC · alertes anomalies · logs traçables</span>
-            </div>
-          </li>
-          <li>
-            <div class="cred-year">04</div>
-            <div class="cred-text">
-              <strong>Validation humaine systématique</strong>
-              <span>Paiements et envois critiques toujours validés par toi</span>
-            </div>
-          </li>
-          <li>
-            <div class="cred-year">05</div>
-            <div class="cred-text">
-              <strong>Conformité nLPD</strong>
-              <span>Contrat de sous-traitance · audit trail · option self-hosted</span>
-            </div>
-          </li>
-        </ul>
-      </aside>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================ ROI ============================================================ -->
-<section id="roi" class="roi">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="head-meta">
-        <div class="eyebrow">Combien tu perds, combien tu gagnes</div>
-        <h2>Calcule ce que te coûte <em>l'inaction.</em></h2>
-      </div>
-      <p class="head-lede">Une estimation honnête, sans magie : les heures que ton équipe passe sur des tâches automatisables, multipliées par leur coût réel. Glisse les curseurs.</p>
-    </div>
-
-    <div class="roi-wrap reveal">
-      <div class="roi-card">
-        <div class="roi-card-title">Ta situation</div>
-        <div class="roi-controls">
-          <div class="roi-control">
-            <label for="roi-hours">
-              Heures perdues par semaine
-              <span class="roi-val" id="roi-hours-val">8 h</span>
-            </label>
-            <input type="range" id="roi-hours" class="roi-slider" min="1" max="40" step="1" value="8" />
-            <div class="roi-ticks"><span>1 h</span><span>20 h</span><span>40 h</span></div>
-          </div>
-
-          <div class="roi-control">
-            <label for="roi-rate">
-              Coût horaire chargé
-              <span class="roi-val" id="roi-rate-val">75 CHF</span>
-            </label>
-            <input type="range" id="roi-rate" class="roi-slider" min="40" max="250" step="5" value="75" />
-            <div class="roi-ticks"><span>40 CHF</span><span>145 CHF</span><span>250 CHF</span></div>
-          </div>
-        </div>
-
-        <p class="roi-note" style="margin-top: 32px; text-align: left;">
-          Base : 48 semaines travaillées par an. Hors charges sociales et coût d'opportunité. Un calcul affiné fait partie de l'audit.
-        </p>
-      </div>
-
-      <div class="roi-card roi-output">
-        <div class="roi-card-title t2" style="color: var(--ocre-soft);">Ce que tu laisses filer</div>
-        <div class="roi-output-display">
-          <div class="roi-output-label">Coût annuel estimé</div>
-          <div class="roi-output-value"><span id="roi-result">28'800</span><span class="roi-output-suffix"> CHF / an</span></div>
-          <div class="roi-output-detail">soit l'équivalent d'un poste à mi-temps qui ne crée aucune valeur</div>
-        </div>
-
-        <div class="roi-breakdown">
-          <div class="roi-bd-item">
-            <div class="roi-bd-label">Heures récupérables</div>
-            <div class="roi-bd-value" id="roi-hours-year">384 h</div>
-          </div>
-          <div class="roi-bd-item">
-            <div class="roi-bd-label">Mensualisé</div>
-            <div class="roi-bd-value" id="roi-monthly">2'400 CHF</div>
-          </div>
-        </div>
-
-        <div class="roi-cta-wrap">
-          <a href="#contact" class="btn btn-ocre">
-            Récupérer ce temps
-            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================ BISSE STORY ============================================================ -->
-<section class="bisse-story">
-  <svg class="bisse-story-svg" viewBox="0 0 1440 600" preserveAspectRatio="none" aria-hidden="true">
-    <defs>
-      <linearGradient id="bs-grad" x1="0" y1="0" x2="1" y2="0">
-        <stop offset="0" stop-color="#c97b3f" stop-opacity="0.1"/>
-        <stop offset="0.5" stop-color="#c97b3f" stop-opacity="0.8"/>
-        <stop offset="1" stop-color="#c97b3f" stop-opacity="0.1"/>
-      </linearGradient>
-    </defs>
-    <path class="bs-flow bs-flow-1" d="M0,300 Q360,200 720,300 T1440,300" stroke="url(#bs-grad)" stroke-width="2" fill="none"/>
-    <path class="bs-flow bs-flow-2" d="M0,330 Q360,230 720,330 T1440,330" stroke="url(#bs-grad)" stroke-width="1.2" fill="none" opacity="0.7"/>
-    <path class="bs-flow bs-flow-3" d="M0,270 Q360,170 720,270 T1440,270" stroke="url(#bs-grad)" stroke-width="0.8" fill="none" opacity="0.5"/>
-    <path class="bs-flow bs-flow-4" d="M0,360 Q400,280 720,360 T1440,360" stroke="url(#bs-grad)" stroke-width="1" fill="none" opacity="0.5"/>
-    <path class="bs-flow bs-flow-5" d="M0,240 Q380,140 720,240 T1440,240" stroke="url(#bs-grad)" stroke-width="0.8" fill="none" opacity="0.45"/>
-    <!-- Subtle mountain silhouette -->
-    <path d="M0,500 L120,420 L220,460 L340,360 L460,440 L580,380 L720,300 L860,400 L1000,360 L1120,440 L1260,380 L1440,440 L1440,600 L0,600 Z"
-          fill="#2a2521" opacity="0.5"/>
+<!-- ════════ HERO ════════ -->
+<section class="hero" id="haut" data-screen-label="Hero">
+  <svg class="hero-flow" viewBox="0 0 1440 880" preserveAspectRatio="none" aria-hidden="true">
+    <path class="bed" d="M-40 690 C 320 640, 560 760, 880 700 S 1380 580, 1500 640"></path>
+    <path class="stream" d="M-40 690 C 320 640, 560 760, 880 700 S 1380 580, 1500 640"></path>
   </svg>
-
-  <div class="bisse-story-content">
-    <div class="eyebrow center">D'où vient le nom Bisse IA</div>
-    <span class="bisse-marker">«</span>
-    <p class="bisse-quote">
-      <span class="bisse-quote-line">Pendant 700 ans, les bisses ont irrigué les terres arides</span>
-      <span class="bisse-quote-line">du Valais sans qu'aucun paysan n'ait à porter d'eau.</span>
-      <br>
-      <span class="bisse-quote-line accent">Une infrastructure invisible, fiable, qui travaille en continu.</span>
-      <span class="bisse-quote-line">C'est exactement ce que doit être l'IA dans ton entreprise.</span>
-    </p>
-    <div class="bisse-story-footer">— Le principe Bisse IA</div>
+  <div class="wrap hero-main">
+    <p class="k-label hero-kicker">Turiya — surveillance de sécurité, conformité &amp; exposition</p>
+    <h1>Votre entreprise est-elle <b>exposée</b> — sans que vous le sachiez&nbsp;?</h1>
+    <p class="hero-lede">Turiya surveille en continu ce qu'un attaquant voit de votre entreprise — site, domaine, email, conformité nLPD, exposition externe — et vous prévient pendant qu'il est encore temps d'agir.</p>
+    <div class="cta-row">
+      <a class="cta" href="#contact">Demander un audit</a>
+      <span class="pilote">Premiers clients pilotes · 2026</span>
+    </div>
+  </div>
+  <div class="hero-foot">
+    <div><span class="hf-k">Local</span><span class="hf-v">Sion, Valais</span></div>
+    <div><span class="hf-k">Surveillance</span><span class="hf-v">En continu</span></div>
+    <div><span class="hf-k">Périmètre</span><span class="hf-v">Sources ouvertes</span></div>
   </div>
 </section>
 
-<!-- ============================================================ ABOUT ============================================================ -->
-<section id="a-propos" class="about">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="head-meta">
-        <div class="eyebrow">La philosophie Bisse IA</div>
-        <h2>Une infrastructure invisible, fiable,<br>pensée <em>pour le Valais.</em></h2>
-      </div>
-      <p class="head-lede">Bisse IA n'est pas une agence de plus qui empile des outils à la mode. C'est un atelier d'automatisation pensé pour les réalités d'une PME valaisanne.</p>
+<!-- ════════ LE PROBLÈME ════════ -->
+<section class="agents" id="probleme" data-screen-label="Le problème">
+  <div class="wrap">
+    <div class="agents-head reveal">
+      <p class="k-label">Le problème</p>
+      <h2>Le risque, c'est ce que <b>vous ne voyez pas.</b></h2>
+      <p>Votre entreprise a une présence numérique bien plus large que son site. Une partie vous échappe — et c'est précisément celle qu'un attaquant observe en premier.</p>
     </div>
-
-    <div class="about-grid">
-      <div class="about-text reveal">
-        <p>Bisse IA est née d'un constat simple : l'intelligence artificielle change ce qu'une petite équipe peut accomplir. Mais entre les outils grand public, les fuites de données régulières et les promesses marketing, les PME valaisannes n'ont pas de partenaire de confiance pour franchir le pas sereinement.</p>
-
-        <p>L'approche : appliquer à l'IA les mêmes standards qu'un centre opérationnel de sécurité. Aucune donnée ne quitte un système sans qu'on sache exactement où elle va, qui la lit, et combien de temps elle y reste. Les workflows sont supervisés en continu, les accès sont chiffrés, et chaque action critique passe par une validation humaine.</p>
-
-        <p>Les outils sont éprouvés — n8n self-hosted, Claude, Bexio, Microsoft 365 — et l'hébergement se fait sur un serveur dédié à Genève chez Infomaniak. La nouvelle Loi sur la protection des données est respectée scrupuleusement, et chaque mandat fait l'objet d'un contrat de sous-traitance en bonne et due forme.</p>
-
-        <p>Connecter des outils, beaucoup savent le faire. Ce que Bisse IA apporte en plus : reconnaître une fuite de données dans un log, anticiper un vecteur d'attaque sur une API mal configurée, et concevoir un workflow qui résiste à un incident plutôt que de l'amplifier. Pour une fiduciaire, un cabinet médical ou une étude d'avocats, ce n'est pas un détail — c'est l'essentiel.</p>
-
-        <p>Du concret, mesurable en heures gagnées et en CHF économisés. Pas de jargon, pas de surprise, pas de dépendance à un prestataire qui parle une autre langue que la vôtre.</p>
+    <div class="agents-grid reveal">
+      <div class="agent">
+        <span class="an">Fuites de données</span>
+        <h3>Vos emails circulent déjà</h3>
+        <p>Des adresses de votre entreprise figurent dans des bases revendues, prêtes pour un hameçonnage ciblé contre vos collaborateurs.</p>
       </div>
-
-      <aside class="about-stats reveal">
-        <div class="about-stats-title">Bisse IA en chiffres</div>
-        <div class="stat">
-          <div class="stat-value">100<em>%</em></div>
-          <div class="stat-label">Données hébergées en Suisse, sur un serveur dédié à Genève. Conforme nLPD.</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value">24<em>/7</em></div>
-          <div class="stat-label">Supervision continue des workflows · pratiques héritées du monde SOC</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value">3–6<em>mois</em></div>
-          <div class="stat-label">Retour sur investissement moyen pour une PME de 1 à 10 personnes</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value">0<em>CHF</em></div>
-          <div class="stat-label">Coût de l'audit initial et de la proposition chiffrée</div>
-        </div>
-      </aside>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================ FAQ ============================================================ -->
-<section id="faq" class="faq">
-  <div class="container-narrow">
-    <div class="section-head reveal" style="grid-template-columns: 1fr;">
-      <div class="head-meta">
-        <div class="eyebrow">Questions fréquentes</div>
-        <h2>Ce que les patrons de PME<br>nous demandent <em>en premier.</em></h2>
+      <div class="agent">
+        <span class="an">Sous-domaine oublié</span>
+        <h3>Une porte restée ouverte</h3>
+        <p>Un serveur de test monté puis abandonné reste exposé sur Internet, souvent sans mise à jour ni surveillance.</p>
       </div>
-    </div>
-
-    <div class="faq-grid reveal">
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false" aria-controls="fa1">
-          <span class="faq-question-text">Est-ce que mes données sortent de Suisse ?</span>
-          <span class="faq-toggle" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer" id="fa1" role="region">
-          <p>Non, par défaut. Tes données vivent sur un serveur dédié à Genève chez Infomaniak — hébergeur 100 % suisse, neutre en carbone. Aucun transit par les États-Unis. Pour les cas sensibles (avocats, médecins, données stratégiques), Bisse IA propose une option entièrement self-hosted avec des modèles d'IA tournant en local, sans aucune connexion sortante. Tout est documenté dans un contrat de sous-traitance conforme à la nouvelle Loi sur la protection des données.</p>
-        </div>
+      <div class="agent">
+        <span class="an">Conformité qui dérive</span>
+        <h3>La nLPD glisse en silence</h3>
+        <p>Un cookie ajouté, un formulaire modifié, une mention oubliée&nbsp;: votre conformité se dégrade sans la moindre alerte.</p>
       </div>
-
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false" aria-controls="fa3">
-          <span class="faq-question-text">J'ai déjà Bexio, Microsoft 365 ou un autre outil, ça marche ?</span>
-          <span class="faq-toggle" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer" id="fa3" role="region">
-          <p>Oui, c'est même l'idée. Bisse IA connecte tes outils existants entre eux et y ajoute une couche d'IA, sans bouleverser tes habitudes. Les intégrations principales : Bexio, Microsoft 365, Google Workspace, Outlook, Gmail, WhatsApp Business, Notion, et la plupart des CRM courants. Si tu utilises un logiciel métier spécifique, on regarde ensemble s'il dispose d'une API ouverte.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false" aria-controls="fa4">
-          <span class="faq-question-text">Combien de temps avant que ça fonctionne ?</span>
-          <span class="faq-toggle" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer" id="fa4" role="region">
-          <p>Pour une automatisation simple, la livraison se fait généralement en 1 à 2 semaines après la signature. Pour un agent IA plus complexe, compte 3 à 6 semaines, avec une phase de test sur tes vraies données avant la mise en production. Bisse IA s'engage toujours sur une date précise, et l'installation n'est facturée que lorsque tu es satisfait du résultat.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false" aria-controls="fa5">
-          <span class="faq-question-text">Et si l'IA fait une erreur ?</span>
-          <span class="faq-toggle" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer" id="fa5" role="region">
-          <p>Toutes les actions critiques (paiements, envois, décisions financières) passent toujours par une validation humaine. L'agent propose, tu décides. Pour les actions à moindre enjeu, Bisse IA met en place des garde-fous : seuils de montants, vérifications croisées, alertes en cas de doute. Les exécutions sont monitorées en continu : si quelque chose dérape, tu es prévenu immédiatement.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false" aria-controls="fa6">
-          <span class="faq-question-text">Je n'y connais rien en IA, est-ce que je vais pouvoir m'en servir ?</span>
-          <span class="faq-toggle" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer" id="fa6" role="region">
-          <p>C'est précisément le but. Tu ne vois pas l'IA, tu vois juste que les choses se font toutes seules. Pas de logiciel à apprendre, pas d'interface compliquée. Tu continues à utiliser tes outils habituels (Bexio, ta boîte mail, WhatsApp), et l'automatisation tourne en arrière-plan. La formation prend généralement 30 minutes à 1 heure maximum.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false" aria-controls="fa7">
-          <span class="faq-question-text">Où intervenez-vous en Valais ?</span>
-          <span class="faq-toggle" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer" id="fa7" role="region">
-          <p>Bisse IA intervient dans tout le Valais romand (de Saint-Maurice à Sierre, vallées comprises) et dans le Haut-Valais germanophone (Brigue, Viège, Zermatt). Pour les premiers échanges, une visite sur place est privilégiée : comprendre ton environnement, tes contraintes et ton équipe fait partie du travail. Les sessions de suivi peuvent se faire en visio si tu préfères.</p>
-        </div>
+      <div class="agent">
+        <span class="an">Domaine usurpable</span>
+        <h3>De faux emails en votre nom</h3>
+        <p>Sans configuration anti-usurpation, n'importe qui peut écrire à vos clients en se faisant passer pour votre entreprise.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================================================ CONTACT ============================================================ -->
-<section id="contact" class="contact">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="head-meta">
-        <div class="eyebrow dark">Audit gratuit · sans engagement</div>
-        <h2>Discutons de ton cas<br>en <em>30 minutes.</em></h2>
-      </div>
-      <p class="head-lede">Décris ton activité et la tâche qui te prend le plus de temps. Bisse IA te répond sous 24 h ouvrées avec une première analyse et une proposition chiffrée si pertinente.</p>
+<!-- ════════ TURIYA — LA SOLUTION ════════ -->
+<section class="produit" id="turiya" data-screen-label="Turiya">
+  <div class="wrap">
+    <div class="produit-head reveal">
+      <p class="k-label">La solution · Turiya</p>
+      <h2>Turiya regarde votre présence numérique <b>avec les yeux d'un attaquant.</b></h2>
+      <p class="lede-xl">Turiya surveille en continu les signaux visibles qui peuvent fragiliser votre entreprise — <b>site, domaine, email, conformité nLPD et exposition externe.</b> Vous recevez uniquement les alertes utiles, avec une marche à suivre claire.</p>
+      <p class="continuity reveal">Un diagnostic initial photographie votre exposition à un instant. <b>Turiya surveille son évolution dans le temps</b> — vous n'êtes plus aveugle entre deux contrôles.</p>
     </div>
 
-    <div class="contact-grid">
-      <form class="contact-form reveal" id="contactForm">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="nom">Nom</label>
-            <input type="text" id="nom" name="nom" required />
+    <div class="agents-grid reveal" style="margin-top:56px">
+      <div class="agent">
+        <span class="an">01 — Santé technique</span>
+        <h3>Disponibilité &amp; certificat</h3>
+        <p>Votre site est-il en ligne, rapide&nbsp;? Son certificat est-il valide et à jour&nbsp;? La disponibilité est vérifiée en permanence.</p>
+      </div>
+      <div class="agent">
+        <span class="an">02 — Sécurité visible</span>
+        <h3>Ce qui est exposé au public</h3>
+        <p>En-têtes de protection, configuration email anti-usurpation, scripts suspects, technologies exposées au public.</p>
+      </div>
+      <div class="agent">
+        <span class="an">03 — Conformité nLPD</span>
+        <h3>Ce que la loi suisse attend</h3>
+        <p>Cookies, formulaires, politique de confidentialité, mentions légales&nbsp;: contrôlés régulièrement.</p>
+      </div>
+      <div class="agent">
+        <span class="an">04 — Exposition externe</span>
+        <h3>Ce qui est visible autour de vous</h3>
+        <p>Emails dans des fuites, sous-domaines oubliés, domaines imitant le vôtre, réputation de votre domaine.</p>
+      </div>
+    </div>
+
+    <div class="demo reveal" id="demo" style="margin-top:80px">
+      <div class="demo-steps" role="tablist" aria-label="Comment fonctionne la surveillance">
+        <button class="demo-step" role="tab" id="demo-tab-0" aria-controls="demo-pane-0" aria-selected="true" data-step="0"><span class="sn">01</span><span class="st">État initial</span></button>
+        <button class="demo-step" role="tab" id="demo-tab-1" aria-controls="demo-pane-1" aria-selected="false" tabindex="-1" data-step="1"><span class="sn">02</span><span class="st">Surveillance</span></button>
+        <button class="demo-step" role="tab" id="demo-tab-2" aria-controls="demo-pane-2" aria-selected="false" tabindex="-1" data-step="2"><span class="sn">03</span><span class="st">Alerte</span></button>
+        <button class="demo-step" role="tab" id="demo-tab-3" aria-controls="demo-pane-3" aria-selected="false" tabindex="-1" data-step="3"><span class="sn">04</span><span class="st">Quoi faire</span></button>
+      </div>
+      <div class="demo-stage">
+        <div class="demo-pane active" data-pane="0" id="demo-pane-0" role="tabpanel" aria-labelledby="demo-tab-0">
+          <div>
+            <h3>On établit <b>l'état initial</b>.</h3>
+            <p>Une photographie complète de votre exposition de départ&nbsp;: ce qui est visible, ce qui est faible, ce qu'il faut suivre.</p>
           </div>
-          <div class="form-group">
-            <label for="entreprise">Entreprise</label>
-            <input type="text" id="entreprise" name="entreprise" required />
+          <div class="demo-visual" aria-hidden="true">
+            <div class="dim">cabinet-exemple.ch — relevé initial</div>
+            <hr />
+            <div class="row"><span class="dim">site</span><span class="okc">en ligne</span></div>
+            <div class="row"><span class="dim">certificat</span><span class="okc">valide · 78 j</span></div>
+            <div class="row"><span class="dim">en-têtes</span><span class="hl">2 manquants</span></div>
+            <div class="row"><span class="dim">emails en fuite</span><span class="hl">3 trouvés</span></div>
           </div>
         </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
+        <div class="demo-pane" data-pane="1" id="demo-pane-1" role="tabpanel" aria-labelledby="demo-tab-1">
+          <div>
+            <h3>La surveillance <b>tourne en continu</b>.</h3>
+            <p>Disponibilité vérifiée en permanence&nbsp;; sécurité et conformité re-contrôlées en profondeur chaque mois.</p>
           </div>
-          <div class="form-group">
-            <label for="telephone">Téléphone</label>
-            <input type="tel" id="telephone" name="telephone" />
+          <div class="demo-visual" aria-hidden="true">
+            <div class="row"><span class="dim">disponibilité</span><span class="okc">100 % · 30 j</span></div>
+            <div class="row"><span class="dim">certificat</span><span class="okc">OK</span></div>
+            <div class="row"><span class="dim">conformité nLPD</span><span class="okc">OK</span></div>
+            <hr />
+            <div class="dim">re-contrôle profond — mensuel</div>
+            <div><span class="badge ok">EN VEILLE</span></div>
           </div>
         </div>
+        <div class="demo-pane" data-pane="2" id="demo-pane-2" role="tabpanel" aria-labelledby="demo-tab-2">
+          <div>
+            <h3>Une dégradation&nbsp;? <b>Vous êtes prévenu.</b></h3>
+            <p>Dès qu'un signal se dégrade, vous recevez une alerte — uniquement les alertes utiles, jamais de bruit inutile.</p>
+          </div>
+          <div class="demo-visual" aria-hidden="true">
+            <div class="dim">alerte — 14.06, 09:12</div>
+            <hr />
+            <div class="row"><span class="dim">domaine</span><span class="hl">SPF affaibli</span></div>
+            <div class="row"><span class="dim">risque</span><span class="hl">usurpation d'email</span></div>
+            <div><span class="badge">À CORRIGER</span></div>
+          </div>
+        </div>
+        <div class="demo-pane" data-pane="3" id="demo-pane-3" role="tabpanel" aria-labelledby="demo-tab-3">
+          <div>
+            <h3>Et je vous dis <b>quoi faire</b>.</h3>
+            <p>Chaque alerte arrive avec une marche à suivre claire et priorisée — qualifiée par un humain avant de vous parvenir.</p>
+          </div>
+          <div class="demo-visual" aria-hidden="true">
+            <div class="row"><span class="dim">priorité</span><span class="hl">haute</span></div>
+            <div class="row"><span class="dim">action</span><span>durcir l'enregistrement SPF</span></div>
+            <div class="row"><span class="dim">qualifié par</span><span>R. Bruppacher</span></div>
+            <hr />
+            <div class="row"><span class="dim">statut</span><span class="badge ok">MARCHE À SUIVRE ✓</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="demo-note">Vous recevez <b>uniquement les alertes utiles</b>, avec une marche à suivre claire.</p>
+    </div>
 
-        <div class="form-group">
-          <label for="secteur">Secteur d'activité</label>
-          <select id="secteur" name="secteur" required>
-            <option value="">Sélectionnez…</option>
-            <option>Artisan / Bâtiment</option>
-            <option>Fiduciaire / Comptabilité</option>
-            <option>Cabinet médical / Dentaire</option>
-            <option>Cave / Vigneron</option>
-            <option>Hôtellerie / Location</option>
-            <option>Commerce / Service</option>
-            <option>Autre</option>
-          </select>
-        </div>
+    <div class="nlpd reveal scope-note">
+      <span class="nk">Notre valeur</span>
+      <p>Les outils détectent. <strong>Nous interprétons.</strong> Vous recevez une alerte claire et actionnable, pas une notification technique brute&nbsp;: nous surveillons ce qui est visible depuis l'extérieur, nous vous alertons si quelque chose change, vous savez quoi corriger.</p>
+    </div>
 
-        <div class="form-group">
-          <label for="message">Quelle tâche te prend le plus de temps&nbsp;?</label>
-          <textarea id="message" name="message" placeholder="Ex : je passe 5 h par mois à saisir manuellement mes factures fournisseurs dans Bexio…" required></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-ocre">
-          Demander mon audit gratuit
-          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-
-        <div class="form-success" id="formSuccess" role="status" aria-live="polite">
-          Merci ! Ta demande a bien été envoyée. Bisse IA te recontacte sous 24 h ouvrées.
-        </div>
-      </form>
-
-      <aside class="contact-info reveal">
-        <div class="contact-info-item">
-          <div class="contact-info-label">Email</div>
-          <div class="contact-info-value"><a href="/cdn-cgi/l/email-protection#690a06071d080a1d290b001a1a0c440008470a01"><span class="__cf_email__" data-cfemail="80e3efeef4e1e3f4c0e2e9f3f3e5ade9e1aee3e8">[email&#160;protected]</span></a></div>
-        </div>
-        <div class="contact-info-item">
-          <div class="contact-info-label">Téléphone</div>
-          <div class="contact-info-value"><a href="tel:+41779246978">+41 77 924 69 78</a></div>
-        </div>
-        <div class="contact-info-item">
-          <div class="contact-info-label">Basé à</div>
-          <div class="contact-info-value">Sion, Valais</div>
-        </div>
-        <div class="contact-info-item">
-          <div class="contact-info-label">Disponibilité</div>
-          <div class="contact-info-value">Lundi–vendredi · 8h–18h</div>
-        </div>
-      </aside>
+    <div class="nlpd reveal scope-note">
+      <span class="nk">Périmètre</span>
+      <p>Turiya observe votre exposition <strong>depuis l'extérieur</strong>, à partir de sources ouvertes. Elle ne sécurise pas votre système interne — elle vous montre ce qui est visible de dehors, et vous dit quoi fermer.</p>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a href="#" class="logo">
-          <div class="logo-mark">
-            <svg aria-hidden="true" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3 11 Q11 4 18 12 T33 11" stroke="#f4ede0" stroke-width="2" fill="none" stroke-linecap="round"/>
-              <path d="M3 19 Q11 12 18 20 T33 19" stroke="#c97b3f" stroke-width="2" fill="none" stroke-linecap="round"/>
-              <path d="M3 27 Q11 20 18 28 T33 27" stroke="#f4ede0" stroke-width="2" fill="none" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <span class="logo-text">Bisse<em> IA</em></span>
-        </a>
-        <p class="footer-tagline">
-          L'eau qui travaille pour ton entreprise.<br>
-          Agents IA et automatisation pour PME valaisannes, hébergés en Suisse.
-        </p>
-        <div class="footer-pilote">
-          <span class="footer-pilote-dot"></span>
-          Premiers clients pilotes 2026
-        </div>
-      </div>
+<!-- ════════ LA PROMESSE ════════ -->
+<section class="nom" data-screen-label="La promesse">
+  <svg class="nom-flow" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M-20 30 C 300 10, 600 50, 900 30 S 1300 10, 1460 30"></path>
+  </svg>
+  <div class="wrap">
+    <p class="k-label">La promesse</p>
+    <figure>
+      <blockquote>La surveillance tourne en continu. Dès qu'une dégradation est détectée, <b>vous êtes alerté — et je vous dis quoi faire.</b></blockquote>
+      <figcaption>Disponibilité vérifiée en permanence · sécurité &amp; conformité re-contrôlées en profondeur</figcaption>
+    </figure>
+  </div>
+</section>
 
-      <div class="footer-col">
-        <div class="footer-col-title">Naviguer</div>
+<!-- ════════ POUR QUI ════════ -->
+<section class="agents" id="pourqui" data-screen-label="Pour qui">
+  <div class="wrap">
+    <div class="agents-head reveal">
+      <p class="k-label">Pour qui</p>
+      <h2>Pour les PME — <b>et d'abord celles qui ont le plus à perdre.</b></h2>
+      <p>Turiya s'adresse à toute PME ayant une présence numérique. Les professions sensibles sont notre priorité — parce que la confidentialité y est le fonds de commerce — mais le risque, lui, ne fait pas de tri.</p>
+    </div>
+    <div class="agents-grid reveal">
+      <div class="agent"><span class="an">01</span><h3>Fiduciaires</h3><p>Vous manipulez les comptes et les données fiscales de tout un tissu d'entreprises locales.</p></div>
+      <div class="agent"><span class="an">02</span><h3>Avocats &amp; études</h3><p>Le secret professionnel ne tolère ni fuite d'email ni domaine usurpé en votre nom.</p></div>
+      <div class="agent"><span class="an">03</span><h3>Cabinets médicaux &amp; dentaires</h3><p>Les données de santé sont parmi les plus sensibles — et les plus convoitées.</p></div>
+      <div class="agent"><span class="an">04</span><h3>Notaires</h3><p>Actes, identités, transactions&nbsp;: votre signature engage, votre exposition aussi.</p></div>
+      <div class="agent"><span class="an">05</span><h3>Régies immobilières</h3><p>Mandats, coordonnées de locataires et de propriétaires, flux financiers à protéger.</p></div>
+      <div class="agent"><span class="an">06</span><h3>Toute PME</h3><p>Commerce, artisan, service&nbsp;: dès qu'il y a un site, des emails et des clients, il y a une exposition à surveiller.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ LE FONDATEUR ════════ -->
+<section class="fondateur" id="fondateur" data-screen-label="Le fondateur">
+  <div class="wrap fondateur-grid">
+    <div class="monogram reveal" aria-hidden="true">
+      <span class="rb">R<b>B</b></span>
+      <span class="role">Fondateur</span>
+    </div>
+    <div class="fondateur-body reveal">
+      <p class="k-label">Qui surveille votre exposition</p>
+      <h2>Rodrigue Bruppacher, <b>analyste cybersécurité</b> au service des PME.</h2>
+      <p>Trois ans et demi en centre opérationnel de sécurité 24/7&nbsp;: surveillance SIEM, threat hunting, réponse aux incidents pour des entreprises internationales. Avant ça, gestion des identités et des accès en environnement bancaire — flux e-banking, revues de droits d'accès.</p>
+      <p>Pour votre entreprise, ça change une chose&nbsp;: <strong>celui qui surveille votre exposition sait voir votre organisation comme un attaquant la voit</strong> — et vous dire, précisément, ce qu'il faut fermer. Aujourd'hui, depuis Sion, je mets ce métier au service des PME.</p>
+      <div class="creds">
+        <div class="cred"><span class="ck">SOC 24/7</span><span class="cv">3+ ans d'analyse sécurité pour des entreprises internationales — SIEM, threat hunting, réponse aux incidents</span></div>
+        <div class="cred"><span class="ck">Banque</span><span class="cv">Gestion des identités et accès — flux e-banking, revues de droits</span></div>
+        <div class="cred"><span class="ck">Certifications</span><span class="cv">Threat Hunting (Cybereason) · CCNA (Cisco)</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SOUVERAINETÉ & GARANTIES ════════ -->
+<section class="securite" id="garanties" data-screen-label="Souveraineté &amp; garanties">
+  <div class="wrap">
+    <div class="securite-head reveal">
+      <p class="k-label">Souveraineté &amp; garanties</p>
+      <h2>Trois garanties, <b>sans compromis.</b></h2>
+      <p>Pas de promesses — des dispositions précises, héritées de la sécurité bancaire et du travail en centre opérationnel de sécurité.</p>
+    </div>
+    <div class="sec-grid reveal">
+      <div class="sec-pillar">
+        <span class="sn">01</span>
+        <h3>Données traitées en Suisse</h3>
+        <p>Vos données de surveillance sont traitées et stockées en Suisse, sur une infrastructure souveraine (Infomaniak, Genève). Aucune donnée n'est revendue ni exploitée à d'autres fins que votre surveillance.</p>
         <ul>
-          <li><a href="#flow">Comment ça marche</a></li>
-          <li><a href="#cas-usage">Cas d'usage</a></li>
-          <li><a href="#securite">Sécurité</a></li>
-          <li><a href="#roi">Calculateur ROI</a></li>
-          <li><a href="#a-propos">À propos</a></li>
-          <li><a href="#faq">FAQ</a></li>
+          <li>traitement &amp; stockage en Suisse</li>
+          <li>hébergement souverain (Infomaniak, Genève)</li>
+          <li>aucune revente de vos données</li>
         </ul>
       </div>
-
-      <div class="footer-col">
-        <div class="footer-col-title">Mentions légales</div>
+      <div class="sec-pillar">
+        <span class="sn">02</span>
+        <h3>Validation humaine</h3>
+        <p>Sur les formules accompagnées, chaque alerte importante est qualifiée et priorisée par un analyste avant de vous parvenir — vous parlez à un humain, pas à un robot.</p>
         <ul>
-          <li><a href="mentions-legales.html#impressum">Mentions légales · Impressum</a></li>
-          <li><a href="mentions-legales.html#confidentialite">Politique de confidentialité</a></li>
-          <li><a href="mentions-legales.html#cookies">Politique des cookies</a></li>
-          <li><a href="mentions-legales.html#droits">Tes droits (nLPD)</a></li>
-          <li><a href="mentions-legales.html#securite">Mesures de sécurité</a></li>
+          <li>qualification humaine sur les formules accompagnées</li>
+          <li>priorisation par un analyste</li>
+          <li>interprétation, pas notification brute</li>
         </ul>
       </div>
-
-      <div class="footer-col">
-        <div class="footer-col-title">Contact</div>
+      <div class="sec-pillar">
+        <span class="sn">03</span>
+        <h3>Surveillance externe, respectueuse</h3>
+        <p>Uniquement des sources ouvertes, observées depuis l'extérieur. Aucune intrusion, aucun test agressif sur vos systèmes.</p>
         <ul>
-          <li><a href="/cdn-cgi/l/email-protection#e1828e8f95808295a18388929284cc8880cf8289"><span class="__cf_email__" data-cfemail="b3d0dcddc7d2d0c7f3d1dac0c0d69edad29dd0db">[email&#160;protected]</span></a></li>
-          <li><a href="tel:+41779246978">+41 77 924 69 78</a></li>
-          <li class="footer-static">Sion · Valais</li>
-          <li class="footer-static">Lundi–vendredi · 8h–18h</li>
+          <li>sources ouvertes uniquement</li>
+          <li>observation depuis l'extérieur</li>
+          <li>aucune intrusion ni test agressif</li>
         </ul>
       </div>
     </div>
+    <div class="nlpd reveal">
+      <span class="nk">Conformité nLPD</span>
+      <p>Surveillance documentée, registre des traitements, données traitées en Suisse&nbsp;: <strong>la conformité est encadrée par écrit</strong>, pas affirmée sur une page web.</p>
+    </div>
+  </div>
+</section>
 
-    <div class="footer-bottom">
-      <div class="footer-copy">
-        © 2026 Bisse IA · Tous droits réservés
+<!-- ════════ L'OFFRE ════════ -->
+<section class="offre" id="offre" data-screen-label="L'offre">
+  <div class="wrap">
+    <div class="offre-head reveal">
+      <p class="k-label">L'offre</p>
+      <h2>Le diagnostic comme porte d'entrée. <b>La surveillance comme tranquillité.</b></h2>
+      <p>On commence toujours par un diagnostic initial de votre exposition. Ensuite, la surveillance continue tourne en abonnement, à un niveau qui correspond à votre exposition réelle — pas à un catalogue.</p>
+    </div>
+
+    <div class="pilot reveal">
+      <div class="pilot-l">
+        <span class="pilot-label">Offre pilote · 2026 — places limitées</span>
+        <h3>Diagnostic offert, puis surveillance <b>dès CHF&nbsp;90.–/mois</b></h3>
+        <p>Pour lancer les premiers clients pilotes, un tarif préférentiel, sans engagement de durée. Vous testez la surveillance sur votre propre exposition, et vous arrêtez quand vous voulez.</p>
       </div>
-      <div class="footer-compliance">
-        <span class="footer-badge">nLPD&nbsp;·&nbsp;conforme</span>
-        <span class="footer-badge">RGPD&nbsp;·&nbsp;compatible</span>
-        <span class="footer-badge">Hébergé&nbsp;en&nbsp;Suisse</span>
+      <div class="pilot-r">
+        <ul>
+          <li>Diagnostic de votre exposition offert</li>
+          <li>Surveillance continue des signaux visibles</li>
+          <li>Sans engagement — résiliable à tout moment</li>
+          <li>Tarif pilote bloqué la première année</li>
+        </ul>
+        <a class="cta" href="#contact">Réserver une place pilote</a>
       </div>
     </div>
+
+    <div class="tiers reveal">
+      <div class="tier">
+        <span class="tn">Essentiel</span>
+        <h3>Ne plus être aveugle</h3>
+        <p>L'essentiel pour ne plus ignorer votre exposition.</p>
+        <ul>
+          <li>Surveillance continue des 4 dimensions</li>
+          <li>Alerte dès qu'une dégradation est détectée</li>
+          <li>Marche à suivre claire pour chaque alerte</li>
+        </ul>
+      </div>
+      <div class="tier feature">
+        <span class="tn">Renforcé</span>
+        <h3>Détecter plus tôt</h3>
+        <p>Pour les entreprises qui veulent anticiper.</p>
+        <ul>
+          <li>Tout l'Essentiel, contrôlé plus fréquemment</li>
+          <li>Contrôles approfondis &amp; priorisation des risques</li>
+          <li>Rapport périodique sur votre exposition</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <span class="tn">Expert</span>
+        <h3>Un analyste à vos côtés</h3>
+        <p>Surveillance complète, accompagnée.</p>
+        <ul>
+          <li>Tout le Renforcé, avec analyse experte humaine</li>
+          <li>Accompagnement à la remédiation, pas à pas</li>
+          <li>Point de contact direct, prioritaire</li>
+        </ul>
+      </div>
+    </div>
+    <p class="offer-note reveal">Pas de prix en ligne au-delà du pilote&nbsp;: chaque entreprise a une exposition différente. On en discute au contact.</p>
+  </div>
+</section>
+
+<!-- ════════ CONTACT ════════ -->
+<section class="contact" id="contact" data-screen-label="Contact">
+  <div class="wrap contact-grid">
+    <div class="contact-info reveal">
+      <p class="k-label">Contact</p>
+      <h2>Vérifions <b>votre exposition</b>.</h2>
+      <p>Décrivez votre entreprise en deux lignes. Je vous réponds sous un jour ouvré avec une première lecture de votre exposition.</p>
+      <div class="coords">
+        <div class="coord"><span class="ck">Email</span><span class="cv"><a href="mailto:admin@bisse-ia.ch">admin@bisse-ia.ch</a></span></div>
+        <div class="coord"><span class="ck">Téléphone</span><span class="cv"><a href="tel:+41779246978">+41 77 924 69 78</a></span></div>
+        <div class="coord"><span class="ck">Adresse</span><span class="cv">Sion · Valais</span></div>
+        <div class="coord"><span class="ck">Horaires</span><span class="cv">Lundi–vendredi, 8h–18h</span></div>
+      </div>
+    </div>
+    <form class="form reveal" id="contact-form" method="POST" action="https://n8n.bisse-ia.ch/webhook/bisseia-contact">
+      <p class="hp-field" aria-hidden="true"><label>Ne pas remplir&nbsp;: <input name="site_web" tabindex="-1" autocomplete="off" /></label></p>
+      <div class="form-row">
+        <div class="field">
+          <label for="f-nom">Nom</label>
+          <input id="f-nom" name="nom" type="text" autocomplete="name" required />
+        </div>
+        <div class="field">
+          <label for="f-entreprise">Cabinet / organisation</label>
+          <input id="f-entreprise" name="entreprise" type="text" autocomplete="organization" />
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-email">Email</label>
+        <input id="f-email" name="email" type="email" autocomplete="email" required />
+      </div>
+      <div class="field">
+        <label for="f-message">En deux lignes, votre entreprise</label>
+        <textarea id="f-message" name="message" placeholder="Votre activité, votre site, ce qui vous inquiète…"></textarea>
+      </div>
+      <button type="submit">Demander un audit</button>
+      <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
+      <p class="form-note">Réponse sous un jour ouvré. Vos coordonnées ne servent qu'à vous répondre.</p>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <span class="fb">© 2026 Bisse IA · Turiya — Sion, Valais</span>
+    <ul class="footer-links">
+      <li><a href="mentions-legales.html#impressum">Mentions légales</a></li>
+      <li><a href="mentions-legales.html#confidentialite">Politique de confidentialité</a></li>
+      <li><a href="mentions-legales.html#droits">Droits nLPD</a></li>
+    </ul>
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
+<script>
+(function () {
+  var motionOK = window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
+
+  /* reveal on scroll */
+  if (motionOK && 'IntersectionObserver' in window) {
+    document.documentElement.classList.add('anim');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  }
+
+  /* nav mobile */
+  var burger = document.querySelector('.nav-burger');
+  var menu = document.getElementById('nav-menu');
+  if (burger && menu) {
+    function setMenu(open) {
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+      menu.hidden = !open;
+    }
+    burger.addEventListener('click', function () {
+      setMenu(burger.getAttribute('aria-expanded') !== 'true');
+    });
+    menu.addEventListener('click', function (ev) {
+      if (ev.target.tagName === 'A') setMenu(false);
+    });
+    document.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Escape' && !menu.hidden) { setMenu(false); burger.focus(); }
+    });
+  }
+
+  /* demo stepper */
+  var steps = Array.prototype.slice.call(document.querySelectorAll('.demo-step'));
+  var panes = Array.prototype.slice.call(document.querySelectorAll('.demo-pane'));
+  var current = 0;
+  var timer = null;
+  var INTERVAL = 7000;
+  var inView = false;
+  var paused = false;
+
+  function show(i, focus) {
+    current = i;
+    steps.forEach(function (s, j) {
+      var sel = j === i;
+      s.setAttribute('aria-selected', sel ? 'true' : 'false');
+      s.setAttribute('tabindex', sel ? '0' : '-1');
+    });
+    panes.forEach(function (p, j) { p.classList.toggle('active', j === i); });
+    if (focus) steps[i].focus();
+  }
+  function next() { show((current + 1) % panes.length); }
+  function startAuto() {
+    if (!motionOK || !inView || paused) return;
+    stopAuto();
+    timer = setInterval(next, INTERVAL);
+  }
+  function stopAuto() { if (timer) { clearInterval(timer); timer = null; } }
+
+  steps.forEach(function (s, i) {
+    s.addEventListener('click', function () { show(i); startAuto(); });
+    s.addEventListener('keydown', function (ev) {
+      var n = null;
+      if (ev.key === 'ArrowRight' || ev.key === 'ArrowDown') n = (i + 1) % steps.length;
+      else if (ev.key === 'ArrowLeft' || ev.key === 'ArrowUp') n = (i - 1 + steps.length) % steps.length;
+      else if (ev.key === 'Home') n = 0;
+      else if (ev.key === 'End') n = steps.length - 1;
+      if (n !== null) { ev.preventDefault(); show(n, true); }
+    });
+  });
+
+  var demo = document.getElementById('demo');
+  if (demo) {
+    demo.addEventListener('mouseenter', function () { paused = true; stopAuto(); });
+    demo.addEventListener('mouseleave', function () { paused = false; startAuto(); });
+    demo.addEventListener('focusin', function () { paused = true; stopAuto(); });
+    demo.addEventListener('focusout', function (ev) {
+      if (!demo.contains(ev.relatedTarget)) { paused = false; startAuto(); }
+    });
+    if ('IntersectionObserver' in window) {
+      var dio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          inView = e.isIntersecting;
+          inView ? startAuto() : stopAuto();
+        });
+      }, { threshold: 0.3 });
+      dio.observe(demo);
+    } else {
+      inView = true;
+      startAuto();
+    }
+  }
+
+  /* contact form → POST JSON vers n8n (webhook bisseia-contact) + honeypot + fallback visible */
+  var form = document.getElementById('contact-form');
+  var formStatus = document.getElementById('form-status');
+  if (form && formStatus) {
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var btn = form.querySelector('button[type="submit"]');
+      var label = btn.textContent;
+      function showStatus(cls, html) {
+        formStatus.hidden = false;
+        formStatus.className = 'form-status ' + cls;
+        formStatus.innerHTML = html;
+      }
+      var data = {};
+      new FormData(form).forEach(function (v, k) { data[k] = v; });
+      // Honeypot : si rempli, on simule le succès sans rien envoyer.
+      if ((data.site_web || '').toString().trim()) {
+        form.reset();
+        showStatus('ok', 'Demande envoyée. Réponse sous un jour ouvré.');
+        return;
+      }
+      btn.disabled = true;
+      btn.textContent = 'Envoi en cours…';
+      fetch(form.getAttribute('action'), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      }).then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        form.reset();
+        showStatus('ok', 'Demande envoyée. Réponse sous un jour ouvré.');
+      }).catch(function () {
+        showStatus('err', 'L\'envoi n\'a pas abouti. Écrivez directement à <a href="mailto:admin@bisse-ia.ch">admin@bisse-ia.ch</a> ou appelez le <a href="tel:+41779246978">+41&nbsp;77&nbsp;924&nbsp;69&nbsp;78</a>.');
+      }).finally(function () {
+        btn.disabled = false;
+        btn.textContent = label;
+      });
+    });
+  }
+})();
+</script>
+
 </body>
 </html>
