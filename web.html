@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="fonts.css"><link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background-color:#0A2028;background-image:linear-gradient(180deg, rgba(10,32,40,0) 0%, rgba(10,32,40,.14) 44%, rgba(10,32,40,.78) 84%, #0A2028 100%),linear-gradient(96deg, rgba(4,22,28,.34) 0%, rgba(4,22,28,.10) 46%, rgba(4,22,28,.62) 100%),url("uploads/mur-petrole-fleurs.png");background-repeat:no-repeat,no-repeat,no-repeat;background-size:100% 120vh,100% 120vh,auto 120vh;background-position:center top,center top,center top;background-attachment:scroll,scroll,scroll;color:#F4F1E8;font-family:'Figtree',sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:#D98E52;text-decoration:none}
+a:hover{color:#F2CDA4}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2.5px solid #D98E52;outline-offset:3px}
+summary::-webkit-details-marker{display:none}
+[data-sign]::after{content:"+"}
+details[open] [data-sign]::after{content:"\2013"}
+@supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){[data-glass]{background:rgba(18,54,66,.86) !important}}
+@keyframes drift1{to{transform:translate(8vw,6vh) scale(1.13)}}
+@keyframes drift2{to{transform:translate(-7vw,-6vh) scale(1.10)}}
+@keyframes cue{0%{top:-7px;opacity:0}14%{opacity:1}80%{opacity:1}100%{top:54px;opacity:0}}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none !important}}
+@media(max-width:860px){
+  body{background-attachment:scroll}
+  [data-grid="offer"]{grid-template-columns:1fr !important;padding:30px 26px !important}
+  [data-price]{order:-1}
+  [data-hero]{min-height:auto !important;padding:56px 0 48px !important}
+  [data-cue]{display:none}
+  [data-sec]{margin-top:96px !important}
+}
+</style>
+</helmet>
+
+<div aria-hidden="true" style="position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden">
+  <span style="position:absolute;border-radius:50%;filter:blur(84px);width:42vw;height:42vw;left:-9vw;top:2vh;background:radial-gradient(circle,#3FA9C4 0%,transparent 68%);opacity:.11;animation:drift1 28s ease-in-out infinite alternate"></span>
+  <span style="position:absolute;border-radius:50%;filter:blur(84px);width:34vw;height:34vw;left:26vw;bottom:-12vh;background:radial-gradient(circle,#0E6E7A 0%,transparent 70%);opacity:.13;animation:drift2 33s ease-in-out infinite alternate"></span>
+</div>
+<div aria-hidden="true" style="position:fixed;inset:-100px;z-index:0;pointer-events:none;opacity:.07;mix-blend-mode:overlay;background-image:url(&quot;data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='220'%20height='220'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='.85'%20numOctaves='3'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20type='saturate'%20values='0'/%3E%3C/filter%3E%3Crect%20width='220'%20height='220'%20filter='url(%23n)'/%3E%3C/svg%3E&quot;)"></div>
+<div aria-hidden="true" style="position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(122% 96% at 50% 46%, rgba(4,22,28,0) 52%, rgba(4,22,28,.30) 100%)"></div>
+
+<header style="position:sticky;top:0;z-index:50;background:rgba(4,22,28,.82);backdrop-filter:blur(12px) saturate(1.1);-webkit-backdrop-filter:blur(12px) saturate(1.1);box-shadow:0 1px 0 rgba(255,255,255,.07)">
+  <div style="max-width:1080px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+    <a href="index.html#accueil" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.25rem;letter-spacing:-.01em;margin-right:auto;color:#F4F1E8">Bisse <span style="background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 2px rgba(4,22,28,.6))">IA</span></a>
+    <nav aria-label="Pages" style="display:flex;gap:4px;flex-wrap:wrap">
+      <a href="index.html#accueil" style="border-radius:999px;padding:8px 16px;font-weight:600;font-size:.92rem;color:#C9D9DB;transition:background .2s,color .2s" style-hover="background:rgba(244,241,232,.14);color:#F4F1E8">Accueil</a>
+      <a href="#hero" aria-current="page" style="border-radius:999px;padding:8px 16px;font-weight:600;font-size:.92rem;background:#F4F1E8;color:#04161C">Web</a>
+      <a href="securite.html" style="border-radius:999px;padding:8px 16px;font-weight:600;font-size:.92rem;color:#C9D9DB;transition:background .2s,color .2s" style-hover="background:rgba(244,241,232,.14);color:#F4F1E8">Sécurité</a>
+      <a href="reseaux.html" style="border-radius:999px;padding:8px 16px;font-weight:600;font-size:.92rem;color:#C9D9DB;transition:background .2s,color .2s" style-hover="background:rgba(244,241,232,.14);color:#F4F1E8">Réseaux sociaux</a>
+    </nav>
+  </div>
+  <span aria-hidden="true" style="display:block;height:2px;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);opacity:.55"></span>
+</header>
+
+<main style="position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 24px 140px">
+
+  <section id="hero" data-hero="" data-screen-label="Hero — Web" style="min-height:calc(100svh - 98px);display:flex;flex-direction:column;justify-content:center;padding-bottom:90px;position:relative;animation:fade .4s ease">
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:.84rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;background-image:linear-gradient(118deg,#F2CDA4 0%,#E8B584 22%,#D0955E 46%,#F2CDA4 68%,#C98A55 86%,#E8B584 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 2px rgba(4,22,28,.9)) drop-shadow(0 2px 10px rgba(4,22,28,.7));margin-bottom:22px">Web — Construire</p>
+    <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(2.5rem,6.4vw,4.4rem);line-height:1.02;letter-spacing:-.02em;max-width:17ch;text-shadow:0 2px 20px rgba(4,22,28,.55)">Un site qui <span style="background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 6px rgba(4,22,28,.75))">travaille</span> pour vous.</h1>
+    <p style="margin-top:28px;max-width:54ch;font-size:1.14rem;color:#C9D9DB;text-wrap:pretty;text-shadow:0 1px 12px rgba(4,22,28,.5)">Une page, un métier, un objectif : que vos futurs clients vous trouvent et vous appellent. Conçu, écrit et mis en ligne pour vous — vous n'avez rien à installer.</p>
+    <div style="margin-top:42px;display:flex;gap:14px;flex-wrap:wrap;align-items:stretch">
+      <a href="#contact" style="display:inline-flex;align-items:center;padding:15px 30px;border-radius:999px;font-weight:600;font-size:1rem;color:#04161C;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);box-shadow:0 8px 22px rgba(4,22,28,.42),inset 0 1px 0 rgba(255,255,255,.42);transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-2px);box-shadow:0 12px 28px rgba(4,22,28,.5),inset 0 1px 0 rgba(255,255,255,.5);color:#04161C">Demander mon site</a>
+    </div>
+    <div data-cue="" aria-hidden="true" style="position:absolute;left:0;bottom:22px;width:1px;height:56px;background:linear-gradient(180deg,rgba(244,241,232,.02),rgba(244,241,232,.30),rgba(244,241,232,.02))">
+      <span style="position:absolute;left:-3px;width:7px;height:9px;border-radius:50%;background:linear-gradient(180deg,#E8F4F7,#8FC6D6);box-shadow:0 0 9px rgba(160,220,235,.6);animation:cue 5.2s ease-in-out infinite"></span>
+    </div>
+  </section>
+
+  <section data-sec="" data-screen-label="Ce que vous obtenez" style="margin-top:130px">
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:.84rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-align:center;background-image:linear-gradient(118deg,#F2CDA4 0%,#E8B584 22%,#D0955E 46%,#F2CDA4 68%,#C98A55 86%,#E8B584 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 2px rgba(4,22,28,.9)) drop-shadow(0 2px 10px rgba(4,22,28,.7))">Ce que vous obtenez</p>
+    <h2 style="margin:20px auto 0;text-align:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.16;letter-spacing:-.02em;max-width:30ch;text-shadow:0 2px 16px rgba(4,22,28,.5)">Trois choses réglées, une fois pour toutes.</h2>
+    <div style="margin-top:58px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;align-items:stretch">
+      <div data-glass="" style="align-self:stretch;position:relative;isolation:isolate;display:flex;flex-direction:column;gap:12px;padding:30px 26px;border-radius:18px;border:1px solid rgba(255,255,255,.26);background:linear-gradient(148deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.04) 38%,rgba(255,255,255,.018) 68%,rgba(255,255,255,.055) 100%);backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);-webkit-backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);box-shadow:0 2px 3px rgba(4,22,28,.55),0 10px 20px rgba(4,22,28,.34),0 30px 60px rgba(4,22,28,.30),inset 0 1px 0 rgba(255,255,255,.62),inset 0 3px 0 -2px rgba(201,138,85,.42),inset 1px 0 0 rgba(255,255,255,.13),inset -1px 0 0 rgba(255,255,255,.09);transition:transform .25s ease,border-color .25s,box-shadow .25s" style-hover="transform:translateY(-5px);border-color:rgba(255,255,255,.38);box-shadow:0 2px 3px rgba(4,22,28,.55),0 14px 26px rgba(4,22,28,.38),0 36px 68px rgba(4,22,28,.34),inset 0 1px 0 rgba(255,255,255,.78),inset 0 3px 0 -2px rgba(201,138,85,.6),inset 1px 0 0 rgba(255,255,255,.2),inset -1px 0 0 rgba(255,255,255,.14)">
+        <span aria-hidden="true" style="position:absolute;inset:0;border-radius:18px;pointer-events:none;z-index:2;background:linear-gradient(112deg,rgba(255,255,255,.24) 0%,rgba(255,255,255,.06) 30%,rgba(255,255,255,0) 58%,rgba(255,255,255,.11) 100%)"></span>
+        <span style="position:relative;z-index:3;font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.14em;color:#D98E52">[01]</span>
+        <h3 style="position:relative;z-index:3;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.28rem;letter-spacing:-.015em">Livré clé en main</h3>
+        <p style="position:relative;z-index:3;font-size:.98rem;color:#C9D9DB;text-wrap:pretty">Textes, structure, mise en ligne et nom de domaine : tout est compris. Vous validez, c'est en ligne.</p>
+      </div>
+      <div data-glass="" style="align-self:stretch;position:relative;isolation:isolate;display:flex;flex-direction:column;gap:12px;padding:30px 26px;border-radius:18px;border:1px solid rgba(255,255,255,.26);background:linear-gradient(148deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.04) 38%,rgba(255,255,255,.018) 68%,rgba(255,255,255,.055) 100%);backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);-webkit-backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);box-shadow:0 2px 3px rgba(4,22,28,.55),0 10px 20px rgba(4,22,28,.34),0 30px 60px rgba(4,22,28,.30),inset 0 1px 0 rgba(255,255,255,.62),inset 0 3px 0 -2px rgba(201,138,85,.42),inset 1px 0 0 rgba(255,255,255,.13),inset -1px 0 0 rgba(255,255,255,.09);transition:transform .25s ease,border-color .25s,box-shadow .25s" style-hover="transform:translateY(-5px);border-color:rgba(255,255,255,.38);box-shadow:0 2px 3px rgba(4,22,28,.55),0 14px 26px rgba(4,22,28,.38),0 36px 68px rgba(4,22,28,.34),inset 0 1px 0 rgba(255,255,255,.78),inset 0 3px 0 -2px rgba(201,138,85,.6),inset 1px 0 0 rgba(255,255,255,.2),inset -1px 0 0 rgba(255,255,255,.14)">
+        <span aria-hidden="true" style="position:absolute;inset:0;border-radius:18px;pointer-events:none;z-index:2;background:linear-gradient(112deg,rgba(255,255,255,.24) 0%,rgba(255,255,255,.06) 30%,rgba(255,255,255,0) 58%,rgba(255,255,255,.11) 100%)"></span>
+        <span style="position:relative;z-index:3;font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.14em;color:#D98E52">[02]</span>
+        <h3 style="position:relative;z-index:3;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.28rem;letter-spacing:-.015em">Pensé pour Google</h3>
+        <p style="position:relative;z-index:3;font-size:.98rem;color:#C9D9DB;text-wrap:pretty">Référencement local soigné pour être visible sur les recherches de votre région et de votre métier.</p>
+      </div>
+      <div data-glass="" style="align-self:stretch;position:relative;isolation:isolate;display:flex;flex-direction:column;gap:12px;padding:30px 26px;border-radius:18px;border:1px solid rgba(255,255,255,.26);background:linear-gradient(148deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.04) 38%,rgba(255,255,255,.018) 68%,rgba(255,255,255,.055) 100%);backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);-webkit-backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);box-shadow:0 2px 3px rgba(4,22,28,.55),0 10px 20px rgba(4,22,28,.34),0 30px 60px rgba(4,22,28,.30),inset 0 1px 0 rgba(255,255,255,.62),inset 0 3px 0 -2px rgba(201,138,85,.42),inset 1px 0 0 rgba(255,255,255,.13),inset -1px 0 0 rgba(255,255,255,.09);transition:transform .25s ease,border-color .25s,box-shadow .25s" style-hover="transform:translateY(-5px);border-color:rgba(255,255,255,.38);box-shadow:0 2px 3px rgba(4,22,28,.55),0 14px 26px rgba(4,22,28,.38),0 36px 68px rgba(4,22,28,.34),inset 0 1px 0 rgba(255,255,255,.78),inset 0 3px 0 -2px rgba(201,138,85,.6),inset 1px 0 0 rgba(255,255,255,.2),inset -1px 0 0 rgba(255,255,255,.14)">
+        <span aria-hidden="true" style="position:absolute;inset:0;border-radius:18px;pointer-events:none;z-index:2;background:linear-gradient(112deg,rgba(255,255,255,.24) 0%,rgba(255,255,255,.06) 30%,rgba(255,255,255,0) 58%,rgba(255,255,255,.11) 100%)"></span>
+        <span style="position:relative;z-index:3;font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.14em;color:#D98E52">[03]</span>
+        <h3 style="position:relative;z-index:3;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.28rem;letter-spacing:-.015em">Hébergé en Suisse</h3>
+        <p style="position:relative;z-index:3;font-size:.98rem;color:#C9D9DB;text-wrap:pretty">Vos données et celles de vos visiteurs restent en Suisse, conformément à la nLPD.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="offre" data-sec="" data-screen-label="L'offre" style="margin-top:130px">
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:.84rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-align:center;background-image:linear-gradient(118deg,#F2CDA4 0%,#E8B584 22%,#D0955E 46%,#F2CDA4 68%,#C98A55 86%,#E8B584 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 2px rgba(4,22,28,.9)) drop-shadow(0 2px 10px rgba(4,22,28,.7))">L'offre</p>
+    <h2 style="margin:20px auto 0;text-align:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.16;letter-spacing:-.02em;max-width:30ch;text-shadow:0 2px 16px rgba(4,22,28,.5)">Un prix, tout compris.</h2>
+    <div data-grid="offer" data-glass="" style="margin-top:58px;position:relative;isolation:isolate;display:grid;grid-template-columns:1fr 340px;gap:40px;padding:40px 40px;border-radius:18px;border:1px solid rgba(255,255,255,.26);background:linear-gradient(148deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.04) 38%,rgba(255,255,255,.018) 68%,rgba(255,255,255,.055) 100%);backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);-webkit-backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);box-shadow:0 2px 3px rgba(4,22,28,.55),0 10px 20px rgba(4,22,28,.34),0 30px 60px rgba(4,22,28,.30),inset 0 1px 0 rgba(255,255,255,.62),inset 0 3px 0 -2px rgba(201,138,85,.42),inset 1px 0 0 rgba(255,255,255,.13),inset -1px 0 0 rgba(255,255,255,.09)">
+      <span aria-hidden="true" style="position:absolute;inset:0;border-radius:18px;pointer-events:none;z-index:2;background:linear-gradient(112deg,rgba(255,255,255,.24) 0%,rgba(255,255,255,.06) 30%,rgba(255,255,255,0) 58%,rgba(255,255,255,.11) 100%)"></span>
+      <div style="position:relative;z-index:3;display:flex;flex-direction:column;gap:26px">
+        <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(1.4rem,2.4vw,1.85rem);letter-spacing:-.02em;line-height:1.14">Site vitrine professionnel</h3>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:16px">
+          <li style="display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start;color:#E4E9E4"><span aria-hidden="true" style="margin-top:9px;width:8px;height:8px;border-radius:50%;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%)"></span><span style="text-wrap:pretty">Conception, rédaction et mise en ligne complètes.</span></li>
+          <li style="display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start;color:#E4E9E4"><span aria-hidden="true" style="margin-top:9px;width:8px;height:8px;border-radius:50%;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%)"></span><span style="text-wrap:pretty">Formulaire de contact et liens directs appel et WhatsApp.</span></li>
+          <li style="display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start;color:#E4E9E4"><span aria-hidden="true" style="margin-top:9px;width:8px;height:8px;border-radius:50%;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%)"></span><span style="text-wrap:pretty">Maintenance mensuelle : mises à jour, sauvegardes et modifications de contenu.</span></li>
+          <li style="display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start;color:#E4E9E4"><span aria-hidden="true" style="margin-top:9px;width:8px;height:8px;border-radius:50%;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%)"></span><span style="text-wrap:pretty">Un interlocuteur unique, en Valais.</span></li>
+        </ul>
+      </div>
+      <div data-price="" style="position:relative;z-index:3;align-self:stretch;display:flex;flex-direction:column;gap:6px;padding:32px 28px;border-radius:14px;background:#04161C;border:1px solid rgba(255,255,255,.10);box-shadow:inset 0 2px 8px rgba(0,0,0,.65),0 1px 0 rgba(255,255,255,.10)">
+        <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(2.6rem,5.4vw,3.5rem);line-height:1;letter-spacing:-.03em;color:#D98E52">590.–</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#C9D9DB;margin-top:4px">Création, en une fois</span>
+        <span style="margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);font-size:.98rem;color:#E4E9E4">puis <strong style="font-weight:600;color:#F4F1E8">49.–/mois</strong> — hébergement &amp; maintenance</span>
+        <a href="#contact" style="margin-top:26px;display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:999px;font-weight:600;font-size:1rem;color:#04161C;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);box-shadow:0 6px 18px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.42);transition:transform .2s" style-hover="transform:translateY(-2px);color:#04161C">Demander mon site</a>
+        <span style="margin-top:14px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(201,217,219,.72)">Réponse sous 24 h ouvrées</span>
+      </div>
+    </div>
+  </section>
+
+  <section data-sec="" data-screen-label="Comment ça se passe" style="margin-top:130px">
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:.84rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-align:center;background-image:linear-gradient(118deg,#F2CDA4 0%,#E8B584 22%,#D0955E 46%,#F2CDA4 68%,#C98A55 86%,#E8B584 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 2px rgba(4,22,28,.9)) drop-shadow(0 2px 10px rgba(4,22,28,.7))">Comment ça se passe</p>
+    <h2 style="margin:20px auto 0;text-align:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.16;letter-spacing:-.02em;max-width:30ch;text-shadow:0 2px 16px rgba(4,22,28,.5)">Trois rendez-vous, et c'est en ligne.</h2>
+    <div style="margin-top:58px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;align-items:stretch">
+      <div data-glass="" style="align-self:stretch;position:relative;isolation:isolate;display:flex;flex-direction:column;gap:14px;padding:30px 26px;border-radius:18px;border:1px solid rgba(255,255,255,.26);background:linear-gradient(148deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.04) 38%,rgba(255,255,255,.018) 68%,rgba(255,255,255,.055) 100%);backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);-webkit-backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);box-shadow:0 2px 3px rgba(4,22,28,.55),0 10px 20px rgba(4,22,28,.34),0 30px 60px rgba(4,22,28,.30),inset 0 1px 0 rgba(255,255,255,.62),inset 0 3px 0 -2px rgba(201,138,85,.42),inset 1px 0 0 rgba(255,255,255,.13),inset -1px 0 0 rgba(255,255,255,.09)">
+        <span aria-hidden="true" style="position:absolute;inset:0;border-radius:18px;pointer-events:none;z-index:2;background:linear-gradient(112deg,rgba(255,255,255,.24) 0%,rgba(255,255,255,.06) 30%,rgba(255,255,255,0) 58%,rgba(255,255,255,.11) 100%)"></span>
+        <span style="position:relative;z-index:3;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:.82rem;font-weight:500;color:#04161C;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);box-shadow:0 3px 10px rgba(4,22,28,.45),inset 0 1px 0 rgba(255,255,255,.45)">01</span>
+        <h3 style="position:relative;z-index:3;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.24rem;letter-spacing:-.015em">Vous m'écrivez</h3>
+        <p style="position:relative;z-index:3;font-size:.98rem;color:#C9D9DB;text-wrap:pretty">Vingt minutes pour comprendre votre métier, vos clients et ce que le site doit obtenir pour vous.</p>
+        <span style="position:relative;z-index:3;margin-top:auto;padding-top:20px;font-family:'IBM Plex Mono',monospace;font-size:.78rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;background-image:linear-gradient(118deg,#F2CDA4 0%,#E8B584 22%,#D0955E 46%,#F2CDA4 68%,#C98A55 86%,#E8B584 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent">Jour 1</span>
+      </div>
+      <div data-glass="" style="align-self:stretch;position:relative;isolation:isolate;display:flex;flex-direction:column;gap:14px;padding:30px 26px;border-radius:18px;border:1px solid rgba(255,255,255,.26);background:linear-gradient(148deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.04) 38%,rgba(255,255,255,.018) 68%,rgba(255,255,255,.055) 100%);backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);-webkit-backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);box-shadow:0 2px 3px rgba(4,22,28,.55),0 10px 20px rgba(4,22,28,.34),0 30px 60px rgba(4,22,28,.30),inset 0 1px 0 rgba(255,255,255,.62),inset 0 3px 0 -2px rgba(201,138,85,.42),inset 1px 0 0 rgba(255,255,255,.13),inset -1px 0 0 rgba(255,255,255,.09)">
+        <span aria-hidden="true" style="position:absolute;inset:0;border-radius:18px;pointer-events:none;z-index:2;background:linear-gradient(112deg,rgba(255,255,255,.24) 0%,rgba(255,255,255,.06) 30%,rgba(255,255,255,0) 58%,rgba(255,255,255,.11) 100%)"></span>
+        <span style="position:relative;z-index:3;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:.82rem;font-weight:500;color:#04161C;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);box-shadow:0 3px 10px rgba(4,22,28,.45),inset 0 1px 0 rgba(255,255,255,.45)">02</span>
+        <h3 style="position:relative;z-index:3;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.24rem;letter-spacing:-.015em">Je vous montre votre site</h3>
+        <p style="position:relative;z-index:3;font-size:.98rem;color:#C9D9DB;text-wrap:pretty">Pas une maquette abstraite : votre site réel, avec vos textes et vos photos.</p>
+        <span style="position:relative;z-index:3;margin-top:auto;padding-top:20px;font-family:'IBM Plex Mono',monospace;font-size:.78rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;background-image:linear-gradient(118deg,#F2CDA4 0%,#E8B584 22%,#D0955E 46%,#F2CDA4 68%,#C98A55 86%,#E8B584 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent">Sous 48 heures</span>
+      </div>
+      <div data-glass="" style="align-self:stretch;position:relative;isolation:isolate;display:flex;flex-direction:column;gap:14px;padding:30px 26px;border-radius:18px;border:1px solid rgba(255,255,255,.26);background:linear-gradient(148deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.04) 38%,rgba(255,255,255,.018) 68%,rgba(255,255,255,.055) 100%);backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);-webkit-backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);box-shadow:0 2px 3px rgba(4,22,28,.55),0 10px 20px rgba(4,22,28,.34),0 30px 60px rgba(4,22,28,.30),inset 0 1px 0 rgba(255,255,255,.62),inset 0 3px 0 -2px rgba(201,138,85,.42),inset 1px 0 0 rgba(255,255,255,.13),inset -1px 0 0 rgba(255,255,255,.09)">
+        <span aria-hidden="true" style="position:absolute;inset:0;border-radius:18px;pointer-events:none;z-index:2;background:linear-gradient(112deg,rgba(255,255,255,.24) 0%,rgba(255,255,255,.06) 30%,rgba(255,255,255,0) 58%,rgba(255,255,255,.11) 100%)"></span>
+        <span style="position:relative;z-index:3;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:.82rem;font-weight:500;color:#04161C;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);box-shadow:0 3px 10px rgba(4,22,28,.45),inset 0 1px 0 rgba(255,255,255,.45)">03</span>
+        <h3 style="position:relative;z-index:3;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.24rem;letter-spacing:-.015em">Vous validez, c'est en ligne</h3>
+        <p style="position:relative;z-index:3;font-size:.98rem;color:#C9D9DB;text-wrap:pretty">Nom de domaine, hébergement suisse, référencement : tout est en place.</p>
+        <span style="position:relative;z-index:3;margin-top:auto;padding-top:20px;font-family:'IBM Plex Mono',monospace;font-size:.78rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;background-image:linear-gradient(118deg,#F2CDA4 0%,#E8B584 22%,#D0955E 46%,#F2CDA4 68%,#C98A55 86%,#E8B584 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent">Dans la semaine</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" data-sec="" data-screen-label="FAQ" style="margin-top:130px">
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:.84rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-align:center;background-image:linear-gradient(118deg,#F2CDA4 0%,#E8B584 22%,#D0955E 46%,#F2CDA4 68%,#C98A55 86%,#E8B584 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 2px rgba(4,22,28,.9)) drop-shadow(0 2px 10px rgba(4,22,28,.7))">Questions fréquentes</p>
+    <h2 style="margin:20px auto 0;text-align:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.16;letter-spacing:-.02em;max-width:30ch;text-shadow:0 2px 16px rgba(4,22,28,.5)">Ce qu'on me demande le plus souvent.</h2>
+    <div style="margin-top:58px;display:flex;flex-direction:column;gap:12px">
+      <details open="{{ true }}" data-glass="" style="position:relative;isolation:isolate;border-radius:18px;border:1px solid rgba(255,255,255,.26);background:linear-gradient(148deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.04) 38%,rgba(255,255,255,.018) 68%,rgba(255,255,255,.055) 100%);backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);-webkit-backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);box-shadow:0 2px 3px rgba(4,22,28,.55),0 10px 20px rgba(4,22,28,.34),0 30px 60px rgba(4,22,28,.30),inset 0 1px 0 rgba(255,255,255,.62),inset 0 3px 0 -2px rgba(201,138,85,.42),inset 1px 0 0 rgba(255,255,255,.13),inset -1px 0 0 rgba(255,255,255,.09)">
+        <summary style="position:relative;z-index:3;display:flex;align-items:center;gap:18px;padding:22px 26px;cursor:pointer;list-style:none;font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.06rem;letter-spacing:-.01em"><span style="flex:1">Qui écrit les textes ?</span><span data-sign="" aria-hidden="true" style="font-family:'IBM Plex Mono',monospace;font-size:1.25rem;line-height:1;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent"></span></summary>
+        <p style="position:relative;z-index:3;padding:0 26px 24px;color:#C9D9DB;max-width:66ch;text-wrap:pretty">Moi. Vous me racontez votre métier lors de l'appel, je rédige et vous validez.</p>
+      </details>
+      <details data-glass="" style="position:relative;isolation:isolate;border-radius:18px;border:1px solid rgba(255,255,255,.26);background:linear-gradient(148deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.04) 38%,rgba(255,255,255,.018) 68%,rgba(255,255,255,.055) 100%);backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);-webkit-backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);box-shadow:0 2px 3px rgba(4,22,28,.55),0 10px 20px rgba(4,22,28,.34),0 30px 60px rgba(4,22,28,.30),inset 0 1px 0 rgba(255,255,255,.62),inset 0 3px 0 -2px rgba(201,138,85,.42),inset 1px 0 0 rgba(255,255,255,.13),inset -1px 0 0 rgba(255,255,255,.09)">
+        <summary style="position:relative;z-index:3;display:flex;align-items:center;gap:18px;padding:22px 26px;cursor:pointer;list-style:none;font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.06rem;letter-spacing:-.01em"><span style="flex:1">Que couvre le forfait de 49 francs ?</span><span data-sign="" aria-hidden="true" style="font-family:'IBM Plex Mono',monospace;font-size:1.25rem;line-height:1;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent"></span></summary>
+        <p style="position:relative;z-index:3;padding:0 26px 24px;color:#C9D9DB;max-width:66ch;text-wrap:pretty">Hébergement en Suisse, nom de domaine, certificat de sécurité, sauvegardes, mises à jour techniques et vos modifications de contenu.</p>
+      </details>
+      <details data-glass="" style="position:relative;isolation:isolate;border-radius:18px;border:1px solid rgba(255,255,255,.26);background:linear-gradient(148deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.04) 38%,rgba(255,255,255,.018) 68%,rgba(255,255,255,.055) 100%);backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);-webkit-backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);box-shadow:0 2px 3px rgba(4,22,28,.55),0 10px 20px rgba(4,22,28,.34),0 30px 60px rgba(4,22,28,.30),inset 0 1px 0 rgba(255,255,255,.62),inset 0 3px 0 -2px rgba(201,138,85,.42),inset 1px 0 0 rgba(255,255,255,.13),inset -1px 0 0 rgba(255,255,255,.09)">
+        <summary style="position:relative;z-index:3;display:flex;align-items:center;gap:18px;padding:22px 26px;cursor:pointer;list-style:none;font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.06rem;letter-spacing:-.01em"><span style="flex:1">Et si j'arrête l'abonnement ?</span><span data-sign="" aria-hidden="true" style="font-family:'IBM Plex Mono',monospace;font-size:1.25rem;line-height:1;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent"></span></summary>
+        <p style="position:relative;z-index:3;padding:0 26px 24px;color:#C9D9DB;max-width:66ch;text-wrap:pretty">Le site et le nom de domaine vous appartiennent. Je vous transmets tout, vous ne perdez rien.</p>
+      </details>
+      <details data-glass="" style="position:relative;isolation:isolate;border-radius:18px;border:1px solid rgba(255,255,255,.26);background:linear-gradient(148deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.04) 38%,rgba(255,255,255,.018) 68%,rgba(255,255,255,.055) 100%);backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);-webkit-backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);box-shadow:0 2px 3px rgba(4,22,28,.55),0 10px 20px rgba(4,22,28,.34),0 30px 60px rgba(4,22,28,.30),inset 0 1px 0 rgba(255,255,255,.62),inset 0 3px 0 -2px rgba(201,138,85,.42),inset 1px 0 0 rgba(255,255,255,.13),inset -1px 0 0 rgba(255,255,255,.09)">
+        <summary style="position:relative;z-index:3;display:flex;align-items:center;gap:18px;padding:22px 26px;cursor:pointer;list-style:none;font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.06rem;letter-spacing:-.01em"><span style="flex:1">Je veux changer un texte ou une photo. C'est possible ?</span><span data-sign="" aria-hidden="true" style="font-family:'IBM Plex Mono',monospace;font-size:1.25rem;line-height:1;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent"></span></summary>
+        <p style="position:relative;z-index:3;padding:0 26px 24px;color:#C9D9DB;max-width:66ch;text-wrap:pretty">Vous m'envoyez le changement, je le fais. C'est compris dans le forfait.</p>
+      </details>
+      <details data-glass="" style="position:relative;isolation:isolate;border-radius:18px;border:1px solid rgba(255,255,255,.26);background:linear-gradient(148deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.04) 38%,rgba(255,255,255,.018) 68%,rgba(255,255,255,.055) 100%);backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);-webkit-backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);box-shadow:0 2px 3px rgba(4,22,28,.55),0 10px 20px rgba(4,22,28,.34),0 30px 60px rgba(4,22,28,.30),inset 0 1px 0 rgba(255,255,255,.62),inset 0 3px 0 -2px rgba(201,138,85,.42),inset 1px 0 0 rgba(255,255,255,.13),inset -1px 0 0 rgba(255,255,255,.09)">
+        <summary style="position:relative;z-index:3;display:flex;align-items:center;gap:18px;padding:22px 26px;cursor:pointer;list-style:none;font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.06rem;letter-spacing:-.01em"><span style="flex:1">Pourquoi un site vitrine plutôt qu'un grand site ?</span><span data-sign="" aria-hidden="true" style="font-family:'IBM Plex Mono',monospace;font-size:1.25rem;line-height:1;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent"></span></summary>
+        <p style="position:relative;z-index:3;padding:0 26px 24px;color:#C9D9DB;max-width:66ch;text-wrap:pretty">Parce que pour la plupart des indépendants, un site vitrine bien construit convertit mieux qu'un grand site que personne ne parcourt.</p>
+      </details>
+    </div>
+  </section>
+
+  <section data-sec="" data-screen-label="Passerelle" style="margin-top:130px">
+    <div style="display:flex;flex-direction:column;gap:14px;padding:34px 36px;border-radius:18px;border:1px solid rgba(255,255,255,.16);background:rgba(4,22,28,.30);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)">
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:#C9D9DB">Autre offre</p>
+      <p style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:clamp(1.16rem,2.2vw,1.44rem);line-height:1.3;letter-spacing:-.015em;max-width:40ch;text-wrap:pretty">Votre site est en ligne ? <a href="securite.html" style="color:#D98E52;border-bottom:1px solid rgba(217,142,82,.42)" style-hover="color:#F2CDA4">Découvrez la surveillance de votre exposition.</a></p>
+    </div>
+  </section>
+
+  <section id="contact" data-sec="" data-screen-label="Contact" style="margin-top:130px">
+    <div data-glass="" style="position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;padding:56px 40px 50px;border-radius:18px;border:1px solid rgba(255,255,255,.26);background:linear-gradient(148deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.04) 38%,rgba(255,255,255,.018) 68%,rgba(255,255,255,.055) 100%);backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);-webkit-backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);box-shadow:0 2px 3px rgba(4,22,28,.55),0 10px 20px rgba(4,22,28,.34),0 30px 60px rgba(4,22,28,.30),inset 0 1px 0 rgba(255,255,255,.62),inset 1px 0 0 rgba(255,255,255,.13),inset -1px 0 0 rgba(255,255,255,.09)">
+      <span aria-hidden="true" style="position:absolute;top:0;left:0;right:0;height:5px;z-index:3;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%)"></span>
+      <span aria-hidden="true" style="position:absolute;inset:0;border-radius:18px;pointer-events:none;z-index:2;background:linear-gradient(112deg,rgba(255,255,255,.24) 0%,rgba(255,255,255,.06) 30%,rgba(255,255,255,0) 58%,rgba(255,255,255,.11) 100%)"></span>
+      <h2 style="position:relative;z-index:3;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(1.7rem,3.4vw,2.5rem);line-height:1.1;letter-spacing:-.02em;max-width:26ch">Vingt minutes suffisent pour savoir si c'est pour vous.</h2>
+      <p style="position:relative;z-index:3;max-width:56ch;color:#C9D9DB;text-wrap:pretty">Écrivez-moi. Si votre projet ne correspond pas à ce que je fais, je vous le dirai franchement.</p>
+      <div style="position:relative;z-index:3;margin-top:16px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center">
+        <a href="{{ waHref }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;padding:15px 30px;border-radius:999px;font-weight:600;font-size:1.04rem;color:#F4F1E8;border:1px solid rgba(244,241,232,.42);background:rgba(4,22,28,.24);transition:border-color .2s,background .2s" style-hover="border-color:rgba(244,241,232,.8);background:rgba(244,241,232,.10);color:#F4F1E8">Écrire sur WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer style="position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 24px 60px">
+  <span aria-hidden="true" style="display:block;height:2px;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);opacity:.55"></span>
+  <div style="margin-top:26px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:space-between;font-size:.9rem;color:rgba(201,217,219,.8)">
+    <span>Bisse IA — Sion, Valais</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase">Hébergement suisse — nLPD</span>
+    <nav aria-label="Informations légales" style="display:flex;gap:14px;flex-wrap:wrap;width:100%;padding-top:14px;margin-top:4px;border-top:1px solid rgba(255,255,255,.10)">
+      <a href="mentions-legales.html#impressum" style="color:inherit" style-hover="color:#F4F1E8">Mentions légales</a>
+      <a href="mentions-legales.html#confidentialite" style="color:inherit" style-hover="color:#F4F1E8">Confidentialité</a>
+      <a href="mentions-legales.html#droits" style="color:inherit" style-hover="color:#F4F1E8">Droits nLPD</a>
+    </nav>
+  </div>
+</footer>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;phone&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;077 924 69 78&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const digits = (this.props.phone ?? '077 924 69 78').replace(/\D/g, '').replace(/^0/, '');
+    return {
+      telHref: 'tel:+41' + digits,
+      waHref: 'https://wa.me/41' + digits
+    };
+  }
+}
+
+</script>
+</body>
+</html>

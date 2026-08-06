@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="fonts.css"><link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background-color:#0A2028;background-image:linear-gradient(180deg, rgba(10,32,40,0) 0%, rgba(10,32,40,.14) 44%, rgba(10,32,40,.78) 84%, #0A2028 100%),linear-gradient(96deg, rgba(4,22,28,.62) 0%, rgba(4,22,28,.10) 50%, rgba(4,22,28,.62) 100%),url("uploads/mur-petrole-reseaux.png");background-repeat:no-repeat,no-repeat,no-repeat;background-size:100% 120vh,100% 120vh,auto 120vh;background-position:center top,center top,center top;background-attachment:scroll,scroll,scroll;color:#F4F1E8;font-family:'Figtree',sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:#EBD08A;text-decoration:none}
+a:hover{color:#F6E6B8}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2.5px solid #EBD08A;outline-offset:3px}
+@supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){[data-glass]{background:rgba(18,54,66,.86) !important}}
+@keyframes drift1{to{transform:translate(8vw,6vh) scale(1.13)}}
+@keyframes drift2{to{transform:translate(-7vw,-6vh) scale(1.10)}}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes pulse{from{opacity:.45;transform:scale(.86)}to{opacity:1;transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){*{animation:none !important}}
+@media(max-width:860px){
+  body{background-attachment:scroll}
+  [data-hero]{min-height:auto !important;padding:56px 0 48px !important}
+}
+</style>
+</helmet>
+
+<div aria-hidden="true" style="position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden">
+  <span style="position:absolute;border-radius:50%;filter:blur(84px);width:42vw;height:42vw;left:-9vw;top:2vh;background:radial-gradient(circle,#3FA9C4 0%,transparent 68%);opacity:.11;animation:drift1 28s ease-in-out infinite alternate"></span>
+  <span style="position:absolute;border-radius:50%;filter:blur(84px);width:34vw;height:34vw;left:26vw;bottom:-12vh;background:radial-gradient(circle,#0E6E7A 0%,transparent 70%);opacity:.13;animation:drift2 33s ease-in-out infinite alternate"></span>
+</div>
+<div aria-hidden="true" style="position:fixed;inset:-100px;z-index:0;pointer-events:none;opacity:.07;mix-blend-mode:overlay;background-image:url(&quot;data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='220'%20height='220'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='.85'%20numOctaves='3'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20type='saturate'%20values='0'/%3E%3C/filter%3E%3Crect%20width='220'%20height='220'%20filter='url(%23n)'/%3E%3C/svg%3E&quot;)"></div>
+<div aria-hidden="true" style="position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(122% 96% at 50% 46%, rgba(4,22,28,0) 52%, rgba(4,22,28,.30) 100%)"></div>
+
+<header style="position:sticky;top:0;z-index:50;background:rgba(4,22,28,.82);backdrop-filter:blur(12px) saturate(1.1);-webkit-backdrop-filter:blur(12px) saturate(1.1);box-shadow:0 1px 0 rgba(255,255,255,.07)">
+  <div style="max-width:1080px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+    <a href="index.html#accueil" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.25rem;letter-spacing:-.01em;margin-right:auto;color:#F4F1E8">Bisse <span style="background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 2px rgba(4,22,28,.6))">IA</span></a>
+    <nav aria-label="Pages" style="display:flex;gap:4px;flex-wrap:wrap">
+      <a href="index.html#accueil" style="border-radius:999px;padding:8px 16px;font-weight:600;font-size:.92rem;color:#C9D9DB;transition:background .2s,color .2s" style-hover="background:rgba(244,241,232,.14);color:#F4F1E8">Accueil</a>
+      <a href="web.html" style="border-radius:999px;padding:8px 16px;font-weight:600;font-size:.92rem;color:#C9D9DB;transition:background .2s,color .2s" style-hover="background:rgba(244,241,232,.14);color:#F4F1E8">Web</a>
+      <a href="securite.html" style="border-radius:999px;padding:8px 16px;font-weight:600;font-size:.92rem;color:#C9D9DB;transition:background .2s,color .2s" style-hover="background:rgba(244,241,232,.14);color:#F4F1E8">Sécurité</a>
+      <a href="#hero" aria-current="page" style="border-radius:999px;padding:8px 16px;font-weight:600;font-size:.92rem;background:#F4F1E8;color:#04161C">Réseaux sociaux</a>
+    </nav>
+  </div>
+  <span aria-hidden="true" style="display:block;height:2px;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);opacity:.55"></span>
+</header>
+
+<main style="position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 24px 120px">
+  <section id="hero" data-hero="" data-screen-label="Réseaux sociaux — bientôt" style="min-height:calc(100svh - 98px);display:flex;flex-direction:column;justify-content:center;padding-bottom:40px;animation:fade .4s ease">
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:.84rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;background-image:linear-gradient(118deg,#F2CDA4 0%,#E8B584 22%,#D0955E 46%,#F2CDA4 68%,#C98A55 86%,#E8B584 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 2px rgba(4,22,28,.9)) drop-shadow(0 2px 10px rgba(4,22,28,.7));margin-bottom:22px">Réseaux sociaux — Faire vivre</p>
+
+    <span style="display:inline-flex;align-items:center;gap:10px;align-self:flex-start;padding:9px 18px 9px 14px;border-radius:999px;border:1px solid rgba(235,208,138,.42);background:rgba(4,22,28,.42);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-family:'IBM Plex Mono',monospace;font-size:.76rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#EBD08A;margin-bottom:26px">
+      <span aria-hidden="true" style="width:8px;height:8px;border-radius:50%;background:#EBD08A;box-shadow:0 0 10px rgba(235,208,138,.8);animation:pulse 1.9s ease-in-out infinite alternate"></span>Bientôt disponible
+    </span>
+
+    <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.03;letter-spacing:-.02em;max-width:18ch;text-shadow:0 2px 20px rgba(4,22,28,.55)">Présent chaque semaine, <em style="font-style:normal;color:#EBD08A;text-shadow:0 2px 16px rgba(4,22,28,.7)">sans y passer vos soirées</em>.</h1>
+    <p style="margin-top:28px;max-width:56ch;font-size:1.14rem;color:#C9D9DB;text-wrap:pretty;text-shadow:0 1px 12px rgba(4,22,28,.5)">Vos clients sont sur Instagram, Facebook et LinkedIn — mais votre métier, c'est le vôtre, pas la création de contenu. Le copilote prépare, vous validez en deux minutes, c'est publié.</p>
+    <p style="margin-top:20px;max-width:56ch;font-size:1.05rem;color:#C9D9DB;text-wrap:pretty;text-shadow:0 1px 12px rgba(4,22,28,.5)">L'offre ouvre bientôt. Si elle vous intéresse, faites-le-moi savoir : les premières places partiront aux personnes qui se seront annoncées.</p>
+
+    <div style="margin-top:42px;display:flex;gap:14px;flex-wrap:wrap;align-items:stretch">
+      <a href="{{ mailHref }}" style="display:inline-flex;align-items:center;padding:15px 30px;border-radius:999px;font-weight:600;font-size:1rem;color:#04161C;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);box-shadow:0 8px 22px rgba(4,22,28,.42),inset 0 1px 0 rgba(255,255,255,.42);transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-2px);box-shadow:0 12px 28px rgba(4,22,28,.5),inset 0 1px 0 rgba(255,255,255,.5);color:#04161C">Prévenez-moi</a>
+      <a href="{{ waHref }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;padding:15px 30px;border-radius:999px;font-weight:600;font-size:1rem;color:#F4F1E8;border:1px solid rgba(244,241,232,.42);background:rgba(4,22,28,.24);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:border-color .2s,background .2s" style-hover="border-color:rgba(244,241,232,.8);background:rgba(244,241,232,.10);color:#F4F1E8">Écrire sur WhatsApp</a>
+    </div>
+  </section>
+
+  <section data-screen-label="Offres disponibles" style="margin-top:20px">
+    <div data-glass="" style="position:relative;isolation:isolate;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;padding:34px 36px;border-radius:18px;border:1px solid rgba(255,255,255,.26);background:linear-gradient(148deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.04) 38%,rgba(255,255,255,.018) 68%,rgba(255,255,255,.055) 100%);backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);-webkit-backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);box-shadow:0 2px 3px rgba(4,22,28,.55),0 10px 20px rgba(4,22,28,.34),0 30px 60px rgba(4,22,28,.30),inset 0 1px 0 rgba(255,255,255,.62),inset 0 3px 0 -2px rgba(201,138,85,.42),inset 1px 0 0 rgba(255,255,255,.13),inset -1px 0 0 rgba(255,255,255,.09)">
+      <span aria-hidden="true" style="position:absolute;inset:0;border-radius:18px;pointer-events:none;z-index:2;background:linear-gradient(112deg,rgba(255,255,255,.24) 0%,rgba(255,255,255,.06) 30%,rgba(255,255,255,0) 58%,rgba(255,255,255,.11) 100%)"></span>
+      <div style="position:relative;z-index:3;display:flex;flex-direction:column;gap:8px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:.78rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#C9D9DB">En attendant</span>
+        <p style="font-size:1.02rem;color:#C9D9DB;text-wrap:pretty;max-width:34ch">Les deux autres offres, elles, sont déjà en place.</p>
+      </div>
+      <div style="position:relative;z-index:3;display:flex;flex-direction:column;gap:12px;justify-content:center">
+        <a href="web.html" style="display:flex;align-items:baseline;gap:12px;color:#F4F1E8;font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.08rem;transition:color .2s" style-hover="color:#9CC4E4"><span aria-hidden="true" style="font-family:'IBM Plex Mono',monospace;color:#9CC4E4">→</span>Votre site vitrine</a>
+        <a href="securite.html" style="display:flex;align-items:baseline;gap:12px;color:#F4F1E8;font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.08rem;transition:color .2s" style-hover="color:#7FD8C6"><span aria-hidden="true" style="font-family:'IBM Plex Mono',monospace;color:#7FD8C6">→</span>Votre sécurité</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer style="position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 24px 60px">
+  <span aria-hidden="true" style="display:block;height:2px;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);opacity:.55"></span>
+  <div style="margin-top:26px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:space-between;font-size:.9rem;color:rgba(201,217,219,.8)">
+    <span>Bisse IA — Sion, Valais</span>
+    <nav aria-label="Informations légales" style="display:flex;gap:14px;flex-wrap:wrap;width:100%;padding-top:14px;margin-top:4px;border-top:1px solid rgba(255,255,255,.10)">
+      <a href="mentions-legales.html#impressum" style="color:inherit" style-hover="color:#F4F1E8">Mentions légales</a>
+      <a href="mentions-legales.html#confidentialite" style="color:inherit" style-hover="color:#F4F1E8">Confidentialité</a>
+      <a href="mentions-legales.html#droits" style="color:inherit" style-hover="color:#F4F1E8">Droits nLPD</a>
+    </nav>
+  </div>
+</footer>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;phone&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;077 924 69 78&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;},&quot;contactEmail&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;admin@bisse-ia.ch&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const digits = (this.props.phone ?? '077 924 69 78').replace(/\D/g, '').replace(/^0/, '');
+    const mail = this.props.contactEmail ?? 'contact@bisse-ia.ch';
+    return {
+      telHref: 'tel:+41' + digits,
+      waHref: 'https://wa.me/41' + digits,
+      mailHref: 'mailto:' + mail + '?subject=' + encodeURIComponent('Réseaux sociaux — prévenez-moi au lancement')
+    };
+  }
+}
+
+</script>
+</body>
+</html>

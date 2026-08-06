@@ -1,171 +1,104 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Mentions légales, confidentialité &amp; droits nLPD · Bisse IA — Turiya</title>
-<link rel="icon" type="image/png" sizes="128x128" href="favicon-128.png" />
-<link rel="apple-touch-icon" sizes="512x512" href="apple-touch-icon.png" />
-<meta name="description" content="Mentions légales, politique de confidentialité (conforme nLPD) et droits sur vos données du site bisse-ia.ch. Éditeur Rodrigue Bruppacher · Bisse IA, Sion. Hébergement en Suisse (Infomaniak, Genève), sans cookie ni traceur." />
-<link rel="canonical" href="https://bisse-ia.ch/mentions-legales.html" />
-<meta name="robots" content="index, follow" />
-<meta name="author" content="Rodrigue Bruppacher · Bisse IA" />
-<meta property="og:type" content="website" />
-<meta property="og:locale" content="fr_CH" />
-<meta property="og:site_name" content="Bisse IA — Turiya" />
-<meta property="og:title" content="Mentions légales, confidentialité &amp; droits nLPD · Bisse IA — Turiya" />
-<meta property="og:description" content="Mentions légales, politique de confidentialité (nLPD) et droits sur vos données. Hébergement en Suisse, sans cookie ni traceur." />
-<meta property="og:url" content="https://bisse-ia.ch/mentions-legales.html" />
-<!-- Polices AUTO-HÉBERGÉES — aucun appel à Google. Voir fonts/FONTS.md. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mentions légales, confidentialité & vos droits — Bisse IA</title>
+<meta name="description" content="Informations légales de bisse-ia.ch : éditeur, hébergement suisse, politique de confidentialité conforme nLPD et vos droits sur vos données.">
+<link rel="stylesheet" href="fonts.css"><link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>
-  @font-face { font-family: 'Sora'; font-style: normal; font-weight: 300; font-display: swap; src: url('fonts/sora-300.woff2') format('woff2'); }
-  @font-face { font-family: 'Sora'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/sora-400.woff2') format('woff2'); }
-  @font-face { font-family: 'Sora'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/sora-600.woff2') format('woff2'); }
-  @font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/ibm-plex-mono-400.woff2') format('woff2'); }
-  @font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 500; font-display: swap; src: url('fonts/ibm-plex-mono-500.woff2') format('woff2'); }
-  @font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/ibm-plex-mono-600.woff2') format('woff2'); }
-</style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Bisse IA",
-  "alternateName": "Turiya",
-  "url": "https://bisse-ia.ch",
-  "email": "admin@bisse-ia.ch",
-  "telephone": "+41779246978",
-  "founder": { "@type": "Person", "name": "Rodrigue Bruppacher" },
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Rue des Champs de Tabac 12",
-    "postalCode": "1950",
-    "addressLocality": "Sion",
-    "addressRegion": "Valais",
-    "addressCountry": "CH"
-  },
-  "areaServed": "CH"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://bisse-ia.ch/" },
-    { "@type": "ListItem", "position": 2, "name": "Mentions légales & confidentialité", "item": "https://bisse-ia.ch/mentions-legales.html" }
-  ]
-}
-</script>
-<style>
-  :root {
-    --bg: #060d12;
-    --bg-2: #0a161e;
-    --bg-panel: #0e1c26;
-    --glacier: #7fd4e8;
-    --glacier-deep: #4ba6bd;
-    --mist: #dfe9ec;
-    --mist-70: rgba(223, 233, 236, 0.74);
-    --mist-45: rgba(223, 233, 236, 0.52);
-    --line: rgba(127, 212, 232, 0.18);
-    --line-soft: rgba(127, 212, 232, 0.09);
-    --sans: 'Sora', system-ui, sans-serif;
-    --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  :root{
+    --petrole:#0C2F3C; --petrole-noir:#04161C; --ivoire:#F4F1E8;
+    --ivoire-2:#C9D9DB; --ivoire-3:#E4E9E4; --web:#9CC4E4;
+    --sans:'Figtree',system-ui,sans-serif; --display:'Bricolage Grotesque',sans-serif; --mono:'IBM Plex Mono',monospace;
+    --gold:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);
   }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg); color: var(--mist);
-    font-family: var(--sans); font-weight: 300; line-height: 1.68;
-    -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    font-family:var(--sans);color:var(--ivoire);line-height:1.65;
+    background:
+      radial-gradient(1100px 620px at 78% -8%, #123a49 0%, rgba(18,58,73,0) 60%),
+      linear-gradient(180deg,var(--petrole) 0%,#0a2733 60%,var(--petrole-noir) 100%);
+    background-attachment:fixed;min-height:100vh;
+    -webkit-font-smoothing:antialiased;
   }
-  ::selection { background: rgba(127, 212, 232, 0.3); }
-  a { color: var(--glacier); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  a:focus-visible, button:focus-visible { outline: 2px solid var(--glacier); outline-offset: 3px; border-radius: 2px; }
-  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
-  .k-label { font-family: var(--mono); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--glacier); }
+  a{color:var(--ivoire);text-decoration:none;transition:color .2s}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .k-label{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--web)}
 
-  /* NAV */
-  nav {
-    position: sticky; top: 0; z-index: 50;
-    backdrop-filter: blur(14px); background: rgba(6, 13, 18, 0.74);
-    border-bottom: 1px solid var(--line-soft);
-  }
-  .nav-in { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-  .brand { font-family: var(--mono); font-size: 0.95rem; font-weight: 500; letter-spacing: 0.08em; color: var(--mist); }
-  .brand b { color: var(--glacier); font-weight: 500; }
-  .nav-back { font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mist-70); display: inline-flex; align-items: center; gap: 8px; }
-  .nav-back:hover { color: var(--glacier); text-decoration: none; }
+  /* header */
+  header.nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(14px);background:linear-gradient(180deg,rgba(4,22,28,.72),rgba(4,22,28,.42));border-bottom:1px solid rgba(255,255,255,.10)}
+  header.nav .wrap{display:flex;align-items:center;gap:14px;padding-top:16px;padding-bottom:16px;flex-wrap:wrap}
+  .brand{font-family:var(--display);font-weight:800;font-size:1.25rem;letter-spacing:-.01em;margin-right:auto;color:var(--ivoire)}
+  .brand span{background-image:var(--gold);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 2px rgba(4,22,28,.6))}
+  .back{font-family:var(--mono);font-size:.8rem;letter-spacing:.06em;color:var(--ivoire-2);border:1px solid rgba(255,255,255,.20);border-radius:999px;padding:8px 16px}
+  .back:hover{color:var(--ivoire);border-color:rgba(255,255,255,.42);background:rgba(255,255,255,.06)}
 
-  /* HEADER */
-  header.legal-hero { padding: 80px 0 56px; border-bottom: 1px solid var(--line-soft); position: relative; overflow: hidden; }
-  header.legal-hero::before {
-    content: ""; position: absolute; inset: 0; pointer-events: none;
-    background: radial-gradient(620px 360px at 80% -10%, rgba(127,212,232,0.08), transparent 70%);
-  }
-  header.legal-hero h1 { position: relative; font-size: clamp(2.1rem, 3.6vw, 3rem); font-weight: 300; letter-spacing: -0.02em; line-height: 1.08; margin: 18px 0 20px; text-wrap: balance; }
-  header.legal-hero h1 b { font-weight: 600; color: var(--glacier); }
-  header.legal-hero p { position: relative; color: var(--mist-70); font-size: 1.06rem; max-width: 60ch; text-wrap: pretty; }
-  .updated { position: relative; margin-top: 26px; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mist-45); }
+  /* hero */
+  .legal-hero{padding:64px 0 20px}
+  .legal-hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.6vw,3.1rem);line-height:1.05;letter-spacing:-.02em;margin:14px 0 16px}
+  .legal-hero h1 b{background-image:var(--gold);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;font-weight:800}
+  .legal-hero p{max-width:64ch;color:var(--ivoire-2)}
+  .updated{font-family:var(--mono);font-size:.78rem;color:var(--ivoire-2);opacity:.75;margin-top:12px}
 
-  /* LAYOUT */
-  .legal-grid { display: grid; grid-template-columns: 240px 1fr; gap: 64px; padding: 64px 0 40px; align-items: start; }
-  .toc { position: sticky; top: 96px; }
-  .toc h2 { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mist-45); margin-bottom: 18px; }
-  .toc ol { list-style: none; display: flex; flex-direction: column; gap: 2px; counter-reset: toc; }
-  .toc a { display: flex; gap: 12px; padding: 9px 0; font-size: 0.92rem; color: var(--mist-70); border-bottom: 1px solid var(--line-soft); }
-  .toc a:hover { color: var(--glacier); text-decoration: none; }
-  .toc a::before { counter-increment: toc; content: counter(toc, decimal-leading-zero); font-family: var(--mono); font-size: 0.72rem; color: var(--glacier-deep); }
+  /* grid + toc */
+  .legal-grid{display:grid;grid-template-columns:230px 1fr;gap:48px;padding:36px 0 40px;align-items:start}
+  .toc{position:sticky;top:96px}
+  .toc h2{font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ivoire-2);margin-bottom:14px}
+  .toc ol{list-style:none;counter-reset:t;display:flex;flex-direction:column;gap:2px}
+  .toc li{counter-increment:t}
+  .toc a{display:block;padding:9px 12px;border-radius:10px;color:var(--ivoire-2);font-size:.92rem;border:1px solid transparent}
+  .toc a::before{content:counter(t,decimal-leading-zero);font-family:var(--mono);font-size:.72rem;color:var(--web);margin-right:10px}
+  .toc a:hover{color:var(--ivoire);background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)}
 
-  /* SECTIONS */
-  .legal-body { min-width: 0; }
-  .legal-section { padding-bottom: 64px; margin-bottom: 64px; border-bottom: 1px solid var(--line-soft); scroll-margin-top: 96px; }
-  .legal-section:last-child { border-bottom: 0; margin-bottom: 0; }
-  .legal-section > .k-label { display: block; margin-bottom: 12px; }
-  .legal-section h2 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); font-weight: 300; letter-spacing: -0.015em; line-height: 1.12; margin-bottom: 8px; text-wrap: balance; }
-  .legal-section h2 b { font-weight: 600; color: var(--glacier); }
-  .legal-section > .sub { color: var(--mist-70); font-size: 1.04rem; margin: 14px 0 4px; max-width: 64ch; text-wrap: pretty; }
-  .legal-section h3 { font-size: 1.04rem; font-weight: 500; color: var(--mist); margin: 38px 0 10px; letter-spacing: 0.01em; }
-  .legal-section p { color: var(--mist-70); margin-bottom: 14px; max-width: 68ch; text-wrap: pretty; }
-  .legal-section ul { list-style: none; display: flex; flex-direction: column; gap: 11px; margin: 6px 0 18px; max-width: 68ch; }
-  .legal-section li { color: var(--mist-70); display: flex; gap: 13px; align-items: baseline; }
-  .legal-section li::before { content: "—"; color: var(--glacier); flex-shrink: 0; }
-  .legal-section li b { color: var(--mist); font-weight: 500; }
-  .legal-section strong { color: var(--mist); font-weight: 500; }
+  .legal-body{min-width:0}
+  .legal-section{scroll-margin-top:96px;padding:26px 0 34px;border-top:1px solid rgba(255,255,255,.10)}
+  .legal-section:first-child{border-top:0;padding-top:0}
+  .legal-section h2{font-family:var(--display);font-weight:800;font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.01em;margin:8px 0 6px}
+  .legal-section h2 b{background-image:var(--gold);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+  .legal-section .sub{font-family:var(--mono);font-size:.8rem;color:var(--ivoire-2);opacity:.8;margin-bottom:18px}
+  .legal-section h3{font-family:var(--display);font-weight:600;font-size:1.08rem;margin:24px 0 8px;color:var(--ivoire)}
+  .legal-section p{color:var(--ivoire-2);margin:8px 0}
+  .legal-section a{color:var(--web);text-decoration:underline;text-underline-offset:2px}
+  .legal-section a:hover{color:#c4dcf2}
+  .legal-section ul{margin:10px 0 10px 2px;padding-left:18px;color:var(--ivoire-3)}
+  .legal-section li{margin:6px 0}
+  .legal-section li b{color:var(--ivoire)}
+  .info-card{margin:14px 0;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:18px 20px}
+  .ic-name{font-family:var(--display);font-weight:600;color:var(--ivoire);margin-bottom:4px}
+  .ic-line{color:var(--ivoire-2);font-size:.95rem}
+  .ic-line a{color:var(--web)}
+  .callout{margin:16px 0;background:linear-gradient(148deg,rgba(156,196,228,.12),rgba(156,196,228,.03));border:1px solid rgba(156,196,228,.28);border-radius:14px;padding:18px 20px}
+  .callout .ck{display:inline-block;font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--web);margin-bottom:8px}
+  .callout p{color:var(--ivoire-3);margin:0}
 
-  /* address / contact card */
-  .info-card { margin: 8px 0 18px; border: 1px solid var(--line); border-left: 2px solid var(--glacier); border-radius: 4px; background: var(--bg-panel); padding: 24px 28px; max-width: 60ch; }
-  .info-card .ic-name { font-size: 1.06rem; color: var(--mist); font-weight: 500; }
-  .info-card .ic-line { font-family: var(--mono); font-size: 0.88rem; color: var(--mist-70); line-height: 1.9; }
-  .info-card .ic-line a { color: var(--glacier); }
+  /* footer */
+  footer.ft{margin-top:20px;background:linear-gradient(180deg,rgba(4,22,28,.55),var(--petrole-noir))}
+  footer.ft .bar{display:block;height:1px;background-image:var(--gold);opacity:.7}
+  footer.ft .wrap{display:flex;gap:16px;flex-wrap:wrap;align-items:center;padding-top:26px;padding-bottom:26px;font-size:.85rem;color:var(--ivoire-2)}
+  footer.ft .cpr{margin-right:auto}
+  footer.ft nav{display:flex;gap:14px;flex-wrap:wrap}
+  footer.ft nav a{color:inherit}
+  footer.ft nav a:hover{color:var(--ivoire)}
 
-  .callout { margin: 8px 0 18px; border: 1px solid var(--line-soft); border-radius: 4px; background: rgba(127,212,232,0.04); padding: 20px 24px; max-width: 66ch; }
-  .callout p { margin: 0; color: var(--mist); }
-  .callout .ck { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--glacier); display: block; margin-bottom: 9px; }
-
-  /* FOOTER */
-  footer { padding: 56px 0; background: var(--bg-2); border-top: 1px solid var(--line-soft); }
-  .foot-in { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mist-45); }
-  .foot-in a { color: var(--mist-70); }
-  .foot-in a:hover { color: var(--glacier); text-decoration: none; }
-  .foot-links { display: flex; gap: 24px; flex-wrap: wrap; }
-
-  @media (max-width: 860px) {
-    .wrap { padding: 0 26px; }
-    .legal-grid { grid-template-columns: 1fr; gap: 8px; padding-top: 40px; }
-    .toc { position: static; margin-bottom: 32px; padding-bottom: 28px; border-bottom: 1px solid var(--line-soft); }
-    .toc ol { gap: 0; }
+  @media(max-width:820px){
+    .legal-grid{grid-template-columns:1fr;gap:24px}
+    .toc{position:static}
+    .toc ol{flex-direction:row;flex-wrap:wrap}
+    .legal-hero{padding-top:40px}
   }
 </style>
 </head>
 <body>
 
-<nav aria-label="Navigation">
-  <div class="wrap nav-in">
-    <a class="brand" href="index.html">BISSE<b>·IA</b></a>
-    <a class="nav-back" href="index.html">← Retour au site</a>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html#accueil">Bisse <span>IA</span></a>
+    <a class="back" href="index.html#accueil">← Retour au site</a>
   </div>
-</nav>
+</header>
 
 <header class="legal-hero">
   <div class="wrap">
@@ -287,7 +220,7 @@
         <p>Des mesures techniques et organisationnelles raisonnables sont mises en œuvre pour protéger vos données contre tout accès, modification ou divulgation non autorisés.</p>
 
         <h3>Modifications</h3>
-        <p>Cette politique peut être mise à jour. La date de dernière mise à jour figure en bas de page.</p>
+        <p>Cette politique peut être mise à jour. La date de dernière mise à jour figure en haut de page.</p>
       </section>
 
       <!-- ════ DROITS nLPD ════ -->
@@ -332,15 +265,16 @@
   </div>
 </div>
 
-<footer>
-  <div class="wrap foot-in">
-    <span>© 2026 Bisse IA · Turiya — Sion, Valais</span>
-    <div class="foot-links">
-      <a href="index.html">Accueil</a>
+<footer class="ft">
+  <span aria-hidden="true" class="bar"></span>
+  <div class="wrap">
+    <span class="cpr">© 2026 Bisse IA — Sion, Valais</span>
+    <nav aria-label="Informations légales">
       <a href="#impressum">Mentions légales</a>
       <a href="#confidentialite">Confidentialité</a>
       <a href="#droits">Droits nLPD</a>
-    </div>
+      <a href="index.html#accueil">Accueil</a>
+    </nav>
   </div>
 </footer>
 

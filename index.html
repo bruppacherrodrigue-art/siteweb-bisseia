@@ -1,1237 +1,421 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Bisse IA — Turiya · Surveillance de sécurité, conformité &amp; exposition</title>
-<meta name="description" content="Turiya surveille en continu la sécurité, la conformité et l'exposition numérique des PME. Par Bisse IA, basé à Sion — un ex-analyste cybersécurité bancaire. Surveillance externe, sources ouvertes, données en Suisse." />
-<link rel="canonical" href="https://bisse-ia.ch/" />
-<meta name="robots" content="index, follow, max-image-preview:large" />
-<meta name="author" content="Rodrigue Bruppacher · Bisse IA" />
-<meta name="keywords" content="surveillance cybersécurité PME, exposition numérique, conformité nLPD, sécurité site web, surveillance domaine email, audit exposition, Sion, Valais, Suisse, Turiya, Bisse IA" />
-<meta name="theme-color" content="#060d12" />
-<link rel="icon" type="image/png" sizes="128x128" href="favicon-128.png" />
-<link rel="apple-touch-icon" sizes="512x512" href="apple-touch-icon.png" />
-<meta name="geo.region" content="CH-VS" />
-<meta name="geo.placename" content="Sion" />
-<meta property="og:type" content="website" />
-<meta property="og:locale" content="fr_CH" />
-<meta property="og:site_name" content="Bisse IA — Turiya" />
-<meta property="og:title" content="Turiya — la surveillance continue de votre exposition numérique" />
-<meta property="og:description" content="Turiya surveille en continu ce qu'un attaquant voit de votre entreprise — site, domaine, email, conformité nLPD, exposition externe — et vous prévient pendant qu'il est encore temps d'agir." />
-<meta property="og:url" content="https://bisse-ia.ch/" />
-<meta property="og:image" content="https://bisse-ia.ch/og-image.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Turiya — surveillance de sécurité, conformité et exposition numérique, par Bisse IA (Sion)." />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Turiya — surveillance de sécurité, conformité &amp; exposition" />
-<meta name="twitter:description" content="La surveillance continue de l'exposition numérique des PME. Par un ex-analyste cybersécurité, données en Suisse." />
-<meta name="twitter:image" content="https://bisse-ia.ch/og-image.png" />
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://bisse-ia.ch/#org",
-      "name": "Bisse IA",
-      "alternateName": "Turiya",
-      "url": "https://bisse-ia.ch/",
-      "email": "admin@bisse-ia.ch",
-      "telephone": "+41779246978",
-      "founder": { "@type": "Person", "name": "Rodrigue Bruppacher", "jobTitle": "Analyste cybersécurité" },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Sion",
-        "addressRegion": "Valais",
-        "addressCountry": "CH"
-      },
-      "areaServed": { "@type": "Country", "name": "Suisse" }
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://bisse-ia.ch/#website",
-      "url": "https://bisse-ia.ch/",
-      "name": "Bisse IA — Turiya",
-      "inLanguage": "fr-CH",
-      "publisher": { "@id": "https://bisse-ia.ch/#org" }
-    },
-    {
-      "@type": "Service",
-      "name": "Turiya",
-      "serviceType": "Surveillance de sécurité, de conformité et d'exposition numérique",
-      "provider": { "@id": "https://bisse-ia.ch/#org" },
-      "areaServed": { "@type": "Country", "name": "Suisse" },
-      "audience": { "@type": "Audience", "audienceType": "PME, fiduciaires, avocats, cabinets médicaux, notaires, régies" },
-      "description": "Surveillance continue et externe de la présence numérique d'une PME — santé technique du site, sécurité visible, conformité nLPD et exposition externe — avec alerte qualifiée et marche à suivre."
-    }
-  ]
-}
-</script>
-<!-- Polices AUTO-HÉBERGÉES — aucun appel à Google. Voir fonts/FONTS.md pour récupérer les .woff2. -->
-<style>
-  /* Sora — 300 / 400 / 600 */
-  @font-face { font-family: 'Sora'; font-style: normal; font-weight: 300; font-display: swap; src: url('fonts/sora-300.woff2') format('woff2'); }
-  @font-face { font-family: 'Sora'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/sora-400.woff2') format('woff2'); }
-  @font-face { font-family: 'Sora'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/sora-600.woff2') format('woff2'); }
-  /* IBM Plex Mono — 400 / 500 / 600 */
-  @font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/ibm-plex-mono-400.woff2') format('woff2'); }
-  @font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 500; font-display: swap; src: url('fonts/ibm-plex-mono-500.woff2') format('woff2'); }
-  @font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/ibm-plex-mono-600.woff2') format('woff2'); }
-</style>
-<style>
-  :root {
-    --bg: #060d12;
-    --bg-2: #0a161e;
-    --bg-panel: #0e1c26;
-    --bg-panel-2: #122430;
-    --glacier: #7fd4e8;
-    --glacier-soft: rgba(127, 212, 232, 0.65);
-    --mist: #dfe9ec;
-    --mist-70: rgba(223, 233, 236, 0.72);
-    --mist-45: rgba(223, 233, 236, 0.5);
-    --line: rgba(127, 212, 232, 0.18);
-    --line-soft: rgba(127, 212, 232, 0.1);
-    --ok: #8fd4a8;
-    --sans: 'Sora', system-ui, sans-serif;
-    --mono: 'IBM Plex Mono', ui-monospace, monospace;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-  body {
-    background: var(--bg);
-    color: var(--mist);
-    font-family: var(--sans);
-    font-weight: 300;
-    -webkit-font-smoothing: antialiased;
-    line-height: 1.6;
-  }
-  ::selection { background: rgba(127, 212, 232, 0.3); }
-  a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible, textarea:focus-visible {
-    outline: 2px solid var(--glacier); outline-offset: 3px; border-radius: 2px;
-  }
-  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
-  section { scroll-margin-top: 90px; }
-
-  .k-label {
-    font-family: var(--mono);
-    font-size: 0.78rem;
-    letter-spacing: 0.26em;
-    text-transform: uppercase;
-    color: var(--glacier);
-  }
-  h2 {
-    font-family: var(--sans);
-    font-weight: 300;
-    font-size: clamp(34px, 4.6vw, 56px);
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-    color: var(--mist);
-    text-wrap: balance;
-  }
-  h2 b { font-weight: 600; color: var(--glacier); }
-
-  /* reveal — gated: hidden only when html.anim (JS + motion ok) */
-  html.anim .reveal { opacity: 0; transform: translateY(18px); transition: opacity 700ms ease, transform 700ms cubic-bezier(0.2, 0.6, 0.2, 1); }
-  html.anim .reveal.in { opacity: 1; transform: none; }
-
-  /* ════════ NAV ════════ */
-  .nav {
-    position: sticky; top: 0; z-index: 50;
-    background: rgba(6, 13, 18, 0.82);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--line-soft);
-  }
-  .nav .wrap {
-    display: flex; align-items: center; justify-content: space-between;
-    height: 72px; gap: 24px;
-  }
-  .brand {
-    font-family: var(--sans); font-weight: 600; font-size: 1.15rem;
-    letter-spacing: 0.06em; color: var(--mist);
-    text-decoration: none; white-space: nowrap;
-  }
-  .brand b { color: var(--glacier); font-weight: 600; }
-  .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-  .nav-links a {
-    font-family: var(--mono); font-size: 0.72rem;
-    letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--mist-45); text-decoration: none;
-    transition: color 160ms ease;
-  }
-  .nav-links a:hover { color: var(--glacier); }
-  .nav-cta {
-    font-family: var(--sans) !important; font-weight: 400;
-    font-size: 0.85rem !important; letter-spacing: 0.02em !important;
-    text-transform: none !important;
-    color: var(--bg) !important;
-    background: var(--glacier);
-    padding: 11px 22px; border-radius: 100px;
-    transition: background 160ms ease;
-  }
-  .nav-cta:hover { background: #a5e2f0; }
-  .nav-burger {
-    display: none; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
-    width: 44px; height: 44px; flex-shrink: 0;
-    background: transparent; border: 0; cursor: pointer; border-radius: 6px;
-  }
-  .nav-burger .nb-bar {
-    width: 20px; height: 1.5px; background: var(--mist);
-    transition: transform 200ms ease;
-  }
-  .nav-burger[aria-expanded="true"] .nb-bar:first-child { transform: translateY(3.75px) rotate(45deg); }
-  .nav-burger[aria-expanded="true"] .nb-bar:last-child { transform: translateY(-3.75px) rotate(-45deg); }
-  .nav-menu { display: none; border-top: 1px solid var(--line-soft); }
-  .nav-menu a {
-    display: block; padding: 17px 32px;
-    font-family: var(--mono); font-size: 0.78rem;
-    letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--mist-70); text-decoration: none;
-    border-bottom: 1px solid var(--line-soft);
-  }
-  .nav-menu a:last-child { border-bottom: 0; }
-  .nav-menu a:hover { color: var(--glacier); }
-  @media (max-width: 860px) {
-    .nav-links li:not(:last-child) { display: none; }
-    .nav-burger { display: inline-flex; }
-    .nav-menu:not([hidden]) { display: block; }
-    /* Le CTA reste visible dans l'en-tête mobile : on le garde sur une seule
-       ligne (sinon "Demander un audit" s'enroule et déborde de la pastille). */
-    .nav .wrap { gap: 14px; }
-    .nav-cta { white-space: nowrap; padding: 9px 16px; font-size: 0.78rem !important; }
-  }
-  @media (max-width: 400px) {
-    .nav .wrap { gap: 9px; }
-    .nav-cta { padding: 7px 12px; font-size: 0.72rem !important; }
-  }
-
-  /* ════════ HERO ════════ */
-  .hero {
-    position: relative;
-    min-height: calc(100vh - 72px);
-    min-height: calc(100svh - 72px);
-    display: flex; flex-direction: column;
-    background: radial-gradient(1200px 700px at 75% 18%, #122835 0%, var(--bg-2) 55%, var(--bg) 100%);
-    overflow: hidden;
-  }
-  .hero-flow { position: absolute; inset: 0; z-index: 0; pointer-events: none; width: 100%; height: 100%; }
-  .hero-flow path { fill: none; stroke-linecap: round; }
-  .hero-flow .bed { stroke: rgba(127, 212, 232, 0.09); stroke-width: 60; }
-  .hero-flow .stream { stroke: var(--glacier-soft); stroke-width: 2.5; }
-  @media (prefers-reduced-motion: no-preference) {
-    .hero-flow .stream { stroke-dasharray: 90 60; animation: flow 4s linear infinite; }
-    @keyframes flow { to { stroke-dashoffset: -150; } }
-  }
-  .hero-main {
-    position: relative; z-index: 2;
-    flex: 1; display: flex; flex-direction: column; justify-content: center;
-    padding-top: 64px; padding-bottom: 64px;
-  }
-  .hero-kicker { margin-bottom: 36px; }
-  .hero h1 {
-    font-weight: 300;
-    font-size: clamp(40px, 5.8vw, 82px);
-    line-height: 1.12;
-    letter-spacing: -0.025em;
-    max-width: 18ch;
-    text-wrap: balance;
-  }
-  .hero h1 b { font-weight: 600; color: var(--glacier); }
-  .hero-lede {
-    font-size: clamp(16px, 1.35vw, 19px);
-    line-height: 1.75;
-    color: var(--mist-70);
-    max-width: 54ch;
-    margin-top: 32px;
-    text-wrap: pretty;
-  }
-  .cta-row { display: flex; align-items: center; gap: 28px; margin-top: 48px; flex-wrap: wrap; }
-  .cta {
-    display: inline-flex; align-items: center; gap: 12px;
-    background: var(--glacier); color: #07141b;
-    font-family: var(--sans); font-weight: 600; font-size: 1.05rem;
-    padding: 19px 38px; text-decoration: none; border-radius: 100px;
-    transition: background 160ms ease;
-  }
-  .cta:hover { background: #a5e2f0; }
-  .pilote {
-    font-family: var(--mono); font-size: 0.78rem;
-    letter-spacing: 0.16em; text-transform: uppercase;
-    color: var(--mist-45);
-  }
-  .hero-foot {
-    position: relative; z-index: 2;
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    border-top: 1px solid var(--line);
-  }
-  .hero-foot > div {
-    padding: 26px 32px;
-    border-right: 1px solid var(--line);
-  }
-  .hero-foot > div:first-child { padding-left: max(32px, calc((100vw - 1200px) / 2 + 32px)); }
-  .hero-foot > div:last-child { border-right: 0; }
-  .hf-k {
-    font-family: var(--mono); font-size: 0.66rem;
-    letter-spacing: 0.24em; text-transform: uppercase;
-    color: var(--glacier); display: block; margin-bottom: 7px;
-  }
-  .hf-v { font-weight: 400; font-size: 1.02rem; color: var(--mist); }
-  @media (max-width: 760px) {
-    .hero-foot { grid-template-columns: 1fr; }
-    .hero-foot > div { border-right: 0; border-bottom: 1px solid var(--line); padding: 18px 32px; }
-    .hero-foot > div:first-child { padding-left: 32px; }
-    .hero-foot > div:last-child { border-bottom: 0; }
-  }
-
-  /* ════════ FONDATEUR ════════ */
-  .fondateur { padding: 130px 0; background: var(--bg); }
-  .fondateur-grid {
-    display: grid; grid-template-columns: 320px 1fr; gap: 72px;
-    align-items: start;
-  }
-  .monogram {
-    aspect-ratio: 1; border: 1px solid var(--line);
-    border-radius: 6px;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center; gap: 10px;
-    background: linear-gradient(160deg, var(--bg-panel) 0%, var(--bg-2) 100%);
-    position: relative; overflow: hidden;
-  }
-  .monogram::after {
-    content: ''; position: absolute; left: -10%; right: -10%; bottom: 26%;
-    height: 1.5px; background: var(--glacier-soft);
-    transform: rotate(-4deg);
-  }
-  .monogram .rb {
-    font-family: var(--sans); font-weight: 300; font-size: 96px;
-    letter-spacing: 0.02em; color: var(--mist); line-height: 1;
-  }
-  .monogram .rb b { font-weight: 600; color: var(--glacier); }
-  .monogram .role {
-    font-family: var(--mono); font-size: 0.68rem;
-    letter-spacing: 0.24em; text-transform: uppercase; color: var(--mist-45);
-  }
-  .fondateur h2 { margin: 18px 0 26px; }
-  .fondateur-body p { color: var(--mist-70); max-width: 58ch; text-wrap: pretty; font-size: 1.05rem; }
-  .fondateur-body p + p { margin-top: 18px; }
-  .fondateur-body p strong { color: var(--mist); font-weight: 400; }
-  .creds {
-    margin-top: 38px; border-top: 1px solid var(--line);
-    display: flex; flex-direction: column;
-  }
-  .cred {
-    display: grid; grid-template-columns: 150px 1fr; gap: 24px;
-    padding: 16px 0; border-bottom: 1px solid var(--line-soft);
-    align-items: baseline;
-  }
-  .cred .ck {
-    font-family: var(--mono); font-size: 0.7rem;
-    letter-spacing: 0.18em; text-transform: uppercase; color: var(--glacier);
-  }
-  .cred .cv { font-size: 0.97rem; color: var(--mist-70); font-weight: 300; }
-  @media (max-width: 860px) {
-    .fondateur-grid { grid-template-columns: 1fr; gap: 40px; }
-    .monogram { max-width: 280px; }
-  }
-
-  /* ════════ PRÉ-COMPTABLE ════════ */
-  .produit {
-    padding: 130px 0;
-    background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 18%, var(--bg-2) 82%, var(--bg) 100%);
-    border-top: 1px solid var(--line-soft);
-  }
-  .produit-head { max-width: 720px; }
-  .produit-head h2 { margin: 18px 0 24px; }
-  .produit-head p { color: var(--mist-70); font-size: 1.08rem; text-wrap: pretty; }
-  .probleme {
-    margin-top: 56px;
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
-    border-radius: 6px; overflow: hidden;
-    max-width: 880px;
-  }
-  .probleme > div { background: var(--bg-panel); padding: 30px 34px; }
-  .probleme .pk {
-    font-family: var(--mono); font-size: 0.68rem;
-    letter-spacing: 0.22em; text-transform: uppercase;
-    display: block; margin-bottom: 12px;
-  }
-  .probleme .avant .pk { color: var(--mist-45); }
-  .probleme .apres .pk { color: var(--glacier); }
-  .probleme p { font-size: 1rem; color: var(--mist-70); text-wrap: pretty; }
-  .probleme .apres p strong { color: var(--mist); font-weight: 400; }
-  @media (max-width: 720px) { .probleme { grid-template-columns: 1fr; } }
-
-  /* demo */
-  .demo { margin-top: 72px; }
-  .demo-steps {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
-    list-style: none;
-  }
-  .demo-step {
-    text-align: left;
-    font-family: inherit;
-    background: transparent; border: 0; cursor: pointer;
-    border-top: 2px solid var(--line);
-    padding: 18px 10px 0 2px;
-    transition: border-color 240ms ease;
-  }
-  .demo-step .sn {
-    font-family: var(--mono); font-size: 0.7rem;
-    letter-spacing: 0.2em; color: var(--mist-45);
-    display: block; margin-bottom: 6px;
-    transition: color 240ms ease;
-  }
-  .demo-step .st {
-    font-family: var(--sans); font-weight: 400; font-size: 1.02rem;
-    color: var(--mist-45); transition: color 240ms ease;
-  }
-  .demo-step[aria-selected="true"] { border-top-color: var(--glacier); }
-  .demo-step[aria-selected="true"] .sn { color: var(--glacier); }
-  .demo-step[aria-selected="true"] .st { color: var(--mist); }
-  .demo-stage {
-    margin-top: 28px;
-    border: 1px solid var(--line); border-radius: 6px;
-    background: var(--bg-panel);
-    min-height: 320px;
-    position: relative; overflow: hidden;
-  }
-  .demo-pane {
-    position: absolute; inset: 0;
-    padding: 40px 48px;
-    display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-    gap: 48px; align-items: center;
-    opacity: 0; visibility: hidden;
-    transition: opacity 360ms ease, visibility 0s 360ms;
-  }
-  .demo-pane.active { opacity: 1; visibility: visible; transition: opacity 360ms ease 120ms, visibility 0s; position: relative; }
-  .demo-pane h3 {
-    font-weight: 300; font-size: 1.7rem; letter-spacing: -0.01em;
-    color: var(--mist); margin-bottom: 14px;
-  }
-  .demo-pane h3 b { font-weight: 600; color: var(--glacier); }
-  .demo-pane > div p { color: var(--mist-70); font-size: 1rem; max-width: 44ch; text-wrap: pretty; }
-  .demo-visual {
-    border: 1px solid var(--line); border-radius: 5px;
-    background: var(--bg-2);
-    padding: 26px 28px;
-    font-family: var(--mono); font-size: 0.85rem; line-height: 1.9;
-  }
-  .demo-visual .dim { color: var(--mist-45); }
-  .demo-visual .hl { color: var(--glacier); }
-  .demo-visual .okc { color: var(--ok); }
-  .demo-visual .row { display: flex; justify-content: space-between; gap: 18px; }
-  .demo-visual .badge {
-    display: inline-block;
-    font-size: 0.7rem; letter-spacing: 0.16em; font-weight: 600;
-    color: var(--glacier); border: 1px solid var(--glacier-soft);
-    padding: 3px 10px; border-radius: 3px;
-  }
-  .demo-visual .badge.ok { color: var(--ok); border-color: rgba(143, 212, 168, 0.5); }
-  .demo-visual hr { border: 0; border-top: 1px solid var(--line-soft); margin: 10px 0; }
-  @media (max-width: 860px) {
-    .demo-steps { grid-template-columns: repeat(2, 1fr); }
-    .demo-pane { grid-template-columns: 1fr; gap: 28px; padding: 28px; }
-  }
-  .demo-note {
-    margin-top: 26px;
-    display: flex; align-items: center; gap: 14px;
-    font-family: var(--mono); font-size: 0.82rem;
-    color: var(--mist-70);
-  }
-  .demo-note::before {
-    content: ''; width: 9px; height: 9px; border-radius: 50%;
-    background: var(--glacier); flex-shrink: 0;
-  }
-  .demo-note b { color: var(--glacier); font-weight: 600; }
-  .produit-cta { margin-top: 64px; }
-
-  /* ════════ AGENTS ════════ */
-  .agents { padding: 110px 0; }
-  .agents-head { margin-bottom: 48px; }
-  .agents-head h2 { margin-top: 18px; }
-  .agents-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
-    background: var(--line); border: 1px solid var(--line);
-    border-radius: 6px; overflow: hidden;
-  }
-  .agent { background: var(--bg-panel); padding: 36px 40px; }
-  .agent .an {
-    font-family: var(--mono); font-size: 0.68rem;
-    letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--glacier); display: block; margin-bottom: 14px;
-  }
-  .agent h3 { font-weight: 400; font-size: 1.35rem; letter-spacing: -0.01em; margin-bottom: 12px; }
-  .agent p { color: var(--mist-70); font-size: 0.98rem; max-width: 44ch; text-wrap: pretty; }
-  .agents-note {
-    margin-top: 22px;
-    font-family: var(--mono); font-size: 0.8rem; color: var(--mist-45);
-  }
-  @media (max-width: 720px) { .agents-grid { grid-template-columns: 1fr; } }
-
-  /* ════════ SÉCURITÉ ════════ */
-  .securite {
-    padding: 130px 0;
-    background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 20%, var(--bg-2) 80%, var(--bg) 100%);
-    border-top: 1px solid var(--line-soft);
-  }
-  .securite-head { max-width: 760px; }
-  .securite-head h2 { margin: 18px 0 24px; }
-  .securite-head p { color: var(--mist-70); font-size: 1.08rem; text-wrap: pretty; }
-  .sec-grid {
-    margin-top: 64px;
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;
-  }
-  .sec-pillar { border-top: 2px solid var(--glacier); padding-top: 24px; }
-  .sec-pillar .sn {
-    font-family: var(--mono); font-size: 0.7rem;
-    letter-spacing: 0.22em; color: var(--glacier);
-    display: block; margin-bottom: 14px;
-  }
-  .sec-pillar h3 { font-weight: 400; font-size: 1.3rem; letter-spacing: -0.01em; margin-bottom: 14px; }
-  .sec-pillar p { color: var(--mist-70); font-size: 0.97rem; text-wrap: pretty; }
-  .sec-pillar ul { margin-top: 16px; list-style: none; display: flex; flex-direction: column; gap: 9px; }
-  .sec-pillar li {
-    font-family: var(--mono); font-size: 0.82rem; color: var(--mist-70);
-    display: flex; gap: 12px; align-items: baseline;
-  }
-  .sec-pillar li::before { content: '—'; color: var(--glacier); flex-shrink: 0; }
-  .nlpd {
-    margin-top: 64px;
-    border: 1px solid var(--line); border-radius: 6px;
-    background: var(--bg-panel);
-    padding: 30px 38px;
-    display: flex; align-items: baseline; gap: 28px;
-  }
-  .nlpd .nk {
-    font-family: var(--mono); font-size: 0.72rem;
-    letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--glacier); white-space: nowrap;
-  }
-  .nlpd p { color: var(--mist-70); font-size: 0.98rem; text-wrap: pretty; }
-  .nlpd p strong { color: var(--mist); font-weight: 400; }
-  @media (max-width: 860px) {
-    .sec-grid { grid-template-columns: 1fr; gap: 36px; }
-    .nlpd { flex-direction: column; gap: 12px; }
-  }
-
-  /* ════════ LE NOM ════════ */
-  .nom {
-    padding: 150px 0;
-    text-align: center;
-    position: relative; overflow: hidden;
-  }
-  .nom-flow { position: absolute; left: 0; right: 0; top: 50%; z-index: 0; pointer-events: none; }
-  .nom-flow path { fill: none; stroke: rgba(127, 212, 232, 0.14); stroke-width: 1.5; }
-  @media (prefers-reduced-motion: no-preference) {
-    .nom-flow path { stroke-dasharray: 60 40; animation: flow 5s linear infinite; }
-  }
-  .nom .wrap { position: relative; z-index: 2; }
-  .nom blockquote {
-    font-weight: 300;
-    font-size: clamp(26px, 3.4vw, 42px);
-    line-height: 1.35; letter-spacing: -0.015em;
-    max-width: 30ch; margin: 28px auto 0;
-    text-wrap: balance;
-  }
-  .nom blockquote b { font-weight: 600; color: var(--glacier); }
-  .nom figcaption {
-    margin-top: 30px;
-    font-family: var(--mono); font-size: 0.8rem;
-    letter-spacing: 0.14em; color: var(--mist-45);
-  }
-
-  /* ════════ FAQ ════════ */
-  .faq { padding: 110px 0; border-top: 1px solid var(--line-soft); }
-  .faq-grid { display: grid; grid-template-columns: 320px 1fr; gap: 72px; align-items: start; }
-  .faq-intro h2 { margin-top: 18px; }
-  .faq-list { border-top: 1px solid var(--line); }
-  .faq details { border-bottom: 1px solid var(--line-soft); }
-  .faq summary {
-    cursor: pointer; list-style: none;
-    display: flex; align-items: baseline; justify-content: space-between; gap: 24px;
-    padding: 24px 4px;
-    font-weight: 400; font-size: 1.08rem; color: var(--mist);
-  }
-  .faq summary::-webkit-details-marker { display: none; }
-  .faq summary::after {
-    content: '+';
-    font-family: var(--mono); font-size: 1.1rem; color: var(--glacier);
-    flex-shrink: 0;
-  }
-  .faq details[open] summary::after { content: '−'; }
-  .faq details p {
-    padding: 0 4px 26px;
-    color: var(--mist-70); font-size: 0.99rem; max-width: 60ch; text-wrap: pretty;
-  }
-  .faq details p strong { color: var(--mist); font-weight: 400; }
-  @media (max-width: 860px) { .faq-grid { grid-template-columns: 1fr; gap: 36px; } }
-
-  /* ════════ CONTACT ════════ */
-  .contact {
-    padding: 130px 0 100px;
-    background: radial-gradient(1000px 600px at 30% 0%, #122835 0%, var(--bg-2) 55%, var(--bg) 100%);
-    border-top: 1px solid var(--line-soft);
-  }
-  .contact-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 80px; align-items: start; }
-  .contact-info h2 { margin: 18px 0 24px; }
-  .contact-info > p { color: var(--mist-70); max-width: 44ch; text-wrap: pretty; font-size: 1.05rem; }
-  .coords { margin-top: 44px; display: flex; flex-direction: column; }
-  .coord {
-    display: grid; grid-template-columns: 130px 1fr; gap: 24px;
-    padding: 15px 0; border-bottom: 1px solid var(--line-soft);
-    align-items: baseline;
-  }
-  .coord .ck {
-    font-family: var(--mono); font-size: 0.68rem;
-    letter-spacing: 0.2em; text-transform: uppercase; color: var(--glacier);
-  }
-  .coord .cv, .coord .cv a { font-size: 0.99rem; color: var(--mist); font-weight: 300; text-decoration: none; }
-  .coord .cv a:hover { color: var(--glacier); }
-  .form { display: flex; flex-direction: column; gap: 22px; }
-  .field { display: flex; flex-direction: column; gap: 9px; }
-  .field label {
-    font-family: var(--mono); font-size: 0.7rem;
-    letter-spacing: 0.2em; text-transform: uppercase; color: var(--mist-45);
-  }
-  .field input, .field textarea {
-    width: 100%; min-width: 0;
-    background: rgba(14, 28, 38, 0.7);
-    border: 1px solid var(--line);
-    border-radius: 4px;
-    color: var(--mist);
-    font-family: var(--sans); font-weight: 300; font-size: 1rem;
-    padding: 15px 18px;
-    transition: border-color 160ms ease;
-  }
-  .field input:focus, .field textarea:focus {
-    outline: none; border-color: var(--glacier-soft);
-  }
-  .field textarea { min-height: 120px; resize: vertical; }
-  .form-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 22px; }
-  .form button {
-    align-self: flex-start;
-    display: inline-flex; align-items: center; gap: 12px;
-    background: var(--glacier); color: #07141b;
-    font-family: var(--sans); font-weight: 600; font-size: 1.02rem;
-    padding: 18px 36px; border: 0; border-radius: 100px; cursor: pointer;
-    transition: background 160ms ease;
-  }
-  .form button:hover { background: #a5e2f0; }
-  .form-note { font-family: var(--mono); font-size: 0.76rem; color: var(--mist-45); }
-  .form-status {
-    font-size: 0.96rem; font-weight: 300; line-height: 1.6;
-    padding: 15px 19px; border-radius: 4px; border: 1px solid; text-wrap: pretty;
-  }
-  .form-status.ok { color: var(--ok); border-color: rgba(143, 212, 168, 0.4); background: rgba(143, 212, 168, 0.06); }
-  .form-status.err { color: var(--mist-70); border-color: rgba(232, 170, 127, 0.4); background: rgba(232, 170, 127, 0.06); }
-  .form-status a { color: var(--glacier); }
-  .hp-field { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-  @media (max-width: 860px) {
-    .contact-grid { grid-template-columns: 1fr; gap: 56px; }
-    .form-row { grid-template-columns: 1fr; }
-  }
-
-  /* ════════ FOOTER ════════ */
-  .footer { border-top: 1px solid var(--line); padding: 36px 0 44px; }
-  .footer .wrap {
-    display: flex; align-items: baseline; justify-content: space-between;
-    gap: 24px; flex-wrap: wrap;
-  }
-  .footer .fb { font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.1em; color: var(--mist-45); }
-  .footer-links { display: flex; gap: 28px; list-style: none; flex-wrap: wrap; }
-  .footer-links a {
-    font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.08em;
-    color: var(--mist-45); text-decoration: none;
-  }
-  .footer-links a:hover { color: var(--glacier); }
-
-  /* ════════ AJOUTS TURIYA ════════ */
-  .agents-head p { color: var(--mist-70); font-size: 1.05rem; max-width: 60ch; margin-top: 18px; text-wrap: pretty; }
-  .lede-xl { font-size: clamp(18px, 1.7vw, 23px); line-height: 1.62; color: var(--mist); max-width: 60ch; margin-top: 26px; font-weight: 300; text-wrap: pretty; }
-  .lede-xl b { font-weight: 400; color: var(--glacier); }
-  .continuity { margin-top: 30px; padding: 20px 26px; border-left: 2px solid var(--glacier); background: var(--bg-panel); border-radius: 0 4px 4px 0; font-size: clamp(15px, 1.25vw, 17px); line-height: 1.6; color: var(--mist-70); max-width: 64ch; text-wrap: pretty; }
-  .continuity b { color: var(--mist); font-weight: 500; }
-  .scope-note { margin-top: 40px; }
-  /* offre */
-  .offre { padding: 130px 0; border-top: 1px solid var(--line-soft); background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 18%, var(--bg-2) 82%, var(--bg) 100%); }
-  .offre-head { max-width: 760px; }
-  .offre-head h2 { margin: 18px 0 24px; }
-  .offre-head p { color: var(--mist-70); font-size: 1.08rem; text-wrap: pretty; }
-  .pilot { margin-top: 56px; border: 1px solid var(--line); border-left: 2px solid var(--glacier); border-radius: 6px; background: var(--bg-panel); padding: 40px 42px; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 48px; align-items: center; }
-  .pilot-label { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--glacier); display: flex; align-items: center; gap: 10px; }
-  .pilot-label::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--glacier); }
-  .pilot h3 { font-weight: 300; font-size: clamp(1.5rem, 2.4vw, 2rem); letter-spacing: -0.015em; line-height: 1.18; margin: 18px 0 14px; }
-  .pilot h3 b { font-weight: 600; color: var(--glacier); white-space: nowrap; }
-  .pilot-l p { color: var(--mist-70); font-size: 1rem; max-width: 44ch; text-wrap: pretty; }
-  .pilot-r ul { list-style: none; display: flex; flex-direction: column; gap: 13px; margin-bottom: 26px; }
-  .pilot-r li { font-family: var(--mono); font-size: 0.84rem; color: var(--mist-70); display: flex; gap: 12px; align-items: baseline; }
-  .pilot-r li::before { content: '—'; color: var(--glacier); flex-shrink: 0; }
-  @media (max-width: 860px) { .pilot { grid-template-columns: 1fr; gap: 30px; padding: 32px 28px; } }
-  .tiers { margin-top: 64px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
-  .tier { border-top: 2px solid var(--line); padding-top: 24px; }
-  .tier.feature { border-top-color: var(--glacier); }
-  .tier .tn { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--glacier); display: block; margin-bottom: 12px; }
-  .tier h3 { font-weight: 400; font-size: 1.22rem; letter-spacing: -0.01em; margin-bottom: 10px; }
-  .tier > p { color: var(--mist-70); font-size: 0.96rem; margin-bottom: 18px; text-wrap: pretty; }
-  .tier ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
-  .tier li { font-size: 0.93rem; color: var(--mist-70); display: flex; gap: 11px; align-items: baseline; }
-  .tier li::before { content: '›'; color: var(--glacier); font-family: var(--mono); flex-shrink: 0; }
-  .offer-note { margin-top: 40px; font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.04em; color: var(--mist-45); max-width: 60ch; }
-  @media (max-width: 860px) { .tiers { grid-template-columns: 1fr; gap: 34px; } }
-
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
 </head>
 <body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="fonts.css"><link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background-color:#0A2028;background-image:linear-gradient(180deg, rgba(10,32,40,0) 0%, rgba(10,32,40,.14) 44%, rgba(10,32,40,.78) 84%, #0A2028 100%),url("uploads/jaybe999_macro_photograph_of_a_hand-painted_wall_very_deep_petr_432a42d3-671e-44ec-8f68-77adf155f141.png");background-repeat:no-repeat,no-repeat;background-size:100% 120vh,auto 120vh;background-position:center top,center top;background-attachment:scroll,scroll;color:#F4F1E8;font-family:'Figtree',sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:#D9A273;text-decoration:none}
+a:hover{color:#EBD08A}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2.5px solid #D9A273;outline-offset:3px}
+summary::-webkit-details-marker{display:none}
+[data-sign]::after{content:"+"}
+details[open] [data-sign]::after{content:"\2013"}
+@keyframes drift1{to{transform:translate(9vw,7vh) scale(1.14)}}
+@keyframes drift2{to{transform:translate(-8vw,-6vh) scale(1.10)}}
+@keyframes drift3{to{transform:translate(6vw,-9vh) scale(1.16)}}
+@keyframes fall{0%{top:-6px;opacity:0}12%{opacity:1}82%{opacity:1}100%{top:56px;opacity:0}}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none !important}}
+@media(max-width:820px){
+  body{background-attachment:scroll}
+  [data-grid="offer"]{grid-template-columns:1fr !important;padding:30px 26px !important}
+  [data-price]{order:-1}
+  [data-grid="founder"]{grid-template-columns:1fr !important;gap:24px !important}
+  [data-portrait]{max-width:220px}
+  [data-hero]{min-height:auto !important;padding-top:40px !important;padding-bottom:40px !important}
+  [data-cue]{display:none}
+}
+</style>
+</helmet>
 
-<nav class="nav" aria-label="Navigation principale">
-  <div class="wrap">
-    <a class="brand" href="#haut">BISSE<b>·IA</b></a>
-    <ul class="nav-links">
-      <li><a href="#probleme">Le problème</a></li>
-      <li><a href="#turiya">Turiya</a></li>
-      <li><a href="#pourqui">Pour qui</a></li>
-      <li><a href="#fondateur">Le fondateur</a></li>
-      <li><a class="nav-cta" href="#contact">Demander un audit</a></li>
-    </ul>
-    <button class="nav-burger" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Ouvrir le menu">
-      <span class="nb-bar"></span>
-      <span class="nb-bar"></span>
-    </button>
-  </div>
-  <div class="nav-menu" id="nav-menu" hidden>
-    <a href="#probleme">Le problème</a>
-    <a href="#turiya">Turiya</a>
-    <a href="#pourqui">Pour qui</a>
-    <a href="#fondateur">Le fondateur</a>
-    <a href="#garanties">Garanties</a>
-    <a href="#offre">L'offre</a>
-    <a href="#contact">Demander un audit</a>
-  </div>
-</nav>
+<div aria-hidden="true" style="position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden">
+  <span style="position:absolute;border-radius:50%;filter:blur(80px);width:46vw;height:46vw;left:-8vw;top:4vh;background:radial-gradient(circle,#7FD8C6 0%,transparent 68%);opacity:.13;animation:drift1 26s ease-in-out infinite alternate"></span>
+  <span style="position:absolute;border-radius:50%;filter:blur(80px);width:38vw;height:38vw;right:-6vw;top:34vh;background:radial-gradient(circle,#3FA9C4 0%,transparent 68%);opacity:.12;animation:drift2 32s ease-in-out infinite alternate"></span>
+  <span style="position:absolute;border-radius:50%;filter:blur(80px);width:34vw;height:34vw;left:34vw;bottom:-10vh;background:radial-gradient(circle,#0E6E7A 0%,transparent 70%);opacity:.15;animation:drift3 29s ease-in-out infinite alternate"></span>
+</div>
+<div aria-hidden="true" style="position:fixed;inset:-100px;z-index:0;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E&quot;)"></div>
 
-<!-- ════════ HERO ════════ -->
-<section class="hero" id="haut" data-screen-label="Hero">
-  <svg class="hero-flow" viewBox="0 0 1440 880" preserveAspectRatio="none" aria-hidden="true">
-    <path class="bed" d="M-40 690 C 320 640, 560 760, 880 700 S 1380 580, 1500 640"></path>
-    <path class="stream" d="M-40 690 C 320 640, 560 760, 880 700 S 1380 580, 1500 640"></path>
-  </svg>
-  <div class="wrap hero-main">
-    <p class="k-label hero-kicker">Turiya — surveillance de sécurité, conformité &amp; exposition</p>
-    <h1>Votre entreprise est-elle <b>exposée</b> — sans que vous le sachiez&nbsp;?</h1>
-    <p class="hero-lede">Turiya surveille en continu ce qu'un attaquant voit de votre entreprise — site, domaine, email, conformité nLPD, exposition externe — et vous prévient pendant qu'il est encore temps d'agir.</p>
-    <div class="cta-row">
-      <a class="cta" href="#contact">Demander un audit</a>
-      <span class="pilote">Premiers clients pilotes · 2026</span>
-    </div>
+<header style="position:sticky;top:0;z-index:50;background:rgba(4,22,28,.82);backdrop-filter:blur(12px) saturate(1.1);-webkit-backdrop-filter:blur(12px) saturate(1.1);box-shadow:0 1px 0 rgba(255,255,255,.07)">
+  <div style="max-width:1080px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+    <a href="#accueil" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.25rem;letter-spacing:-.01em;margin-right:auto;color:#F4F1E8">Bisse <span style="background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 2px rgba(4,22,28,.6))">IA</span></a>
+    <nav aria-label="Pages" style="display:flex;gap:4px;flex-wrap:wrap">
+      <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}"><a href="#accueil" aria-current="page" style="border-radius:999px;padding:8px 16px;font-weight:600;font-size:.92rem;background:#F4F1E8;color:#04161C;transition:background .2s,color .2s">Accueil</a></sc-if>
+      <sc-if value="{{ notHome }}" hint-placeholder-val="{{ false }}"><a href="#accueil" style="border-radius:999px;padding:8px 16px;font-weight:600;font-size:.92rem;color:#C9D9DB;transition:background .2s,color .2s" style-hover="background:rgba(244,241,232,.14);color:#F4F1E8">Accueil</a></sc-if>
+      <sc-if value="{{ isWeb }}" hint-placeholder-val="{{ false }}"><a href="web.html" aria-current="page" style="border-radius:999px;padding:8px 16px;font-weight:600;font-size:.92rem;background:#F4F1E8;color:#04161C;transition:background .2s,color .2s">Web</a></sc-if>
+      <sc-if value="{{ notWeb }}" hint-placeholder-val="{{ true }}"><a href="web.html" style="border-radius:999px;padding:8px 16px;font-weight:600;font-size:.92rem;color:#C9D9DB;transition:background .2s,color .2s" style-hover="background:rgba(244,241,232,.14);color:#F4F1E8">Web</a></sc-if>
+      <sc-if value="{{ isSec }}" hint-placeholder-val="{{ false }}"><a href="securite.html" aria-current="page" style="border-radius:999px;padding:8px 16px;font-weight:600;font-size:.92rem;background:#F4F1E8;color:#04161C;transition:background .2s,color .2s">Sécurité</a></sc-if>
+      <sc-if value="{{ notSec }}" hint-placeholder-val="{{ true }}"><a href="securite.html" style="border-radius:999px;padding:8px 16px;font-weight:600;font-size:.92rem;color:#C9D9DB;transition:background .2s,color .2s" style-hover="background:rgba(244,241,232,.14);color:#F4F1E8">Sécurité</a></sc-if>
+      <sc-if value="{{ isRs }}" hint-placeholder-val="{{ false }}"><a href="reseaux.html" aria-current="page" style="border-radius:999px;padding:8px 16px;font-weight:600;font-size:.92rem;background:#F4F1E8;color:#04161C;transition:background .2s,color .2s">Réseaux sociaux</a></sc-if>
+      <sc-if value="{{ notRs }}" hint-placeholder-val="{{ true }}"><a href="reseaux.html" style="border-radius:999px;padding:8px 16px;font-weight:600;font-size:.92rem;color:#C9D9DB;transition:background .2s,color .2s" style-hover="background:rgba(244,241,232,.14);color:#F4F1E8">Réseaux sociaux</a></sc-if>
+    </nav>
   </div>
-  <div class="hero-foot">
-    <div><span class="hf-k">Local</span><span class="hf-v">Sion, Valais</span></div>
-    <div><span class="hf-k">Surveillance</span><span class="hf-v">En continu</span></div>
-    <div><span class="hf-k">Périmètre</span><span class="hf-v">Sources ouvertes</span></div>
-  </div>
-</section>
+  <span aria-hidden="true" style="display:block;height:2px;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);opacity:.55"></span>
+</header>
 
-<!-- ════════ LE PROBLÈME ════════ -->
-<section class="agents" id="probleme" data-screen-label="Le problème">
-  <div class="wrap">
-    <div class="agents-head reveal">
-      <p class="k-label">Le problème</p>
-      <h2>Le risque, c'est ce que <b>vous ne voyez pas.</b></h2>
-      <p>Votre entreprise a une présence numérique bien plus large que son site. Une partie vous échappe — et c'est précisément celle qu'un attaquant observe en premier.</p>
-    </div>
-    <div class="agents-grid reveal">
-      <div class="agent">
-        <span class="an">Fuites de données</span>
-        <h3>Vos emails circulent déjà</h3>
-        <p>Des adresses de votre entreprise figurent dans des bases revendues, prêtes pour un hameçonnage ciblé contre vos collaborateurs.</p>
-      </div>
-      <div class="agent">
-        <span class="an">Sous-domaine oublié</span>
-        <h3>Une porte restée ouverte</h3>
-        <p>Un serveur de test monté puis abandonné reste exposé sur Internet, souvent sans mise à jour ni surveillance.</p>
-      </div>
-      <div class="agent">
-        <span class="an">Conformité qui dérive</span>
-        <h3>La nLPD glisse en silence</h3>
-        <p>Un cookie ajouté, un formulaire modifié, une mention oubliée&nbsp;: votre conformité se dégrade sans la moindre alerte.</p>
-      </div>
-      <div class="agent">
-        <span class="an">Domaine usurpable</span>
-        <h3>De faux emails en votre nom</h3>
-        <p>Sans configuration anti-usurpation, n'importe qui peut écrire à vos clients en se faisant passer pour votre entreprise.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<main style="position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 24px 150px">
 
-<!-- ════════ TURIYA — LA SOLUTION ════════ -->
-<section class="produit" id="turiya" data-screen-label="Turiya">
-  <div class="wrap">
-    <div class="produit-head reveal">
-      <p class="k-label">La solution · Turiya</p>
-      <h2>Turiya regarde votre présence numérique <b>avec les yeux d'un attaquant.</b></h2>
-      <p class="lede-xl">Turiya surveille en continu les signaux visibles qui peuvent fragiliser votre entreprise — <b>site, domaine, email, conformité nLPD et exposition externe.</b> Vous recevez uniquement les alertes utiles, avec une marche à suivre claire.</p>
-      <p class="continuity reveal">Un diagnostic initial photographie votre exposition à un instant. <b>Turiya surveille son évolution dans le temps</b> — vous n'êtes plus aveugle entre deux contrôles.</p>
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <section data-screen-label="Accueil" style="animation:fade .35s ease">
+
+    <div data-hero="" id="accueil" style="min-height:calc(100svh - 76px);display:flex;flex-direction:column;justify-content:center;padding-bottom:78px;position:relative">
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:#C9D9DB;margin:0 0 16px;text-shadow:0 1px 8px rgba(0,0,0,.25)">Pour les indépendants et les PME</p>
+      <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(2.4rem,6.2vw,4.2rem);line-height:1.02;letter-spacing:-.025em;max-width:16ch;text-shadow:0 2px 18px rgba(0,0,0,.28)">Votre présence en ligne, <em style="font-style:normal;color:#D9A273">irriguée en continu</em>.</h1>
+      <p style="margin:26px 0 0;max-width:56ch;font-size:1.12rem;color:#C9D9DB;text-shadow:0 1px 10px rgba(0,0,0,.25)">Les bisses valaisans amènent l'eau aux champs depuis sept siècles : creusés avec soin, parcourus chaque matin, entretenus pour durer. Bisse IA applique la même logique à votre présence numérique. Trois offres indépendantes, une seule personne au bout du fil.</p>
+      <div style="margin-top:40px;display:flex;gap:12px;align-items:stretch;flex-wrap:wrap">
+        <button onClick="{{ toOffers }}" style="background:none;border:1.5px solid rgba(255,255,255,.42);color:#F4F1E8;border-radius:999px;padding:14px 28px;font-weight:600;font-size:1rem;line-height:1.2;display:inline-flex;align-items:center;transition:background .2s,border-color .2s" style-hover="background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.7)">Voir les trois offres</button>
+      </div>
+      <span data-cue="" aria-hidden="true" style="position:absolute;left:0;bottom:14px;width:2px;height:56px;border-radius:2px;background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.16),rgba(255,255,255,.02))">
+        <span style="position:absolute;left:50%;top:0;width:6px;height:8px;margin-left:-3px;border-radius:50% 50% 55% 55%;background:#D9A273;box-shadow:0 0 10px -1px #D9A273;animation:fall 3.6s cubic-bezier(.5,0,.75,.4) infinite"></span>
+      </span>
     </div>
 
-    <div class="agents-grid reveal" style="margin-top:56px">
-      <div class="agent">
-        <span class="an">01 — Santé technique</span>
-        <h3>Disponibilité &amp; certificat</h3>
-        <p>Votre site est-il en ligne, rapide&nbsp;? Son certificat est-il valide et à jour&nbsp;? La disponibilité est vérifiée en permanence.</p>
-      </div>
-      <div class="agent">
-        <span class="an">02 — Sécurité visible</span>
-        <h3>Ce qui est exposé au public</h3>
-        <p>En-têtes de protection, configuration email anti-usurpation, scripts suspects, technologies exposées au public.</p>
-      </div>
-      <div class="agent">
-        <span class="an">03 — Conformité nLPD</span>
-        <h3>Ce que la loi suisse attend</h3>
-        <p>Cookies, formulaires, politique de confidentialité, mentions légales&nbsp;: contrôlés régulièrement.</p>
-      </div>
-      <div class="agent">
-        <span class="an">04 — Exposition externe</span>
-        <h3>Ce qui est visible autour de vous</h3>
-        <p>Emails dans des fuites, sous-domaines oubliés, domaines imitant le vôtre, réputation de votre domaine.</p>
-      </div>
-    </div>
+    <section ref="{{ offersRef }}">
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 2px rgba(4,22,28,.5));margin:0 auto 20px;text-align:center">Les trois offres</p>
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(1.55rem,2.9vw,2.15rem);line-height:1.18;letter-spacing:-.015em;max-width:34ch;margin:0 auto;text-align:center;text-wrap:balance;text-shadow:0 2px 14px rgba(4,22,28,.4)">Construire, protéger, faire vivre.</h2>
+      <p style="margin:20px auto 0;max-width:60ch;text-align:center;color:#C9D9DB;font-size:1.04rem;line-height:1.65;text-wrap:pretty">Une offre par besoin, un prix par offre.</p>
 
-    <div class="demo reveal" id="demo" style="margin-top:80px">
-      <div class="demo-steps" role="tablist" aria-label="Comment fonctionne la surveillance">
-        <button class="demo-step" role="tab" id="demo-tab-0" aria-controls="demo-pane-0" aria-selected="true" data-step="0"><span class="sn">01</span><span class="st">État initial</span></button>
-        <button class="demo-step" role="tab" id="demo-tab-1" aria-controls="demo-pane-1" aria-selected="false" tabindex="-1" data-step="1"><span class="sn">02</span><span class="st">Surveillance</span></button>
-        <button class="demo-step" role="tab" id="demo-tab-2" aria-controls="demo-pane-2" aria-selected="false" tabindex="-1" data-step="2"><span class="sn">03</span><span class="st">Alerte</span></button>
-        <button class="demo-step" role="tab" id="demo-tab-3" aria-controls="demo-pane-3" aria-selected="false" tabindex="-1" data-step="3"><span class="sn">04</span><span class="st">Quoi faire</span></button>
+      <div style="margin-top:66px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;align-items:stretch">
+        <a href="web.html" style="position:relative;isolation:isolate;display:flex;flex-direction:column;gap:10px;text-align:left;color:#F4F1E8;border-radius:18px;padding:28px 26px 26px;border:1px solid rgba(255,255,255,.26);background:linear-gradient(148deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.04) 40%,rgba(255,255,255,.018) 62%,rgba(255,255,255,.055) 100%);backdrop-filter:blur(22px) saturate(1.55) brightness(1.12) contrast(1.04);-webkit-backdrop-filter:blur(22px) saturate(1.55) brightness(1.12) contrast(1.04);box-shadow:0 2px 3px rgba(4,22,28,.55),0 10px 20px rgba(4,22,28,.34),0 30px 60px rgba(4,22,28,.30),inset 0 1px 0 rgba(255,255,255,.62),inset 0 3px 0 -2px rgba(201,138,85,.42),inset 1px 0 0 rgba(255,255,255,.20),inset -1px 0 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(255,255,255,.30),inset 0 -22px 40px -28px rgba(255,255,255,.16);transition:transform .28s cubic-bezier(.2,.7,.3,1),box-shadow .28s,background .28s,border-color .28s" style-hover="transform:translateY(-5px);color:#F4F1E8;border-color:rgba(255,255,255,.40);background:linear-gradient(148deg,rgba(255,255,255,.15) 0%,rgba(255,255,255,.06) 40%,rgba(255,255,255,.03) 62%,rgba(255,255,255,.08) 100%);box-shadow:0 3px 4px rgba(4,22,28,.42),0 18px 34px rgba(4,22,28,.34),0 44px 80px rgba(4,22,28,.34),inset 0 1px 0 rgba(255,255,255,.78),inset 1px 0 0 rgba(255,255,255,.26),inset -1px 0 0 rgba(255,255,255,.18),inset 0 -1px 0 rgba(255,255,255,.36)">
+          <span aria-hidden="true" style="position:absolute;inset:0;border-radius:18px;pointer-events:none;z-index:2;background:linear-gradient(112deg,rgba(255,255,255,.24) 0%,rgba(255,255,255,.07) 14%,rgba(255,255,255,0) 30%,rgba(255,255,255,0) 70%,rgba(255,255,255,.05) 86%,rgba(255,255,255,.11) 100%)"></span>
+          <span aria-hidden="true" style="position:absolute;top:0;left:24px;right:24px;height:3px;border-radius:0 0 3px 3px;background:#9CC4E4;z-index:3"></span>
+          <span style="position:relative;z-index:3;font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:#9CC4E4">Construire</span>
+          <h3 style="position:relative;z-index:3;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.35rem;text-shadow:0 1px 10px rgba(4,22,28,.45)">Votre site vitrine</h3>
+          <p style="position:relative;z-index:3;font-size:.95rem;color:#C9D9DB;flex:1">Un site vitrine professionnel, pensé pour être trouvé sur Google et transformer les visites en appels.</p>
+          <span style="position:relative;z-index:3;font-weight:600;font-size:.95rem;margin-top:auto;padding-top:6px">590.– puis 49.–/mois</span>
+          <span style="position:relative;z-index:3;margin-top:4px;display:inline-flex;align-items:center;gap:8px;color:#9CC4E4;font-weight:600;font-size:.9rem">Voir l'offre <span aria-hidden="true" style="font-family:'IBM Plex Mono',monospace">→</span></span>
+        </a>
+        <a href="securite.html" style="position:relative;isolation:isolate;display:flex;flex-direction:column;gap:10px;text-align:left;color:#F4F1E8;border-radius:18px;padding:28px 26px 26px;border:1px solid rgba(255,255,255,.26);background:linear-gradient(148deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.04) 40%,rgba(255,255,255,.018) 62%,rgba(255,255,255,.055) 100%);backdrop-filter:blur(22px) saturate(1.55) brightness(1.12) contrast(1.04);-webkit-backdrop-filter:blur(22px) saturate(1.55) brightness(1.12) contrast(1.04);box-shadow:0 2px 3px rgba(4,22,28,.55),0 10px 20px rgba(4,22,28,.34),0 30px 60px rgba(4,22,28,.30),inset 0 1px 0 rgba(255,255,255,.62),inset 0 3px 0 -2px rgba(201,138,85,.42),inset 1px 0 0 rgba(255,255,255,.20),inset -1px 0 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(255,255,255,.30),inset 0 -22px 40px -28px rgba(255,255,255,.16);transition:transform .28s cubic-bezier(.2,.7,.3,1),box-shadow .28s,background .28s,border-color .28s" style-hover="transform:translateY(-5px);color:#F4F1E8;border-color:rgba(255,255,255,.40);background:linear-gradient(148deg,rgba(255,255,255,.15) 0%,rgba(255,255,255,.06) 40%,rgba(255,255,255,.03) 62%,rgba(255,255,255,.08) 100%);box-shadow:0 3px 4px rgba(4,22,28,.42),0 18px 34px rgba(4,22,28,.34),0 44px 80px rgba(4,22,28,.34),inset 0 1px 0 rgba(255,255,255,.78),inset 1px 0 0 rgba(255,255,255,.26),inset -1px 0 0 rgba(255,255,255,.18),inset 0 -1px 0 rgba(255,255,255,.36)">
+          <span aria-hidden="true" style="position:absolute;inset:0;border-radius:18px;pointer-events:none;z-index:2;background:linear-gradient(112deg,rgba(255,255,255,.24) 0%,rgba(255,255,255,.07) 14%,rgba(255,255,255,0) 30%,rgba(255,255,255,0) 70%,rgba(255,255,255,.05) 86%,rgba(255,255,255,.11) 100%)"></span>
+          <span aria-hidden="true" style="position:absolute;top:0;left:24px;right:24px;height:3px;border-radius:0 0 3px 3px;background:#7FD8C6;z-index:3"></span>
+          <span style="position:relative;z-index:3;font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:#7FD8C6">Protéger</span>
+          <h3 style="position:relative;z-index:3;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.35rem;text-shadow:0 1px 10px rgba(4,22,28,.45)">Votre sécurité</h3>
+          <p style="position:relative;z-index:3;font-size:.95rem;color:#C9D9DB;flex:1">Turiya surveille votre exposition numérique avec les yeux d'un attaquant, et vous alerte avant que ça coûte.</p>
+          <span style="position:relative;z-index:3;font-weight:600;font-size:.95rem;margin-top:auto;padding-top:6px">Diagnostic offert, puis 90.–/mois</span>
+          <span style="position:relative;z-index:3;margin-top:4px;display:inline-flex;align-items:center;gap:8px;color:#7FD8C6;font-weight:600;font-size:.9rem">Voir l'offre <span aria-hidden="true" style="font-family:'IBM Plex Mono',monospace">→</span></span>
+        </a>
+        <a href="reseaux.html" style="position:relative;isolation:isolate;display:flex;flex-direction:column;gap:10px;text-align:left;color:#F4F1E8;border-radius:18px;padding:28px 26px 26px;border:1px solid rgba(255,255,255,.26);background:linear-gradient(148deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.04) 40%,rgba(255,255,255,.018) 62%,rgba(255,255,255,.055) 100%);backdrop-filter:blur(22px) saturate(1.55) brightness(1.12) contrast(1.04);-webkit-backdrop-filter:blur(22px) saturate(1.55) brightness(1.12) contrast(1.04);box-shadow:0 2px 3px rgba(4,22,28,.55),0 10px 20px rgba(4,22,28,.34),0 30px 60px rgba(4,22,28,.30),inset 0 1px 0 rgba(255,255,255,.62),inset 0 3px 0 -2px rgba(201,138,85,.42),inset 1px 0 0 rgba(255,255,255,.20),inset -1px 0 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(255,255,255,.30),inset 0 -22px 40px -28px rgba(255,255,255,.16);transition:transform .28s cubic-bezier(.2,.7,.3,1),box-shadow .28s,background .28s,border-color .28s" style-hover="transform:translateY(-5px);color:#F4F1E8;border-color:rgba(255,255,255,.40);background:linear-gradient(148deg,rgba(255,255,255,.15) 0%,rgba(255,255,255,.06) 40%,rgba(255,255,255,.03) 62%,rgba(255,255,255,.08) 100%);box-shadow:0 3px 4px rgba(4,22,28,.42),0 18px 34px rgba(4,22,28,.34),0 44px 80px rgba(4,22,28,.34),inset 0 1px 0 rgba(255,255,255,.78),inset 1px 0 0 rgba(255,255,255,.26),inset -1px 0 0 rgba(255,255,255,.18),inset 0 -1px 0 rgba(255,255,255,.36)">
+          <span aria-hidden="true" style="position:absolute;inset:0;border-radius:18px;pointer-events:none;z-index:2;background:linear-gradient(112deg,rgba(255,255,255,.24) 0%,rgba(255,255,255,.07) 14%,rgba(255,255,255,0) 30%,rgba(255,255,255,0) 70%,rgba(255,255,255,.05) 86%,rgba(255,255,255,.11) 100%)"></span>
+          <span aria-hidden="true" style="position:absolute;top:0;left:24px;right:24px;height:3px;border-radius:0 0 3px 3px;background:#EBD08A;z-index:3"></span>
+          <span style="position:relative;z-index:3;font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:#EBD08A">Faire vivre</span>
+          <h3 style="position:relative;z-index:3;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.35rem;text-shadow:0 1px 10px rgba(4,22,28,.45)">Vos réseaux sociaux</h3>
+          <p style="position:relative;z-index:3;font-size:.95rem;color:#C9D9DB;flex:1">Un copilote qui prépare vos publications chaque semaine — vous validez, il publie.</p>
+          <span style="position:relative;z-index:3;font-weight:600;font-size:.95rem;margin-top:auto;padding-top:6px">199.–/mois</span>
+          <span style="position:relative;z-index:3;margin-top:4px;display:inline-flex;align-items:center;gap:8px;color:#EBD08A;font-weight:600;font-size:.9rem">Voir l'offre <span aria-hidden="true" style="font-family:'IBM Plex Mono',monospace">→</span></span>
+        </a>
       </div>
-      <div class="demo-stage">
-        <div class="demo-pane active" data-pane="0" id="demo-pane-0" role="tabpanel" aria-labelledby="demo-tab-0">
-          <div>
-            <h3>On établit <b>l'état initial</b>.</h3>
-            <p>Une photographie complète de votre exposition de départ&nbsp;: ce qui est visible, ce qui est faible, ce qu'il faut suivre.</p>
-          </div>
-          <div class="demo-visual" aria-hidden="true">
-            <div class="dim">cabinet-exemple.ch — relevé initial</div>
-            <hr />
-            <div class="row"><span class="dim">site</span><span class="okc">en ligne</span></div>
-            <div class="row"><span class="dim">certificat</span><span class="okc">valide · 78 j</span></div>
-            <div class="row"><span class="dim">en-têtes</span><span class="hl">2 manquants</span></div>
-            <div class="row"><span class="dim">emails en fuite</span><span class="hl">3 trouvés</span></div>
-          </div>
+
+      <p style="margin-top:66px;padding:30px 36px;border:1px solid rgba(255,255,255,.22);border-left:3px solid #C98A55;color:#C9D9DB;max-width:62ch;font-size:1rem;background:linear-gradient(148deg,rgba(255,255,255,.09),rgba(255,255,255,.03));backdrop-filter:blur(20px) saturate(1.5) brightness(1.12);-webkit-backdrop-filter:blur(20px) saturate(1.5) brightness(1.12);border-radius:0 14px 14px 0;box-shadow:0 2px 3px rgba(4,22,28,.45),0 16px 34px rgba(4,22,28,.26),inset 0 1px 0 rgba(255,255,255,.50)"><strong style="color:#F4F1E8">Indépendantes l'une de l'autre.</strong> Vous avez déjà un site ? Prenez la surveillance seule. Vous voulez juste être présent chaque semaine ? Prenez le copilote seul. Rien n'est conditionné à rien.</p>
+    </section>
+
+    <section style="margin-top:220px">
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 2px rgba(4,22,28,.5));margin:0 auto 20px;text-align:center">Qui je suis</p>
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(1.55rem,2.9vw,2.15rem);line-height:1.18;letter-spacing:-.015em;max-width:34ch;margin:0 auto;text-align:center;text-wrap:balance;text-shadow:0 2px 14px rgba(4,22,28,.4)">Vous parlez à la personne qui fait le travail.</h2>
+      <div data-grid="founder" style="margin-top:66px;display:grid;grid-template-columns:280px 1fr;gap:40px;align-items:center">
+        <div data-portrait="" style="position:relative;aspect-ratio:1;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.26);box-shadow:0 16px 34px rgba(4,22,28,.32)">
+          <img src="uploads/IMG_20200505_103626.jpg" alt="Rodrigue Bruppacher, fondateur de Bisse IA" style="width:100%;height:100%;object-fit:cover;object-position:50% 28%;display:block">
+          <span aria-hidden="true" style="position:absolute;inset:0;border-radius:18px;pointer-events:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.45);background:linear-gradient(200deg,rgba(12,47,60,0) 50%,rgba(4,22,28,.4) 100%)"></span>
         </div>
-        <div class="demo-pane" data-pane="1" id="demo-pane-1" role="tabpanel" aria-labelledby="demo-tab-1">
-          <div>
-            <h3>La surveillance <b>tourne en continu</b>.</h3>
-            <p>Disponibilité vérifiée en permanence&nbsp;; sécurité et conformité re-contrôlées en profondeur chaque mois.</p>
-          </div>
-          <div class="demo-visual" aria-hidden="true">
-            <div class="row"><span class="dim">disponibilité</span><span class="okc">100 % · 30 j</span></div>
-            <div class="row"><span class="dim">certificat</span><span class="okc">OK</span></div>
-            <div class="row"><span class="dim">conformité nLPD</span><span class="okc">OK</span></div>
-            <hr />
-            <div class="dim">re-contrôle profond — mensuel</div>
-            <div><span class="badge ok">EN VEILLE</span></div>
-          </div>
-        </div>
-        <div class="demo-pane" data-pane="2" id="demo-pane-2" role="tabpanel" aria-labelledby="demo-tab-2">
-          <div>
-            <h3>Une dégradation&nbsp;? <b>Vous êtes prévenu.</b></h3>
-            <p>Dès qu'un signal se dégrade, vous recevez une alerte — uniquement les alertes utiles, jamais de bruit inutile.</p>
-          </div>
-          <div class="demo-visual" aria-hidden="true">
-            <div class="dim">alerte — 14.06, 09:12</div>
-            <hr />
-            <div class="row"><span class="dim">domaine</span><span class="hl">SPF affaibli</span></div>
-            <div class="row"><span class="dim">risque</span><span class="hl">usurpation d'email</span></div>
-            <div><span class="badge">À CORRIGER</span></div>
-          </div>
-        </div>
-        <div class="demo-pane" data-pane="3" id="demo-pane-3" role="tabpanel" aria-labelledby="demo-tab-3">
-          <div>
-            <h3>Et je vous dis <b>quoi faire</b>.</h3>
-            <p>Chaque alerte arrive avec une marche à suivre claire et priorisée — qualifiée par un humain avant de vous parvenir.</p>
-          </div>
-          <div class="demo-visual" aria-hidden="true">
-            <div class="row"><span class="dim">priorité</span><span class="hl">haute</span></div>
-            <div class="row"><span class="dim">action</span><span>durcir l'enregistrement SPF</span></div>
-            <div class="row"><span class="dim">qualifié par</span><span>R. Bruppacher</span></div>
-            <hr />
-            <div class="row"><span class="dim">statut</span><span class="badge ok">MARCHE À SUIVRE ✓</span></div>
+        <div>
+          <p style="color:#C9D9DB;max-width:58ch"><strong style="color:#F4F1E8">Rodrigue Bruppacher.</strong> Une solide expérience en cybersécurité, à surveiller la sécurité et l'exposition d'infrastructures d'entreprises, doublée d'une vraie maîtrise du webdesign et de l'intelligence artificielle. Trois domaines où je suis bon, et ce sont exactement les trois offres que vous voyez ici.</p>
+          <p style="color:#C9D9DB;max-width:58ch;margin-top:12px">Pas d'agence, pas de commercial, pas de sous-traitance à l'étranger : vous m'écrivez, je réponds, et c'est moi qui fais le travail. Ce qui veut aussi dire que je réponds encore dans deux ans.</p>
+          <div style="margin-top:22px;display:flex;gap:8px;flex-wrap:wrap">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.05em;padding:6px 13px;border-radius:999px;color:#2A1608;font-weight:500;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);background-size:200% 100%;box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -1px 0 rgba(0,0,0,.28),0 3px 8px rgba(4,22,28,.4)">Sécurité &amp; exposition</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.05em;padding:6px 13px;border-radius:999px;color:#2A1608;font-weight:500;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);background-size:200% 100%;box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -1px 0 rgba(0,0,0,.28),0 3px 8px rgba(4,22,28,.4)">Webdesign</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.05em;padding:6px 13px;border-radius:999px;color:#2A1608;font-weight:500;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);background-size:200% 100%;box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -1px 0 rgba(0,0,0,.28),0 3px 8px rgba(4,22,28,.4)">Automatisation &amp; IA</span>
           </div>
         </div>
       </div>
-      <p class="demo-note">Vous recevez <b>uniquement les alertes utiles</b>, avec une marche à suivre claire.</p>
-    </div>
+    </section>
 
-    <div class="nlpd reveal scope-note">
-      <span class="nk">Notre valeur</span>
-      <p>Les outils détectent. <strong>Nous interprétons.</strong> Vous recevez une alerte claire et actionnable, pas une notification technique brute&nbsp;: nous surveillons ce qui est visible depuis l'extérieur, nous vous alertons si quelque chose change, vous savez quoi corriger.</p>
-    </div>
-
-    <div class="nlpd reveal scope-note">
-      <span class="nk">Périmètre</span>
-      <p>Turiya observe votre exposition <strong>depuis l'extérieur</strong>, à partir de sources ouvertes. Elle ne sécurise pas votre système interne — elle vous montre ce qui est visible de dehors, et vous dit quoi fermer.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ════════ LA PROMESSE ════════ -->
-<section class="nom" data-screen-label="La promesse">
-  <svg class="nom-flow" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M-20 30 C 300 10, 600 50, 900 30 S 1300 10, 1460 30"></path>
-  </svg>
-  <div class="wrap">
-    <p class="k-label">La promesse</p>
-    <figure>
-      <blockquote>La surveillance tourne en continu. Dès qu'une dégradation est détectée, <b>vous êtes alerté — et je vous dis quoi faire.</b></blockquote>
-      <figcaption>Disponibilité vérifiée en permanence · sécurité &amp; conformité re-contrôlées en profondeur</figcaption>
-    </figure>
-  </div>
-</section>
-
-<!-- ════════ POUR QUI ════════ -->
-<section class="agents" id="pourqui" data-screen-label="Pour qui">
-  <div class="wrap">
-    <div class="agents-head reveal">
-      <p class="k-label">Pour qui</p>
-      <h2>Pour les PME — <b>et d'abord celles qui ont le plus à perdre.</b></h2>
-      <p>Turiya s'adresse à toute PME ayant une présence numérique. Les professions sensibles sont notre priorité — parce que la confidentialité y est le fonds de commerce — mais le risque, lui, ne fait pas de tri.</p>
-    </div>
-    <div class="agents-grid reveal">
-      <div class="agent"><span class="an">01</span><h3>Fiduciaires</h3><p>Vous manipulez les comptes et les données fiscales de tout un tissu d'entreprises locales.</p></div>
-      <div class="agent"><span class="an">02</span><h3>Avocats &amp; études</h3><p>Le secret professionnel ne tolère ni fuite d'email ni domaine usurpé en votre nom.</p></div>
-      <div class="agent"><span class="an">03</span><h3>Cabinets médicaux &amp; dentaires</h3><p>Les données de santé sont parmi les plus sensibles — et les plus convoitées.</p></div>
-      <div class="agent"><span class="an">04</span><h3>Notaires</h3><p>Actes, identités, transactions&nbsp;: votre signature engage, votre exposition aussi.</p></div>
-      <div class="agent"><span class="an">05</span><h3>Régies immobilières</h3><p>Mandats, coordonnées de locataires et de propriétaires, flux financiers à protéger.</p></div>
-      <div class="agent"><span class="an">06</span><h3>Toute PME</h3><p>Commerce, artisan, service&nbsp;: dès qu'il y a un site, des emails et des clients, il y a une exposition à surveiller.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════ LE FONDATEUR ════════ -->
-<section class="fondateur" id="fondateur" data-screen-label="Le fondateur">
-  <div class="wrap fondateur-grid">
-    <div class="monogram reveal" aria-hidden="true">
-      <span class="rb">R<b>B</b></span>
-      <span class="role">Fondateur</span>
-    </div>
-    <div class="fondateur-body reveal">
-      <p class="k-label">Qui surveille votre exposition</p>
-      <h2>Rodrigue Bruppacher, <b>analyste cybersécurité</b> au service des PME.</h2>
-      <p>Trois ans et demi en centre opérationnel de sécurité 24/7&nbsp;: surveillance SIEM, threat hunting, réponse aux incidents pour des entreprises internationales. Avant ça, gestion des identités et des accès en environnement bancaire — flux e-banking, revues de droits d'accès.</p>
-      <p>Pour votre entreprise, ça change une chose&nbsp;: <strong>celui qui surveille votre exposition sait voir votre organisation comme un attaquant la voit</strong> — et vous dire, précisément, ce qu'il faut fermer. Aujourd'hui, depuis Sion, je mets ce métier au service des PME.</p>
-      <div class="creds">
-        <div class="cred"><span class="ck">SOC 24/7</span><span class="cv">3+ ans d'analyse sécurité pour des entreprises internationales — SIEM, threat hunting, réponse aux incidents</span></div>
-        <div class="cred"><span class="ck">Banque</span><span class="cv">Gestion des identités et accès — flux e-banking, revues de droits</span></div>
-        <div class="cred"><span class="ck">Certifications</span><span class="cv">Threat Hunting (Cybereason) · CCNA (Cisco)</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════ SOUVERAINETÉ & GARANTIES ════════ -->
-<section class="securite" id="garanties" data-screen-label="Souveraineté &amp; garanties">
-  <div class="wrap">
-    <div class="securite-head reveal">
-      <p class="k-label">Souveraineté &amp; garanties</p>
-      <h2>Trois garanties, <b>sans compromis.</b></h2>
-      <p>Pas de promesses — des dispositions précises, héritées de la sécurité bancaire et du travail en centre opérationnel de sécurité.</p>
-    </div>
-    <div class="sec-grid reveal">
-      <div class="sec-pillar">
-        <span class="sn">01</span>
-        <h3>Données traitées en Suisse</h3>
-        <p>Vos données de surveillance sont traitées et stockées en Suisse, sur une infrastructure souveraine (Infomaniak, Genève). Aucune donnée n'est revendue ni exploitée à d'autres fins que votre surveillance.</p>
-        <ul>
-          <li>traitement &amp; stockage en Suisse</li>
-          <li>hébergement souverain (Infomaniak, Genève)</li>
-          <li>aucune revente de vos données</li>
-        </ul>
-      </div>
-      <div class="sec-pillar">
-        <span class="sn">02</span>
-        <h3>Validation humaine</h3>
-        <p>Sur les formules accompagnées, chaque alerte importante est qualifiée et priorisée par un analyste avant de vous parvenir — vous parlez à un humain, pas à un robot.</p>
-        <ul>
-          <li>qualification humaine sur les formules accompagnées</li>
-          <li>priorisation par un analyste</li>
-          <li>interprétation, pas notification brute</li>
-        </ul>
-      </div>
-      <div class="sec-pillar">
-        <span class="sn">03</span>
-        <h3>Surveillance externe, respectueuse</h3>
-        <p>Uniquement des sources ouvertes, observées depuis l'extérieur. Aucune intrusion, aucun test agressif sur vos systèmes.</p>
-        <ul>
-          <li>sources ouvertes uniquement</li>
-          <li>observation depuis l'extérieur</li>
-          <li>aucune intrusion ni test agressif</li>
-        </ul>
-      </div>
-    </div>
-    <div class="nlpd reveal">
-      <span class="nk">Conformité nLPD</span>
-      <p>Surveillance documentée, registre des traitements, données traitées en Suisse&nbsp;: <strong>la conformité est encadrée par écrit</strong>, pas affirmée sur une page web.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ════════ L'OFFRE ════════ -->
-<section class="offre" id="offre" data-screen-label="L'offre">
-  <div class="wrap">
-    <div class="offre-head reveal">
-      <p class="k-label">L'offre</p>
-      <h2>Le diagnostic comme porte d'entrée. <b>La surveillance comme tranquillité.</b></h2>
-      <p>On commence toujours par un diagnostic initial de votre exposition. Ensuite, la surveillance continue tourne en abonnement, à un niveau qui correspond à votre exposition réelle — pas à un catalogue.</p>
-    </div>
-
-    <div class="pilot reveal">
-      <div class="pilot-l">
-        <span class="pilot-label">Offre pilote · 2026 — places limitées</span>
-        <h3>Diagnostic offert, puis surveillance <b>dès CHF&nbsp;90.–/mois</b></h3>
-        <p>Pour lancer les premiers clients pilotes, un tarif préférentiel, sans engagement de durée. Vous testez la surveillance sur votre propre exposition, et vous arrêtez quand vous voulez.</p>
-      </div>
-      <div class="pilot-r">
-        <ul>
-          <li>Diagnostic de votre exposition offert</li>
-          <li>Surveillance continue des signaux visibles</li>
-          <li>Sans engagement — résiliable à tout moment</li>
-          <li>Tarif pilote bloqué la première année</li>
-        </ul>
-        <a class="cta" href="#contact">Réserver une place pilote</a>
-      </div>
-    </div>
-
-    <div class="tiers reveal">
-      <div class="tier">
-        <span class="tn">Essentiel</span>
-        <h3>Ne plus être aveugle</h3>
-        <p>L'essentiel pour ne plus ignorer votre exposition.</p>
-        <ul>
-          <li>Surveillance continue des 4 dimensions</li>
-          <li>Alerte dès qu'une dégradation est détectée</li>
-          <li>Marche à suivre claire pour chaque alerte</li>
-        </ul>
-      </div>
-      <div class="tier feature">
-        <span class="tn">Renforcé</span>
-        <h3>Détecter plus tôt</h3>
-        <p>Pour les entreprises qui veulent anticiper.</p>
-        <ul>
-          <li>Tout l'Essentiel, contrôlé plus fréquemment</li>
-          <li>Contrôles approfondis &amp; priorisation des risques</li>
-          <li>Rapport périodique sur votre exposition</li>
-        </ul>
-      </div>
-      <div class="tier">
-        <span class="tn">Expert</span>
-        <h3>Un analyste à vos côtés</h3>
-        <p>Surveillance complète, accompagnée.</p>
-        <ul>
-          <li>Tout le Renforcé, avec analyse experte humaine</li>
-          <li>Accompagnement à la remédiation, pas à pas</li>
-          <li>Point de contact direct, prioritaire</li>
-        </ul>
-      </div>
-    </div>
-    <p class="offer-note reveal">Pas de prix en ligne au-delà du pilote&nbsp;: chaque entreprise a une exposition différente. On en discute au contact.</p>
-  </div>
-</section>
-
-<!-- ════════ CONTACT ════════ -->
-<section class="contact" id="contact" data-screen-label="Contact">
-  <div class="wrap contact-grid">
-    <div class="contact-info reveal">
-      <p class="k-label">Contact</p>
-      <h2>Vérifions <b>votre exposition</b>.</h2>
-      <p>Décrivez votre entreprise en deux lignes. Je vous réponds sous un jour ouvré avec une première lecture de votre exposition.</p>
-      <div class="coords">
-        <div class="coord"><span class="ck">Email</span><span class="cv"><a href="mailto:admin@bisse-ia.ch">admin@bisse-ia.ch</a></span></div>
-        <div class="coord"><span class="ck">Téléphone</span><span class="cv"><a href="tel:+41779246978">+41 77 924 69 78</a></span></div>
-        <div class="coord"><span class="ck">Adresse</span><span class="cv">Sion · Valais</span></div>
-        <div class="coord"><span class="ck">Horaires</span><span class="cv">Lundi–vendredi, 8h–18h</span></div>
-      </div>
-    </div>
-    <form class="form reveal" id="contact-form" method="POST" action="https://n8n.bisse-ia.ch/webhook/bisseia-contact">
-      <p class="hp-field" aria-hidden="true"><label>Ne pas remplir&nbsp;: <input name="site_web" tabindex="-1" autocomplete="off" /></label></p>
-      <div class="form-row">
-        <div class="field">
-          <label for="f-nom">Nom</label>
-          <input id="f-nom" name="nom" type="text" autocomplete="name" required />
+    <section style="margin-top:180px">
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 2px rgba(4,22,28,.5));margin:0 auto 20px;text-align:center">Comment ça se passe</p>
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(1.55rem,2.9vw,2.15rem);line-height:1.18;letter-spacing:-.015em;max-width:34ch;margin:0 auto;text-align:center;text-wrap:balance;text-shadow:0 2px 14px rgba(4,22,28,.4)">Quelle que soit l'offre, la marche est la même.</h2>
+      <div style="margin-top:66px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;align-items:stretch">
+        <div style="position:relative;padding-top:22px;border-top:1px solid rgba(255,255,255,.22);display:flex;flex-direction:column">
+          <span style="position:absolute;top:-11px;left:0;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);background-size:200% 100%;color:#2A1608;font-family:'IBM Plex Mono',monospace;font-size:.7rem;font-weight:600;padding:3px 10px;border-radius:999px;box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 2px 6px rgba(4,22,28,.45)">01</span>
+          <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.1rem;margin-bottom:5px">Vous m'écrivez</h4>
+          <p style="font-size:.93rem;color:#C9D9DB;flex:1">Vingt minutes pour comprendre votre métier, vos clients et ce dont vous avez réellement besoin. Si ce n'est aucune des trois offres, je vous le dis.</p>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:#D9A273;margin-top:12px;display:block">Jour 1</span>
         </div>
-        <div class="field">
-          <label for="f-entreprise">Cabinet / organisation</label>
-          <input id="f-entreprise" name="entreprise" type="text" autocomplete="organization" />
+        <div style="position:relative;padding-top:22px;border-top:1px solid rgba(255,255,255,.22);display:flex;flex-direction:column">
+          <span style="position:absolute;top:-11px;left:0;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);background-size:200% 100%;color:#2A1608;font-family:'IBM Plex Mono',monospace;font-size:.7rem;font-weight:600;padding:3px 10px;border-radius:999px;box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 2px 6px rgba(4,22,28,.45)">02</span>
+          <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.1rem;margin-bottom:5px">Je vous montre du concret</h4>
+          <p style="font-size:.93rem;color:#C9D9DB;flex:1">Votre site réel, votre diagnostic d'exposition, ou vos premières publications — jamais une promesse abstraite.</p>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:#D9A273;margin-top:12px;display:block">Sous 48 heures</span>
+        </div>
+        <div style="position:relative;padding-top:22px;border-top:1px solid rgba(255,255,255,.22);display:flex;flex-direction:column">
+          <span style="position:absolute;top:-11px;left:0;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);background-size:200% 100%;color:#2A1608;font-family:'IBM Plex Mono',monospace;font-size:.7rem;font-weight:600;padding:3px 10px;border-radius:999px;box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 2px 6px rgba(4,22,28,.45)">03</span>
+          <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.1rem;margin-bottom:5px">Vous validez, ça tourne</h4>
+          <p style="font-size:.93rem;color:#C9D9DB;flex:1">Tout est mis en place et suivi chaque mois. Vous n'installez rien, vous ne gérez rien.</p>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:#D9A273;margin-top:12px;display:block">Dans la semaine</span>
         </div>
       </div>
-      <div class="field">
-        <label for="f-email">Email</label>
-        <input id="f-email" name="email" type="email" autocomplete="email" required />
-      </div>
-      <div class="field">
-        <label for="f-message">En deux lignes, votre entreprise</label>
-        <textarea id="f-message" name="message" placeholder="Votre activité, votre site, ce qui vous inquiète…"></textarea>
-      </div>
-      <button type="submit">Demander un audit</button>
-      <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
-      <p class="form-note">Réponse sous un jour ouvré. Vos coordonnées ne servent qu'à vous répondre.</p>
-    </form>
-  </div>
-</section>
+    </section>
 
-<footer class="footer">
-  <div class="wrap">
-    <span class="fb">© 2026 Bisse IA · Turiya — Sion, Valais</span>
-    <ul class="footer-links">
-      <li><a href="mentions-legales.html#impressum">Mentions légales</a></li>
-      <li><a href="mentions-legales.html#confidentialite">Politique de confidentialité</a></li>
-      <li><a href="mentions-legales.html#droits">Droits nLPD</a></li>
-    </ul>
+    <section style="margin-top:220px">
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 2px rgba(4,22,28,.5));margin:0 auto 20px;text-align:center">Questions fréquentes</p>
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(1.55rem,2.9vw,2.15rem);line-height:1.18;letter-spacing:-.015em;max-width:34ch;margin:0 auto;text-align:center;text-wrap:balance;text-shadow:0 2px 14px rgba(4,22,28,.4)">Ce qu'on me demande avant de se lancer.</h2>
+      <div style="margin:58px auto 0;max-width:76ch">
+        <details open="open" style="border-bottom:1px solid rgba(255,255,255,.16)">
+          <summary style="cursor:pointer;padding:25px 34px 25px 0;font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.03rem;list-style:none;position:relative">Faut-il prendre les trois offres ?<span data-sign="" aria-hidden="true" style="position:absolute;right:4px;top:50%;transform:translateY(-50%);font-family:'IBM Plex Mono',monospace;font-size:1.3rem;color:#D9A273"></span></summary>
+          <p style="padding:0 0 26px;color:#C9D9DB;font-size:.98rem;line-height:1.65;max-width:70ch">Non. Elles sont totalement indépendantes et se prennent séparément. La plupart des clients commencent par une seule.</p>
+        </details>
+        <details style="border-bottom:1px solid rgba(255,255,255,.16)">
+          <summary style="cursor:pointer;padding:25px 34px 25px 0;font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.03rem;list-style:none;position:relative">Y a-t-il un engagement de durée ?<span data-sign="" aria-hidden="true" style="position:absolute;right:4px;top:50%;transform:translateY(-50%);font-family:'IBM Plex Mono',monospace;font-size:1.3rem;color:#D9A273"></span></summary>
+          <p style="padding:0 0 26px;color:#C9D9DB;font-size:.98rem;line-height:1.65;max-width:70ch">Aucun. Les abonnements mensuels s'arrêtent quand vous le décidez, sans préavis ni frais.</p>
+        </details>
+        <details style="border-bottom:1px solid rgba(255,255,255,.16)">
+          <summary style="cursor:pointer;padding:25px 34px 25px 0;font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.03rem;list-style:none;position:relative">Que se passe-t-il si j'arrête ?<span data-sign="" aria-hidden="true" style="position:absolute;right:4px;top:50%;transform:translateY(-50%);font-family:'IBM Plex Mono',monospace;font-size:1.3rem;color:#D9A273"></span></summary>
+          <p style="padding:0 0 26px;color:#C9D9DB;font-size:.98rem;line-height:1.65;max-width:70ch">Ce qui vous appartient reste à vous : votre site, votre nom de domaine, vos comptes. Je vous transmets tout et vous pouvez continuer ailleurs.</p>
+        </details>
+        <details style="border-bottom:1px solid rgba(255,255,255,.16)">
+          <summary style="cursor:pointer;padding:25px 34px 25px 0;font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.03rem;list-style:none;position:relative">Mes données restent-elles en Suisse ?<span data-sign="" aria-hidden="true" style="position:absolute;right:4px;top:50%;transform:translateY(-50%);font-family:'IBM Plex Mono',monospace;font-size:1.3rem;color:#D9A273"></span></summary>
+          <p style="padding:0 0 26px;color:#C9D9DB;font-size:.98rem;line-height:1.65;max-width:70ch">Oui, pour les trois offres. Hébergement suisse et conformité à la nLPD.</p>
+        </details>
+        <details style="border-bottom:1px solid rgba(255,255,255,.16)">
+          <summary style="cursor:pointer;padding:25px 34px 25px 0;font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.03rem;list-style:none;position:relative">Je n'y connais rien en informatique. C'est un problème ?<span data-sign="" aria-hidden="true" style="position:absolute;right:4px;top:50%;transform:translateY(-50%);font-family:'IBM Plex Mono',monospace;font-size:1.3rem;color:#D9A273"></span></summary>
+          <p style="padding:0 0 26px;color:#C9D9DB;font-size:.98rem;line-height:1.65;max-width:70ch">Au contraire, c'est le cas de la plupart de mes clients. Vous n'avez rien à installer ni à apprendre — je m'occupe de la technique, vous validez.</p>
+        </details>
+      </div>
+    </section>
+
+    <section style="margin-top:200px;padding:78px 48px;border-radius:22px;position:relative;overflow:hidden;background:linear-gradient(148deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.04) 50%,rgba(255,255,255,.06) 100%);backdrop-filter:blur(24px) saturate(1.55) brightness(1.12);-webkit-backdrop-filter:blur(24px) saturate(1.55) brightness(1.12);border:1px solid rgba(255,255,255,.26);box-shadow:0 2px 3px rgba(4,22,28,.5),0 24px 60px rgba(4,22,28,.34),inset 0 1px 0 rgba(255,255,255,.6),inset 0 26px 60px -40px rgba(201,138,85,.45)">
+      <span aria-hidden="true" style="position:absolute;top:0;left:0;right:0;height:3px;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);background-size:200% 100%;box-shadow:0 1px 14px rgba(201,138,85,.45)"></span>
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(1.7rem,3.2vw,2.4rem);line-height:1.15;letter-spacing:-.015em;margin:0 auto;max-width:26ch;text-align:center;text-wrap:balance">Vingt minutes suffisent pour savoir laquelle des trois vous concerne.</h2>
+      <p style="margin:20px auto 0;max-width:56ch;line-height:1.65;color:#C9D9DB;text-align:center">Écrivez-moi sur WhatsApp, ou laissez-moi un message ci-dessous — je réponds sous 24 h ouvrées.</p>
+      <div style="margin-top:32px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;align-items:stretch">
+        <a href="https://wa.me/41779246978" target="_blank" rel="noopener" style="border:1.5px solid rgba(255,255,255,.42);color:#F4F1E8;border-radius:999px;padding:14px 28px;font-weight:600;font-size:1rem;line-height:1.2;display:inline-flex;align-items:center;transition:background .2s,border-color .2s" style-hover="background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.7);color:#F4F1E8">Écrire sur WhatsApp</a>
+      </div>
+
+      <form onSubmit="{{ onSubmit }}" style="margin:42px auto 0;max-width:52ch;display:grid;gap:12px;text-align:left">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px">
+          <label style="display:grid;gap:6px"><span style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:#C9D9DB">Votre nom</span><input ref="{{ nameRef }}" type="text" required="" autoComplete="name" style="background:rgba(4,22,28,.45);border:1px solid rgba(255,255,255,.22);border-radius:10px;padding:12px 14px;color:#F4F1E8;font:inherit;font-size:.95rem"></label>
+          <label style="display:grid;gap:6px"><span style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:#C9D9DB">WhatsApp ou e-mail</span><input ref="{{ contactRef }}" type="text" required="" style="background:rgba(4,22,28,.45);border:1px solid rgba(255,255,255,.22);border-radius:10px;padding:12px 14px;color:#F4F1E8;font:inherit;font-size:.95rem"></label>
+        </div>
+        <label style="display:grid;gap:6px"><span style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:#C9D9DB">Ce dont vous auriez besoin</span><textarea ref="{{ msgRef }}" rows="3" style="background:rgba(4,22,28,.45);border:1px solid rgba(255,255,255,.22);border-radius:10px;padding:12px 14px;color:#F4F1E8;font:inherit;font-size:.95rem;resize:vertical"></textarea></label>
+        <button type="submit" style="justify-self:start;background:none;border:1.5px solid #C98A55;color:#D9A273;border-radius:999px;padding:12px 26px;font-weight:600;font-size:.95rem;transition:background .2s,color .2s" style-hover="background:#C98A55;color:#2A1608">Envoyer mon message</button>
+      </form>
+    </section>
+
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ isWeb }}" hint-placeholder-val="{{ false }}">
+  <section data-screen-label="Web" style="animation:fade .35s ease">
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:#9CC4E4;margin:76px 0 16px;text-shadow:0 1px 8px rgba(0,0,0,.25)">Web — Construire</p>
+    <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(2.4rem,6.2vw,4.2rem);line-height:1.02;letter-spacing:-.025em;max-width:16ch;text-shadow:0 2px 18px rgba(0,0,0,.28)">Un site qui <em style="font-style:normal;color:#9CC4E4">travaille</em> pour vous.</h1>
+    <p style="margin:26px 0 0;max-width:56ch;font-size:1.12rem;color:#C9D9DB;text-shadow:0 1px 10px rgba(0,0,0,.25)">Une page, un métier, un objectif : que vos futurs clients vous trouvent et vous appellent. Conçu, écrit et mis en ligne pour vous — vous n'avez rien à installer.</p>
+
+    <div style="margin-top:78px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:34px;align-items:start">
+      <div><span style="font-family:'IBM Plex Mono',monospace;color:#9CC4E4;font-size:.85rem">[01]</span><h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.08rem;margin-bottom:6px;color:#F4F1E8">Livré clé en main</h4><p style="font-size:.95rem;color:#C9D9DB">Textes, structure, mise en ligne et nom de domaine : tout est compris. Vous validez, c'est en ligne.</p></div>
+      <div><span style="font-family:'IBM Plex Mono',monospace;color:#9CC4E4;font-size:.85rem">[02]</span><h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.08rem;margin-bottom:6px;color:#F4F1E8">Pensé pour Google</h4><p style="font-size:.95rem;color:#C9D9DB">Référencement local soigné pour être visible sur les recherches de votre région et de votre métier.</p></div>
+      <div><span style="font-family:'IBM Plex Mono',monospace;color:#9CC4E4;font-size:.85rem">[03]</span><h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.08rem;margin-bottom:6px;color:#F4F1E8">Hébergé en Suisse</h4><p style="font-size:.95rem;color:#C9D9DB">Vos données et celles de vos visiteurs restent en Suisse, conformément à la nLPD.</p></div>
+    </div>
+
+    <div data-grid="offer" style="margin-top:86px;position:relative;overflow:hidden;border-radius:22px;padding:42px;display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center;color:#F4F1E8;border:1px solid rgba(255,255,255,.26);background:linear-gradient(148deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.04) 42%,rgba(255,255,255,.018) 64%,rgba(255,255,255,.055) 100%);backdrop-filter:blur(26px) saturate(1.55) brightness(1.12) contrast(1.04);-webkit-backdrop-filter:blur(26px) saturate(1.55) brightness(1.12) contrast(1.04);box-shadow:0 2px 3px rgba(4,22,28,.55),0 14px 26px rgba(4,22,28,.34),0 40px 78px rgba(4,22,28,.32),inset 0 1px 0 rgba(255,255,255,.62),inset 0 3px 0 -2px rgba(201,138,85,.42),inset 1px 0 0 rgba(255,255,255,.20),inset -1px 0 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(255,255,255,.30),inset 0 -26px 46px -32px rgba(255,255,255,.15)">
+      <span aria-hidden="true" style="position:absolute;inset:0;border-radius:22px;pointer-events:none;background:linear-gradient(112deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,.06) 16%,rgba(255,255,255,0) 32%,rgba(255,255,255,0) 72%,rgba(255,255,255,.045) 86%,rgba(255,255,255,.10) 100%)"></span>
+      <span aria-hidden="true" style="position:absolute;top:0;bottom:0;left:0;width:5px;background:#9CC4E4;z-index:1;box-shadow:0 0 18px -2px #9CC4E4"></span>
+      <div style="position:relative;z-index:1;min-width:0">
+        <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.55rem;letter-spacing:-.01em;text-shadow:0 1px 10px rgba(4,22,28,.45)">Site vitrine professionnel</h2>
+        <ul style="list-style:none;margin-top:16px;display:grid;gap:9px">
+          <li style="padding-left:26px;position:relative;font-size:.98rem"><span style="position:absolute;left:0;color:#9CC4E4;font-family:'IBM Plex Mono',monospace">—</span>Conception, rédaction et mise en ligne complètes</li>
+          <li style="padding-left:26px;position:relative;font-size:.98rem"><span style="position:absolute;left:0;color:#9CC4E4;font-family:'IBM Plex Mono',monospace">—</span>Formulaire de contact et liens directs (appel, WhatsApp)</li>
+          <li style="padding-left:26px;position:relative;font-size:.98rem"><span style="position:absolute;left:0;color:#9CC4E4;font-family:'IBM Plex Mono',monospace">—</span>Maintenance mensuelle : mises à jour, sauvegardes, modifications de contenu</li>
+          <li style="padding-left:26px;position:relative;font-size:.98rem"><span style="position:absolute;left:0;color:#9CC4E4;font-family:'IBM Plex Mono',monospace">—</span>Un interlocuteur unique, en Valais</li>
+        </ul>
+      </div>
+      <div data-price="" style="position:relative;z-index:1;min-width:0;text-align:center;background:linear-gradient(165deg,#07222B,#04161C);border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:30px 26px;box-shadow:inset 0 1px 0 rgba(255,255,255,.10),0 10px 30px rgba(4,22,28,.45)">
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:3rem;line-height:1;color:#9CC4E4;text-shadow:0 2px 14px rgba(4,22,28,.45)">590.–</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:#C9D9DB;margin-top:6px">création, en une fois</div>
+        <p style="margin-top:14px;font-size:.92rem;color:#C9D9DB">puis <strong>49.–/mois</strong><br>hébergement &amp; maintenance, sans engagement</p>
+        <a href="https://wa.me/41779246978" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;margin-top:22px;background:#C98A55;color:#2A1608;border-radius:999px;padding:13px 28px;font-weight:600;font-size:1rem;transition:transform .15s,background .2s;box-shadow:0 8px 22px rgba(4,22,28,.42),inset 0 1px 0 rgba(255,255,255,.5)" style-hover="transform:translateY(-2px);background:#D9A273;color:#2A1608">Demander mon site</a>
+        <p style="font-size:.86rem;color:#C9D9DB;margin-top:12px">Réponse sous 24 h ouvrées.</p>
+      </div>
+    </div>
+
+    <sc-if value="{{ showNext }}" hint-placeholder-val="{{ true }}">
+      <a href="securite.html" style="margin-top:78px;display:flex;align-items:center;gap:18px;background:linear-gradient(148deg,rgba(255,255,255,.09),rgba(255,255,255,.03));backdrop-filter:blur(20px) saturate(1.5) brightness(1.12);-webkit-backdrop-filter:blur(20px) saturate(1.5) brightness(1.12);border:1px solid rgba(255,255,255,.20);box-shadow:0 2px 3px rgba(4,22,28,.45),0 16px 34px rgba(4,22,28,.26),inset 0 1px 0 rgba(255,255,255,.50);border-radius:14px;padding:20px 24px;width:100%;text-align:left;color:#F4F1E8;transition:border-color .2s,background .2s,transform .2s" style-hover="border-color:#7FD8C6;background:rgba(255,255,255,.16);color:#F4F1E8;transform:translateX(3px)">
+        <span style="font-family:'IBM Plex Mono',monospace;color:#7FD8C6;font-size:1.2rem">→</span>
+        <span><span style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#7FD8C6">Autre offre</span><br><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.05rem">Votre site est en ligne ? Découvrez la surveillance de votre exposition.</span></span>
+      </a>
+    </sc-if>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ isSec }}" hint-placeholder-val="{{ false }}">
+  <section data-screen-label="Sécurité" style="animation:fade .35s ease">
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:#7FD8C6;margin:76px 0 16px;text-shadow:0 1px 8px rgba(0,0,0,.25)">Sécurité — Protéger · Turiya</p>
+    <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(2.4rem,6.2vw,4.2rem);line-height:1.02;letter-spacing:-.025em;max-width:16ch;text-shadow:0 2px 18px rgba(0,0,0,.28)">Voir votre entreprise avec <em style="font-style:normal;color:#7FD8C6">les yeux d'un attaquant</em>.</h1>
+    <p style="margin:26px 0 0;max-width:56ch;font-size:1.12rem;color:#C9D9DB;text-shadow:0 1px 10px rgba(0,0,0,.25)">Comme le garde du bisse parcourait le canal chaque matin pour repérer les fuites avant qu'elles ne deviennent des brèches, Turiya surveille en continu ce que votre entreprise expose sur internet — et vous alerte quand quelque chose cloche.</p>
+
+    <div style="margin-top:78px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:34px;align-items:start">
+      <div><span style="font-family:'IBM Plex Mono',monospace;color:#7FD8C6;font-size:.85rem">[01]</span><h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.08rem;margin-bottom:6px;color:#F4F1E8">Surveillance continue</h4><p style="font-size:.95rem;color:#C9D9DB">Domaines, e-mails, fuites de données, services exposés : ce qu'un attaquant verrait, vous le voyez d'abord.</p></div>
+      <div><span style="font-family:'IBM Plex Mono',monospace;color:#7FD8C6;font-size:.85rem">[02]</span><h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.08rem;margin-bottom:6px;color:#F4F1E8">Validation humaine</h4><p style="font-size:.95rem;color:#C9D9DB">Chaque alerte est vérifiée par un analyste avant de vous parvenir. Pas de bruit, pas de fausses alarmes.</p></div>
+      <div><span style="font-family:'IBM Plex Mono',monospace;color:#7FD8C6;font-size:.85rem">[03]</span><h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.08rem;margin-bottom:6px;color:#F4F1E8">Données en Suisse</h4><p style="font-size:.95rem;color:#C9D9DB">Analyse fondée sur des sources ouvertes, hébergement suisse, conforme nLPD.</p></div>
+    </div>
+
+    <div data-grid="offer" style="margin-top:86px;position:relative;overflow:hidden;border-radius:22px;padding:42px;display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center;color:#F4F1E8;border:1px solid rgba(255,255,255,.26);background:linear-gradient(148deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.04) 42%,rgba(255,255,255,.018) 64%,rgba(255,255,255,.055) 100%);backdrop-filter:blur(26px) saturate(1.55) brightness(1.12) contrast(1.04);-webkit-backdrop-filter:blur(26px) saturate(1.55) brightness(1.12) contrast(1.04);box-shadow:0 2px 3px rgba(4,22,28,.55),0 14px 26px rgba(4,22,28,.34),0 40px 78px rgba(4,22,28,.32),inset 0 1px 0 rgba(255,255,255,.62),inset 0 3px 0 -2px rgba(201,138,85,.42),inset 1px 0 0 rgba(255,255,255,.20),inset -1px 0 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(255,255,255,.30),inset 0 -26px 46px -32px rgba(255,255,255,.15)">
+      <span aria-hidden="true" style="position:absolute;inset:0;border-radius:22px;pointer-events:none;background:linear-gradient(112deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,.06) 16%,rgba(255,255,255,0) 32%,rgba(255,255,255,0) 72%,rgba(255,255,255,.045) 86%,rgba(255,255,255,.10) 100%)"></span>
+      <span aria-hidden="true" style="position:absolute;top:0;bottom:0;left:0;width:5px;background:#7FD8C6;z-index:1;box-shadow:0 0 18px -2px #7FD8C6"></span>
+      <div style="position:relative;z-index:1;min-width:0">
+        <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.55rem;letter-spacing:-.01em;text-shadow:0 1px 10px rgba(4,22,28,.45)">Surveillance d'exposition numérique</h2>
+        <ul style="list-style:none;margin-top:16px;display:grid;gap:9px">
+          <li style="padding-left:26px;position:relative;font-size:.98rem"><span style="position:absolute;left:0;color:#7FD8C6;font-family:'IBM Plex Mono',monospace">—</span>Diagnostic initial complet de votre exposition — offert</li>
+          <li style="padding-left:26px;position:relative;font-size:.98rem"><span style="position:absolute;left:0;color:#7FD8C6;font-family:'IBM Plex Mono',monospace">—</span>Surveillance continue et alertes vérifiées par un humain</li>
+          <li style="padding-left:26px;position:relative;font-size:.98rem"><span style="position:absolute;left:0;color:#7FD8C6;font-family:'IBM Plex Mono',monospace">—</span>Rapport mensuel clair, sans jargon</li>
+          <li style="padding-left:26px;position:relative;font-size:.98rem"><span style="position:absolute;left:0;color:#7FD8C6;font-family:'IBM Plex Mono',monospace">—</span>Sans engagement : vous arrêtez quand vous voulez</li>
+        </ul>
+      </div>
+      <div data-price="" style="position:relative;z-index:1;min-width:0;text-align:center;background:linear-gradient(165deg,#07222B,#04161C);border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:30px 26px;box-shadow:inset 0 1px 0 rgba(255,255,255,.10),0 10px 30px rgba(4,22,28,.45)">
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:3rem;line-height:1;color:#7FD8C6;text-shadow:0 2px 14px rgba(4,22,28,.45)">90.–</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:#C9D9DB;margin-top:6px">par mois · diagnostic offert</div>
+        <p style="margin-top:14px;font-size:.92rem;color:#C9D9DB">Tarif pilote <strong>bloqué la première année</strong></p>
+        <a href="https://wa.me/41779246978" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;margin-top:22px;background:#C98A55;color:#2A1608;border-radius:999px;padding:13px 26px;font-weight:600;font-size:1rem;transition:transform .15s,background .2s;box-shadow:0 8px 22px rgba(4,22,28,.42),inset 0 1px 0 rgba(255,255,255,.5)" style-hover="transform:translateY(-2px);background:#D9A273;color:#2A1608">Demander mon diagnostic</a>
+        <p style="font-size:.86rem;color:#C9D9DB;margin-top:12px">Réponse sous 24 h ouvrées.</p>
+      </div>
+    </div>
+
+    <sc-if value="{{ showNext }}" hint-placeholder-val="{{ true }}">
+      <a href="reseaux.html" style="margin-top:78px;display:flex;align-items:center;gap:18px;background:linear-gradient(148deg,rgba(255,255,255,.09),rgba(255,255,255,.03));backdrop-filter:blur(20px) saturate(1.5) brightness(1.12);-webkit-backdrop-filter:blur(20px) saturate(1.5) brightness(1.12);border:1px solid rgba(255,255,255,.20);box-shadow:0 2px 3px rgba(4,22,28,.45),0 16px 34px rgba(4,22,28,.26),inset 0 1px 0 rgba(255,255,255,.50);border-radius:14px;padding:20px 24px;width:100%;text-align:left;color:#F4F1E8;transition:border-color .2s,background .2s,transform .2s" style-hover="border-color:#EBD08A;background:rgba(255,255,255,.16);color:#F4F1E8;transform:translateX(3px)">
+        <span style="font-family:'IBM Plex Mono',monospace;color:#EBD08A;font-size:1.2rem">→</span>
+        <span><span style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#EBD08A">Autre offre</span><br><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.05rem">Envie d'être présent chaque semaine sans y passer vos soirées ?</span></span>
+      </a>
+    </sc-if>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ isRs }}" hint-placeholder-val="{{ false }}">
+  <section data-screen-label="Réseaux sociaux" style="animation:fade .35s ease">
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:#EBD08A;margin:76px 0 16px;text-shadow:0 1px 8px rgba(0,0,0,.25)">Réseaux sociaux — Faire vivre</p>
+    <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(2.4rem,6.2vw,4.2rem);line-height:1.02;letter-spacing:-.025em;max-width:16ch;text-shadow:0 2px 18px rgba(0,0,0,.28)">Présent chaque semaine, <em style="font-style:normal;color:#EBD08A">sans y passer vos soirées</em>.</h1>
+    <p style="margin:26px 0 0;max-width:56ch;font-size:1.12rem;color:#C9D9DB;text-shadow:0 1px 10px rgba(0,0,0,.25)">Vos clients sont sur Instagram, Facebook et LinkedIn — mais votre métier, c'est le vôtre, pas la création de contenu. Le copilote prépare, vous validez en deux minutes, c'est publié.</p>
+
+    <div style="margin-top:78px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:34px;align-items:start">
+      <div><span style="font-family:'IBM Plex Mono',monospace;color:#EBD08A;font-size:.85rem">[01]</span><h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.08rem;margin-bottom:6px;color:#F4F1E8">Préparé pour vous</h4><p style="font-size:.95rem;color:#C9D9DB">Chaque semaine, des publications prêtes à partir, rédigées dans votre ton et pour votre métier.</p></div>
+      <div><span style="font-family:'IBM Plex Mono',monospace;color:#EBD08A;font-size:.85rem">[02]</span><h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.08rem;margin-bottom:6px;color:#F4F1E8">Vous gardez la main</h4><p style="font-size:.95rem;color:#C9D9DB">Rien ne part sans votre accord : vous validez ou ajustez depuis votre téléphone.</p></div>
+      <div><span style="font-family:'IBM Plex Mono',monospace;color:#EBD08A;font-size:.85rem">[03]</span><h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.08rem;margin-bottom:6px;color:#F4F1E8">Régularité mesurable</h4><p style="font-size:.95rem;color:#C9D9DB">Un point mensuel simple : ce qui a été publié, ce qui a fonctionné, ce qu'on ajuste.</p></div>
+    </div>
+
+    <div data-grid="offer" style="margin-top:86px;position:relative;overflow:hidden;border-radius:22px;padding:42px;display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center;color:#F4F1E8;border:1px solid rgba(255,255,255,.26);background:linear-gradient(148deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.04) 42%,rgba(255,255,255,.018) 64%,rgba(255,255,255,.055) 100%);backdrop-filter:blur(26px) saturate(1.55) brightness(1.12) contrast(1.04);-webkit-backdrop-filter:blur(26px) saturate(1.55) brightness(1.12) contrast(1.04);box-shadow:0 2px 3px rgba(4,22,28,.55),0 14px 26px rgba(4,22,28,.34),0 40px 78px rgba(4,22,28,.32),inset 0 1px 0 rgba(255,255,255,.62),inset 0 3px 0 -2px rgba(201,138,85,.42),inset 1px 0 0 rgba(255,255,255,.20),inset -1px 0 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(255,255,255,.30),inset 0 -26px 46px -32px rgba(255,255,255,.15)">
+      <span aria-hidden="true" style="position:absolute;inset:0;border-radius:22px;pointer-events:none;background:linear-gradient(112deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,.06) 16%,rgba(255,255,255,0) 32%,rgba(255,255,255,0) 72%,rgba(255,255,255,.045) 86%,rgba(255,255,255,.10) 100%)"></span>
+      <span aria-hidden="true" style="position:absolute;top:0;bottom:0;left:0;width:5px;background:#EBD08A;z-index:1;box-shadow:0 0 18px -2px #EBD08A"></span>
+      <div style="position:relative;z-index:1;min-width:0">
+        <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.55rem;letter-spacing:-.01em;text-shadow:0 1px 10px rgba(4,22,28,.45)">Copilote réseaux sociaux</h2>
+        <ul style="list-style:none;margin-top:16px;display:grid;gap:9px">
+          <li style="padding-left:26px;position:relative;font-size:.98rem"><span style="position:absolute;left:0;color:#EBD08A;font-family:'IBM Plex Mono',monospace">—</span>Publications hebdomadaires préparées et planifiées</li>
+          <li style="padding-left:26px;position:relative;font-size:.98rem"><span style="position:absolute;left:0;color:#EBD08A;font-family:'IBM Plex Mono',monospace">—</span>Validation en un clic avant chaque parution</li>
+          <li style="padding-left:26px;position:relative;font-size:.98rem"><span style="position:absolute;left:0;color:#EBD08A;font-family:'IBM Plex Mono',monospace">—</span>Visuels et textes adaptés à votre activité</li>
+          <li style="padding-left:26px;position:relative;font-size:.98rem"><span style="position:absolute;left:0;color:#EBD08A;font-family:'IBM Plex Mono',monospace">—</span>Bilan mensuel et ajustements continus</li>
+        </ul>
+      </div>
+      <div data-price="" style="position:relative;z-index:1;min-width:0;text-align:center;background:linear-gradient(165deg,#07222B,#04161C);border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:30px 26px;box-shadow:inset 0 1px 0 rgba(255,255,255,.10),0 10px 30px rgba(4,22,28,.45)">
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:3rem;line-height:1;color:#EBD08A;text-shadow:0 2px 14px rgba(4,22,28,.45)">199.–</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:#C9D9DB;margin-top:6px">par mois · sans engagement</div>
+        <p style="margin-top:14px;font-size:.92rem;color:#C9D9DB">Vous arrêtez quand vous voulez, sans préavis.</p>
+        <a href="https://wa.me/41779246978" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;margin-top:22px;background:#C98A55;color:#2A1608;border-radius:999px;padding:13px 28px;font-weight:600;font-size:1rem;transition:transform .15s,background .2s;box-shadow:0 8px 22px rgba(4,22,28,.42),inset 0 1px 0 rgba(255,255,255,.5)" style-hover="transform:translateY(-2px);background:#D9A273;color:#2A1608">Démarrer mon copilote</a>
+        <p style="font-size:.86rem;color:#C9D9DB;margin-top:12px">Réponse sous 24 h ouvrées.</p>
+      </div>
+    </div>
+
+    <sc-if value="{{ showNext }}" hint-placeholder-val="{{ true }}">
+      <a href="web.html" style="margin-top:78px;display:flex;align-items:center;gap:18px;background:linear-gradient(148deg,rgba(255,255,255,.09),rgba(255,255,255,.03));backdrop-filter:blur(20px) saturate(1.5) brightness(1.12);-webkit-backdrop-filter:blur(20px) saturate(1.5) brightness(1.12);border:1px solid rgba(255,255,255,.20);box-shadow:0 2px 3px rgba(4,22,28,.45),0 16px 34px rgba(4,22,28,.26),inset 0 1px 0 rgba(255,255,255,.50);border-radius:14px;padding:20px 24px;width:100%;text-align:left;color:#F4F1E8;transition:border-color .2s,background .2s,transform .2s" style-hover="border-color:#9CC4E4;background:rgba(255,255,255,.16);color:#F4F1E8;transform:translateX(3px)">
+        <span style="font-family:'IBM Plex Mono',monospace;color:#9CC4E4;font-size:1.2rem">→</span>
+        <span><span style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#9CC4E4">Autre offre</span><br><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.05rem">Pas encore de site ? Un site vitrine rassemble tout au même endroit.</span></span>
+      </a>
+    </sc-if>
+  </section>
+  </sc-if>
+
+</main>
+
+<footer style="position:relative;z-index:1;margin-top:20px;background:linear-gradient(180deg,rgba(4,22,28,.55),#04161C)">
+  <span aria-hidden="true" style="display:block;height:1px;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);opacity:.7"></span>
+  <div style="max-width:1080px;margin:0 auto;padding:26px 24px;display:flex;gap:18px;flex-wrap:wrap;font-size:.85rem;color:#C9D9DB">
+    <span style="margin-right:auto">© 2026 Bisse IA — Sion, Valais</span>
+    <a href="web.html">Web</a>
+    <a href="securite.html">Sécurité (Turiya)</a>
+    <a href="reseaux.html">Réseaux sociaux</a>
+    <nav aria-label="Informations légales" style="display:flex;gap:14px;flex-wrap:wrap;width:100%;padding-top:14px;margin-top:4px;border-top:1px solid rgba(255,255,255,.10)">
+      <a href="mentions-legales.html#impressum" style="color:inherit" style-hover="color:#F4F1E8">Mentions légales</a>
+      <a href="mentions-legales.html#confidentialite" style="color:inherit" style-hover="color:#F4F1E8">Confidentialité</a>
+      <a href="mentions-legales.html#droits" style="color:inherit" style-hover="color:#F4F1E8">Droits nLPD</a>
+    </nav>
   </div>
 </footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;startPage&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;home&quot;, &quot;web&quot;, &quot;sec&quot;, &quot;rs&quot;], &quot;default&quot;: &quot;home&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Comportement&quot;},
+  &quot;showNextStep&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Comportement&quot;},
+  &quot;contactEmail&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;contact@bisse-ia.ch&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Contact&quot;}
+}">
+const ROUTES = { '#accueil': 'home', '#web': 'web', '#securite': 'sec', '#reseaux': 'rs' };
 
-<script>
-(function () {
-  var motionOK = window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
+class Component extends DCLogic {
+  state = { page: null };
+  offers = React.createRef();
+  nameRef = React.createRef();
+  contactRef = React.createRef();
+  msgRef = React.createRef();
 
-  /* reveal on scroll */
-  if (motionOK && 'IntersectionObserver' in window) {
-    document.documentElement.classList.add('anim');
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  componentDidMount() {
+    this.onHash = () => {
+      const id = ROUTES[window.location.hash];
+      if (!id) return;
+      this.setState({ page: id });
+      try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+    };
+    window.addEventListener('hashchange', this.onHash);
+    const id = ROUTES[window.location.hash];
+    if (id) this.setState({ page: id });
   }
 
-  /* nav mobile */
-  var burger = document.querySelector('.nav-burger');
-  var menu = document.getElementById('nav-menu');
-  if (burger && menu) {
-    function setMenu(open) {
-      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-      burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
-      menu.hidden = !open;
-    }
-    burger.addEventListener('click', function () {
-      setMenu(burger.getAttribute('aria-expanded') !== 'true');
-    });
-    menu.addEventListener('click', function (ev) {
-      if (ev.target.tagName === 'A') setMenu(false);
-    });
-    document.addEventListener('keydown', function (ev) {
-      if (ev.key === 'Escape' && !menu.hidden) { setMenu(false); burger.focus(); }
-    });
+  componentWillUnmount() {
+    if (this.onHash) window.removeEventListener('hashchange', this.onHash);
   }
 
-  /* demo stepper */
-  var steps = Array.prototype.slice.call(document.querySelectorAll('.demo-step'));
-  var panes = Array.prototype.slice.call(document.querySelectorAll('.demo-pane'));
-  var current = 0;
-  var timer = null;
-  var INTERVAL = 7000;
-  var inView = false;
-  var paused = false;
+  current() { return this.state.page || this.props.startPage || 'home'; }
 
-  function show(i, focus) {
-    current = i;
-    steps.forEach(function (s, j) {
-      var sel = j === i;
-      s.setAttribute('aria-selected', sel ? 'true' : 'false');
-      s.setAttribute('tabindex', sel ? '0' : '-1');
-    });
-    panes.forEach(function (p, j) { p.classList.toggle('active', j === i); });
-    if (focus) steps[i].focus();
-  }
-  function next() { show((current + 1) % panes.length); }
-  function startAuto() {
-    if (!motionOK || !inView || paused) return;
-    stopAuto();
-    timer = setInterval(next, INTERVAL);
-  }
-  function stopAuto() { if (timer) { clearInterval(timer); timer = null; } }
-
-  steps.forEach(function (s, i) {
-    s.addEventListener('click', function () { show(i); startAuto(); });
-    s.addEventListener('keydown', function (ev) {
-      var n = null;
-      if (ev.key === 'ArrowRight' || ev.key === 'ArrowDown') n = (i + 1) % steps.length;
-      else if (ev.key === 'ArrowLeft' || ev.key === 'ArrowUp') n = (i - 1 + steps.length) % steps.length;
-      else if (ev.key === 'Home') n = 0;
-      else if (ev.key === 'End') n = steps.length - 1;
-      if (n !== null) { ev.preventDefault(); show(n, true); }
-    });
-  });
-
-  var demo = document.getElementById('demo');
-  if (demo) {
-    demo.addEventListener('mouseenter', function () { paused = true; stopAuto(); });
-    demo.addEventListener('mouseleave', function () { paused = false; startAuto(); });
-    demo.addEventListener('focusin', function () { paused = true; stopAuto(); });
-    demo.addEventListener('focusout', function (ev) {
-      if (!demo.contains(ev.relatedTarget)) { paused = false; startAuto(); }
-    });
-    if ('IntersectionObserver' in window) {
-      var dio = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          inView = e.isIntersecting;
-          inView ? startAuto() : stopAuto();
-        });
-      }, { threshold: 0.3 });
-      dio.observe(demo);
-    } else {
-      inView = true;
-      startAuto();
-    }
-  }
-
-  /* contact form → POST JSON vers n8n (webhook bisseia-contact) + honeypot + fallback visible */
-  var form = document.getElementById('contact-form');
-  var formStatus = document.getElementById('form-status');
-  if (form && formStatus) {
-    form.addEventListener('submit', function (ev) {
-      ev.preventDefault();
-      var btn = form.querySelector('button[type="submit"]');
-      var label = btn.textContent;
-      function showStatus(cls, html) {
-        formStatus.hidden = false;
-        formStatus.className = 'form-status ' + cls;
-        formStatus.innerHTML = html;
+  renderVals() {
+    const p = this.current();
+    const on = id => p === id;
+    return {
+      showNext: this.props.showNextStep ?? true,
+      isHome: on('home'), isWeb: on('web'), isSec: on('sec'), isRs: on('rs'),
+      notHome: !on('home'), notWeb: !on('web'), notSec: !on('sec'), notRs: !on('rs'),
+      offersRef: this.offers,
+      nameRef: this.nameRef,
+      contactRef: this.contactRef,
+      msgRef: this.msgRef,
+      toOffers: () => {
+        const el = this.offers.current;
+        if (!el) return;
+        const y = el.getBoundingClientRect().top + window.pageYOffset - 90;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      },
+      onSubmit: e => {
+        e.preventDefault();
+        const to = this.props.contactEmail || 'contact@bisse-ia.ch';
+        const n = (this.nameRef.current && this.nameRef.current.value) || '';
+        const c = (this.contactRef.current && this.contactRef.current.value) || '';
+        const m = (this.msgRef.current && this.msgRef.current.value) || '';
+        const body = 'Nom : ' + n + '\nContact : ' + c + '\n\n' + m;
+        window.location.href = 'mailto:' + to +
+          '?subject=' + encodeURIComponent('Demande via bisse-ia.ch — ' + n) +
+          '&body=' + encodeURIComponent(body);
       }
-      var data = {};
-      new FormData(form).forEach(function (v, k) { data[k] = v; });
-      // Honeypot : si rempli, on simule le succès sans rien envoyer.
-      if ((data.site_web || '').toString().trim()) {
-        form.reset();
-        showStatus('ok', 'Demande envoyée. Réponse sous un jour ouvré.');
-        return;
-      }
-      btn.disabled = true;
-      btn.textContent = 'Envoi en cours…';
-      fetch(form.getAttribute('action'), {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      }).then(function (res) {
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        form.reset();
-        showStatus('ok', 'Demande envoyée. Réponse sous un jour ouvré.');
-      }).catch(function () {
-        showStatus('err', 'L\'envoi n\'a pas abouti. Écrivez directement à <a href="mailto:admin@bisse-ia.ch">admin@bisse-ia.ch</a> ou appelez le <a href="tel:+41779246978">+41&nbsp;77&nbsp;924&nbsp;69&nbsp;78</a>.');
-      }).finally(function () {
-        btn.disabled = false;
-        btn.textContent = label;
-      });
-    });
+    };
   }
-})();
+}
 </script>
-
 </body>
 </html>
