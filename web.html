@@ -32,8 +32,22 @@ details[open] [data-sign]::after{content:"\2013"}
   [data-price]{order:-1}
   [data-hero]{min-height:auto !important;padding:56px 0 48px !important}
   [data-cue]{display:none}
-  [data-sec]{margin-top:96px !important}
+  [data-sec]{margin-top:clamp(84px,15vw,132px) !important}
 }
+
+  /* --- Menu mobile : burger + menu déroulant (remplace la nav qui s'enroulait) --- */
+  .nav-burger{display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;margin-left:auto;width:44px;height:44px;padding:0;background:transparent;border:1px solid rgba(255,255,255,.22);border-radius:10px;cursor:pointer;transition:border-color .2s,background .2s}
+  .nav-burger:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.05)}
+  .nav-burger span{display:block;width:20px;height:1.6px;background:#F4F1E8;transition:transform .22s ease,opacity .22s ease}
+  .nav-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6.6px) rotate(45deg)}
+  .nav-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .nav-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.6px) rotate(-45deg)}
+  @media(max-width:680px){
+    .nav-burger{display:flex}
+    header nav[aria-label="Pages"]{display:none !important;width:100%;flex-direction:column;gap:4px;padding-top:12px;margin-top:8px;border-top:1px solid rgba(255,255,255,.12)}
+    header nav[aria-label="Pages"].nav-open{display:flex !important;animation:fade .18s ease}
+    header nav[aria-label="Pages"] a{padding:13px 14px !important;font-size:1rem !important;border-radius:10px !important}
+  }
 </style>
 </helmet>
 
@@ -47,6 +61,7 @@ details[open] [data-sign]::after{content:"\2013"}
 <header style="position:sticky;top:0;z-index:50;background:rgba(4,22,28,.82);backdrop-filter:blur(12px) saturate(1.1);-webkit-backdrop-filter:blur(12px) saturate(1.1);box-shadow:0 1px 0 rgba(255,255,255,.07)">
   <div style="max-width:1080px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
     <a href="index.html#accueil" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.25rem;letter-spacing:-.01em;margin-right:auto;color:#F4F1E8">Bisse <span style="background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 2px rgba(4,22,28,.6))">IA</span></a>
+    <button class="nav-burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav aria-label="Pages" style="display:flex;gap:4px;flex-wrap:wrap">
       <a href="index.html#accueil" style="border-radius:999px;padding:8px 16px;font-weight:600;font-size:.92rem;color:#C9D9DB;transition:background .2s,color .2s" style-hover="background:rgba(244,241,232,.14);color:#F4F1E8">Accueil</a>
       <a href="#hero" aria-current="page" style="border-radius:999px;padding:8px 16px;font-weight:600;font-size:.92rem;background:#F4F1E8;color:#04161C">Web</a>
@@ -71,7 +86,7 @@ details[open] [data-sign]::after{content:"\2013"}
     </div>
   </section>
 
-  <section data-sec="" data-screen-label="Ce que vous obtenez" style="margin-top:130px">
+  <section data-sec="" data-screen-label="Ce que vous obtenez" style="margin-top:clamp(84px,15vw,132px)">
     <p style="font-family:'IBM Plex Mono',monospace;font-size:.84rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-align:center;background-image:linear-gradient(118deg,#F2CDA4 0%,#E8B584 22%,#D0955E 46%,#F2CDA4 68%,#C98A55 86%,#E8B584 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 2px rgba(4,22,28,.9)) drop-shadow(0 2px 10px rgba(4,22,28,.7))">Ce que vous obtenez</p>
     <h2 style="margin:20px auto 0;text-align:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.16;letter-spacing:-.02em;max-width:30ch;text-shadow:0 2px 16px rgba(4,22,28,.5)">Trois choses réglées, une fois pour toutes.</h2>
     <div style="margin-top:58px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;align-items:stretch">
@@ -97,7 +112,7 @@ details[open] [data-sign]::after{content:"\2013"}
   </section>
 
 
-  <section id="offre" data-sec="" data-screen-label="L'offre" style="margin-top:130px">
+  <section id="offre" data-sec="" data-screen-label="L'offre" style="margin-top:clamp(84px,15vw,132px)">
     <p style="font-family:'IBM Plex Mono',monospace;font-size:.84rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-align:center;background-image:linear-gradient(118deg,#F2CDA4 0%,#E8B584 22%,#D0955E 46%,#F2CDA4 68%,#C98A55 86%,#E8B584 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 2px rgba(4,22,28,.9)) drop-shadow(0 2px 10px rgba(4,22,28,.7))">L'offre</p>
     <h2 style="margin:20px auto 0;text-align:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.16;letter-spacing:-.02em;max-width:30ch;text-shadow:0 2px 16px rgba(4,22,28,.5)">Un prix, tout compris.</h2>
     <div data-grid="offer" data-glass="" style="margin-top:58px;position:relative;isolation:isolate;display:grid;grid-template-columns:1fr 340px;gap:40px;padding:40px 40px;border-radius:18px;border:1px solid rgba(255,255,255,.26);background:linear-gradient(148deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.04) 38%,rgba(255,255,255,.018) 68%,rgba(255,255,255,.055) 100%);backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);-webkit-backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);box-shadow:0 2px 3px rgba(4,22,28,.55),0 10px 20px rgba(4,22,28,.34),0 30px 60px rgba(4,22,28,.30),inset 0 1px 0 rgba(255,255,255,.62),inset 0 3px 0 -2px rgba(201,138,85,.42),inset 1px 0 0 rgba(255,255,255,.13),inset -1px 0 0 rgba(255,255,255,.09)">
@@ -121,7 +136,7 @@ details[open] [data-sign]::after{content:"\2013"}
     </div>
   </section>
 
-  <section data-sec="" data-screen-label="Comment ça se passe" style="margin-top:130px">
+  <section data-sec="" data-screen-label="Comment ça se passe" style="margin-top:clamp(84px,15vw,132px)">
     <p style="font-family:'IBM Plex Mono',monospace;font-size:.84rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-align:center;background-image:linear-gradient(118deg,#F2CDA4 0%,#E8B584 22%,#D0955E 46%,#F2CDA4 68%,#C98A55 86%,#E8B584 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 2px rgba(4,22,28,.9)) drop-shadow(0 2px 10px rgba(4,22,28,.7))">Comment ça se passe</p>
     <h2 style="margin:20px auto 0;text-align:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.16;letter-spacing:-.02em;max-width:30ch;text-shadow:0 2px 16px rgba(4,22,28,.5)">Trois rendez-vous, et c'est en ligne.</h2>
     <div style="margin-top:58px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;align-items:stretch">
@@ -149,7 +164,7 @@ details[open] [data-sign]::after{content:"\2013"}
     </div>
   </section>
 
-  <section id="faq" data-sec="" data-screen-label="FAQ" style="margin-top:130px">
+  <section id="faq" data-sec="" data-screen-label="FAQ" style="margin-top:clamp(84px,15vw,132px)">
     <p style="font-family:'IBM Plex Mono',monospace;font-size:.84rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-align:center;background-image:linear-gradient(118deg,#F2CDA4 0%,#E8B584 22%,#D0955E 46%,#F2CDA4 68%,#C98A55 86%,#E8B584 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 2px rgba(4,22,28,.9)) drop-shadow(0 2px 10px rgba(4,22,28,.7))">Questions fréquentes</p>
     <h2 style="margin:20px auto 0;text-align:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.16;letter-spacing:-.02em;max-width:30ch;text-shadow:0 2px 16px rgba(4,22,28,.5)">Ce qu'on me demande le plus souvent.</h2>
     <div style="margin-top:58px;display:flex;flex-direction:column;gap:12px">
@@ -176,14 +191,14 @@ details[open] [data-sign]::after{content:"\2013"}
     </div>
   </section>
 
-  <section data-sec="" data-screen-label="Passerelle" style="margin-top:130px">
+  <section data-sec="" data-screen-label="Passerelle" style="margin-top:clamp(84px,15vw,132px)">
     <div style="display:flex;flex-direction:column;gap:14px;padding:34px 36px;border-radius:18px;border:1px solid rgba(255,255,255,.16);background:rgba(4,22,28,.30);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)">
       <p style="font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:#C9D9DB">Autre offre</p>
       <p style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:clamp(1.16rem,2.2vw,1.44rem);line-height:1.3;letter-spacing:-.015em;max-width:40ch;text-wrap:pretty">Votre site est en ligne ? <a href="securite.html" style="color:#D98E52;border-bottom:1px solid rgba(217,142,82,.42)" style-hover="color:#F2CDA4">Découvrez la surveillance de votre exposition.</a></p>
     </div>
   </section>
 
-  <section id="contact" data-sec="" data-screen-label="Contact" style="margin-top:130px">
+  <section id="contact" data-sec="" data-screen-label="Contact" style="margin-top:clamp(84px,15vw,132px)">
     <div data-glass="" style="position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;padding:56px 40px 50px;border-radius:18px;border:1px solid rgba(255,255,255,.26);background:linear-gradient(148deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.04) 38%,rgba(255,255,255,.018) 68%,rgba(255,255,255,.055) 100%);backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);-webkit-backdrop-filter:blur(22px) saturate(1.55) brightness(1.12);box-shadow:0 2px 3px rgba(4,22,28,.55),0 10px 20px rgba(4,22,28,.34),0 30px 60px rgba(4,22,28,.30),inset 0 1px 0 rgba(255,255,255,.62),inset 1px 0 0 rgba(255,255,255,.13),inset -1px 0 0 rgba(255,255,255,.09)">
       <span aria-hidden="true" style="position:absolute;top:0;left:0;right:0;height:5px;z-index:3;background-image:linear-gradient(118deg,#6E3E1C 0%,#B87A44 14%,#F2CDA4 28%,#D0955E 40%,#8A5024 54%,#E8B584 70%,#B4753F 84%,#7A4620 100%)"></span>
       <span aria-hidden="true" style="position:absolute;inset:0;border-radius:18px;pointer-events:none;z-index:2;background:linear-gradient(112deg,rgba(255,255,255,.24) 0%,rgba(255,255,255,.06) 30%,rgba(255,255,255,0) 58%,rgba(255,255,255,.11) 100%)"></span>
@@ -221,6 +236,16 @@ class Component extends DCLogic {
   }
 }
 
+</script>
+<script>
+/* Menu mobile — délégation sur document (robuste au re-render du runtime) */
+document.addEventListener('click',function(e){
+  var nav=document.querySelector('header nav[aria-label="Pages"]');if(!nav)return;
+  var burger=e.target.closest&&e.target.closest('.nav-burger');
+  if(burger){var o=!nav.classList.contains('nav-open');nav.classList.toggle('nav-open',o);burger.setAttribute('aria-expanded',o?'true':'false');return;}
+  if(e.target.closest&&e.target.closest('header nav[aria-label="Pages"] a')){nav.classList.remove('nav-open');var b=document.querySelector('.nav-burger');if(b)b.setAttribute('aria-expanded','false');}
+});
+document.addEventListener('keydown',function(e){if(e.key!=='Escape')return;var nav=document.querySelector('header nav[aria-label="Pages"]');if(nav)nav.classList.remove('nav-open');var b=document.querySelector('.nav-burger');if(b)b.setAttribute('aria-expanded','false');});
 </script>
 </body>
 </html>
