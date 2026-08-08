@@ -5,3 +5,8 @@
 .vscode/
 .idea/
 node_modules/
+
+# Outillage skills (npx skills add) — NE PAS committer ni déployer sur le web
+.agents/
+.claude/
+skills-lock.json
